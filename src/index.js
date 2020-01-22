@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 
-import App from './App';
+import App from './features/App';
 
 const render = () => {
   ReactDOM.render(
@@ -18,5 +18,5 @@ const render = () => {
 render();
 
 if (process.env.NODE_ENV === 'development' && module.hot) {
-  module.hot.accept('./App', render);
+  module.hot.accept('./features/App', render);
 }

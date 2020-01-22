@@ -1,9 +1,10 @@
 {
-  "name": "boilerplate",
-  "version": "0.1.1",
+  "name": "stockscout",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.2.2",
+    "axios": "^0.19.1",
     "classnames": "^2.2.6",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
