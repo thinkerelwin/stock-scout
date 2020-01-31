@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/styles/main.scss';
+import './App.scss';
 
 import Menu from './menu/Menu';
 import Main from './home/Home';
@@ -15,9 +16,6 @@ function App() {
       <div className="container">
         <Menu />
         <Switch>
-          <Route path="/" exact>
-            <Main />
-          </Route>
           <Route path="/news">
             <News />
           </Route>
@@ -26,6 +24,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/">
+            <Main />
           </Route>
         </Switch>
       </div>

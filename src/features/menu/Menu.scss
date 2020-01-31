@@ -1,3 +1,5 @@
+@import '../../assets/styles/mixins';
+
 .header {
   display: flex;
   // grid-template-columns: minmax(max-content, 4fr) minmax(min-content, 1fr);
@@ -20,24 +22,35 @@
 
 .navbar {
   // position: relative;
+  &.open {
+    .navbar__list {
+      opacity: 1;
+    }
+    .navbar__icon {
+      background-color: transparent;
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
   &__list {
     display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
+    @include absoluteCenter;
     flex-direction: column;
     width: calc(100% - 2rem);
     min-width: 320px;
     height: 100%;
     justify-content: center;
     align-items: center;
-    transform: translate(-50%, -50%);
     background-color: rgba(249, 249, 249, 1);
+    z-index: 10;
     opacity: 0;
-    transition: opacity 0.3s;
-    &.open {
-      opacity: 1;
-    }
+    transition: all 0.3s;
   }
   &__item {
     display: flex;
@@ -55,7 +68,7 @@
     }
   }
   &__button {
-    position: fixed;
+    position: absolute;
     top: 2rem;
     right: 2rem;
     width: 1.5rem;

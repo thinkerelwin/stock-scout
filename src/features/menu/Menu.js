@@ -19,28 +19,45 @@ const Menu = () => {
         <p>Stock Scout</p>
       </Link>
 
-      <nav className="navbar">
+      <nav className={classNames('navbar', { open: isMenuOpen })}>
         <button className="navbar__button" onClick={handleMenuToggle}>
           <span className="navbar__icon">&nbsp;</span>
         </button>
-        <ul className={classNames('navbar__list', { open: isMenuOpen })}>
+        <ul className="navbar__list">
           <li className="navbar__item">
-            <NavLink to="/" exact className="navbar__link">
+            <NavLink
+              to="/"
+              exact
+              className="navbar__link"
+              onClick={handleMenuToggle}
+            >
               Home
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink to="/news" className="navbar__link">
+            <NavLink
+              to="/news"
+              className="navbar__link"
+              onClick={handleMenuToggle}
+            >
               News
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink to="/stocks" className="navbar__link">
+            <NavLink
+              to="/stocks"
+              className="navbar__link"
+              onClick={handleMenuToggle}
+            >
               Stocks
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink to="/contact" className="navbar__link">
+            <NavLink
+              to="/contact"
+              className="navbar__link"
+              onClick={handleMenuToggle}
+            >
               Contact
             </NavLink>
           </li>
