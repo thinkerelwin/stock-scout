@@ -10,27 +10,27 @@
 @mixin rwd($breakpoint) {
   // 360px
   @if $breakpoint == xs {
-    @media only screen and (max-width: 22.5em) {
+    @media only screen and (min-width: 22.5em) {
       @content;
     }
-    // 767px
+    // 768px
   } @else if $breakpoint == sm {
-    @media only screen and (max-width: 47.93em) {
+    @media only screen and (min-width: 48em) {
       @content;
     }
-    // 1023px
+    // 1024px
   } @else if $breakpoint == md {
-    @media only screen and (max-width: 63.93em) {
+    @media only screen and (min-width: 64em) {
       @content;
     }
-    // 1279px
+    // 1280px
   } @else if $breakpoint == lg {
-    @media only screen and (max-width: 79.93em) {
+    @media only screen and (min-width: 80em) {
       @content;
     }
     // 1920px
   } @else if $breakpoint == xl {
-    @media only screen and (max-width: 120em) {
+    @media only screen and (min-width: 120em) {
       @content;
     }
   }

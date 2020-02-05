@@ -10,6 +10,22 @@ const Menu = () => {
 
   function handleMenuToggle() {
     setIsMenuOpen(!isMenuOpen);
+    document.body.classList.toggle('no-scroll');
+    stopBodyScrolling(!isMenuOpen);
+  }
+
+  function stopBodyScrolling(bool) {
+    if (bool === true) {
+      document.body.addEventListener('touchmove', freezeVp, false);
+      console.log('stop', isMenuOpen);
+    } else {
+      document.body.removeEventListener('touchmove', freezeVp, false);
+      console.log('stop', isMenuOpen);
+    }
+
+    function freezeVp(e) {
+      e.preventDefault();
+    }
   }
 
   return (

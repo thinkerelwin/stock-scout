@@ -1,24 +1,109 @@
+@import '../../assets/styles/mixins';
+
+$heading-font-size: 3rem;
+
 .main {
+  grid-column: center-start / center-end;
 }
 .section-about {
+  grid-column: center-start / center-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: $heading-font-size * 2;
   &__image {
-    /* The image used */
+    position: relative;
+    width: 100%;
+    height: 50vh;
     background-image: url('../../assets/images/spiderman_reading.jpg');
-
-    /* Full height */
-    height: 40vh;
-
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include rwd(lg) {
+      background-attachment: scroll;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      background: white;
+      opacity: 0.15;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      // z-index: -1;
+    }
   }
   &__heading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    transform: translateY(-85%);
+    margin-left: 10%;
+    font-size: $heading-font-size;
+  }
+  &__explaination {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .heading-secondary {
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 2rem;
+    }
   }
 }
 
-.section-achievement {
-  width: 100%;
-  height: 200vh;
+.section-sectors {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+}
+
+.section-sector {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.7rem 3.5rem;
+  &:nth-child(n) {
+    background-color: rgba(45, 54, 67, 1);
+  }
+  &:nth-child(2n) {
+    background-color: var(--color-secondary-dark);
+  }
+  &__heading {
+    margin-bottom: 0.7rem;
+    font-weight: normal;
+    color: #737882;
+    text-transform: capitalize;
+  }
+  &__text {
+    width: 70%;
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+.recent-news {
+  grid-column: center-start / center-end;
+  &__title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+  .carousel {
+    .control-dots {
+      .dot {
+        background-color: rgba(65, 65, 65, 1);
+      }
+    }
+    .swiper__title {
+      background-color: white;
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+    }
+  }
 }

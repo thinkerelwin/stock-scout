@@ -1,12 +1,12 @@
 @import '../../assets/styles/mixins';
 
 .header {
+  grid-column: center-start / center-end;
   display: flex;
-  // grid-template-columns: minmax(max-content, 4fr) minmax(min-content, 1fr);
+  position: relative;
   justify-content: space-around;
   align-items: center;
   height: 5.5rem;
-  // margin-top: 1.5rem;
 }
 
 .logo-box {
@@ -21,9 +21,10 @@
 }
 
 .navbar {
-  // position: relative;
   &.open {
+    overflow: hidden;
     .navbar__list {
+      z-index: 10;
       opacity: 1;
     }
     .navbar__icon {
@@ -41,15 +42,15 @@
   &__list {
     display: flex;
     @include absoluteCenter;
+    position: fixed;
     flex-direction: column;
-    width: calc(100% - 2rem);
-    min-width: 320px;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     background-color: rgba(249, 249, 249, 1);
-    z-index: 10;
     opacity: 0;
+    z-index: -1;
     transition: all 0.3s;
   }
   &__item {

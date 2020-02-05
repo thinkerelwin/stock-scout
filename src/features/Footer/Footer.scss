@@ -1,0 +1,11 @@
+.footer {
+  grid-column: left-padding / right-padding;
+  background-color: var(--color-secondary-light);
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.copyright {
+  color: white;
+}

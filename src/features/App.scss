@@ -1,4 +1,9 @@
+@import '../assets/styles/mixins';
+
 .container {
   display: grid;
-  grid-template-rows: max-content max-content min-content max-content;
+  grid-template-columns:
+    [left-padding] minmax(1rem, 1fr) [center-start] minmax(18rem, 90%)
+    [center-end] minmax(1rem, 1fr) [right-padding];
+  // @include rwd();
 }

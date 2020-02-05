@@ -1,7 +1,7 @@
 // Box sizing
 html {
   box-sizing: border-box;
-  // font-family: 'Roboto', sans-serif;
+  font-family: 'times new roman', times, serif;
 }
 
 *,
@@ -63,6 +63,13 @@ button {
 
 button * {
   pointer-events: none;
+}
+
+// Utility
+.no-scroll {
+  overflow: hidden;
+  // for mobile safari
+  -webkit-overflow-scrolling: touch;
 }
 
 // Media elements
