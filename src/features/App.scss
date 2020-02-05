@@ -3,7 +3,14 @@
 .container {
   display: grid;
   grid-template-columns:
-    [left-padding] minmax(1rem, 1fr) [center-start] minmax(18rem, 90%)
+    [left-padding] minmax(1rem, 1fr) [center-start] repeat(
+      3,
+      [col-start] minmax(min-content, 16rem) [col-end]
+    )
     [center-end] minmax(1rem, 1fr) [right-padding];
-  // @include rwd();
+  // @include rwd(lg) {
+  //   grid-template-columns:
+  //     [left-padding] 1fr [center-start] minmax(20rem, 70%)
+  //     [center-end] 1fr [right-padding];
+  // }
 }

@@ -8,18 +8,20 @@ import './Home.scss';
 const Home = () => {
   return (
     <main className="main">
-      <section className="section-about">
-        <div className="section-about__image">
-          <h1 className="section-about__heading">Investing in yourself</h1>
-        </div>
-        <div className="section-about__explaination">
-          <h3 className="heading-secondary">Stock Scout - About</h3>
-          <p>
-            Stock Scout offers an easy way to peek the market price and news.
-            It's also a place to implement my knowledge on frond-end
-          </p>
-        </div>
-      </section>
+      <h1 className="section-about__heading section-about__heading--upper">
+        Investing
+      </h1>
+      <h1 className="section-about__heading section-about__heading--lower">
+        in yourself
+      </h1>
+      <div className="section-about__image"></div>
+      <div className="section-about__explaination">
+        <h3 className="heading-secondary">Stock Scout - About</h3>
+        <p>
+          Stock Scout offers an easy way to peek the market price and news. It's
+          also a place to implement my knowledge on frond-end.
+        </p>
+      </div>
       <section className="section-sectors">
         <div className="section-sector">
           <h4 className="section-sector__heading">sector</h4>

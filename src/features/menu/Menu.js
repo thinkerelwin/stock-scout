@@ -29,16 +29,19 @@ const Menu = () => {
   }
 
   return (
-    <header className="header heading-primary">
+    <header
+      className={classNames('header heading-primary', { open: isMenuOpen })}
+    >
       <Link to="/" className="logo-box">
         <Logo title="logo" className="logo-box__icon" />
         <p>Stock Scout</p>
       </Link>
 
-      <nav className={classNames('navbar', { open: isMenuOpen })}>
-        <button className="navbar__button" onClick={handleMenuToggle}>
-          <span className="navbar__icon">&nbsp;</span>
-        </button>
+      <button className="navbar__button" onClick={handleMenuToggle}>
+        <span className="navbar__icon">&nbsp;</span>
+      </button>
+
+      <nav className="navbar">
         <ul className="navbar__list">
           <li className="navbar__item">
             <NavLink

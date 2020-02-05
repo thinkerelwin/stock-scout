@@ -1,51 +1,86 @@
 @import '../../assets/styles/mixins';
 
 $heading-font-size: 3rem;
+$heading-font-size-md: 6rem;
 
 .main {
-  grid-column: center-start / center-end;
+  grid-column: left-padding / right-padding;
+  display: grid;
+  grid-template-columns:
+    [main-left-padding] minmax(1rem, 1fr) [main-center-start] repeat(
+      3,
+      [main-col-start] minmax(min-content, 16rem) [main-col-end]
+    )
+    [main-center-end] minmax(1rem, 1fr) [main-right-padding];
+  // [main-left-padding] minmax(1rem, 1fr) [main-center-start] minmax(18rem, 70%)
+  // [main-center-end] minmax(1rem, 1fr) [main-right-padding];
+  @include rwd(md) {
+    margin-top: var(--menu-height);
+  }
+  // @include rwd(lg) {
+  //   grid-template-columns:
+  //     [main-left-padding] minmax(1rem, 1fr) [main-center-start] minmax(
+  //       18rem,
+  //       70%
+  //     )
+  //     [main-center-end] minmax(1rem, 1fr) [main-right-padding];
+  // }
 }
 .section-about {
-  grid-column: center-start / center-end;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  margin-top: $heading-font-size * 2;
   &__image {
+    grid-column: main-left-padding / main-right-padding;
     position: relative;
     width: 100%;
     height: 50vh;
     background-image: url('../../assets/images/spiderman_reading.jpg');
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include rwd(xs) {
+      grid-column: main-center-start / main-center-end;
+    }
     @include rwd(lg) {
-      background-attachment: scroll;
+      grid-column: main-left-padding / main-right-padding;
+      height: 80vh;
+      background-attachment: fixed;
+      background-position: center top;
     }
-    &::after {
-      content: '';
-      position: absolute;
-      background: white;
-      opacity: 0.15;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      // z-index: -1;
-    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   background: white;
+    //   opacity: 0.1;
+    //   top: 0;
+    //   left: 0;
+    //   bottom: 0;
+    //   right: 0;
+    // }
   }
   &__heading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    transform: translateY(-85%);
+    grid-column: main-center-start / main-center-end;
+    // position: absolute;
+    // left: 0;
+    transform: skewX(-10deg);
     margin-left: 10%;
     font-size: $heading-font-size;
+    font-weight: normal;
+    @include rwd(md) {
+      font-size: $heading-font-size-md;
+    }
+
+    &--upper {
+      top: 0;
+    }
+    &--lower {
+      top: 3rem;
+    }
+    @include rwd(sm) {
+      // width: 40%;
+    }
   }
   &__explaination {
+    grid-column: main-center-start / main-center-end;
     margin-top: 2rem;
     margin-bottom: 2rem;
     .heading-secondary {
@@ -58,9 +93,9 @@ $heading-font-size: 3rem;
 }
 
 .section-sectors {
-  grid-column: center-start / center-end;
+  grid-column: main-center-start / main-center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 }
 
 .section-sector {
@@ -87,14 +122,18 @@ $heading-font-size: 3rem;
 }
 
 .recent-news {
-  grid-column: center-start / center-end;
+  grid-column: main-center-start / main-center-end;
   &__title {
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 2rem;
     text-transform: capitalize;
   }
+  // custom styles
   .carousel {
+    .slide {
+      background: transparent;
+    }
     .control-dots {
       .dot {
         background-color: rgba(65, 65, 65, 1);

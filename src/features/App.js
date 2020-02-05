@@ -10,7 +10,7 @@ import Footer from './Footer/Footer';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div className="container">
@@ -30,6 +30,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

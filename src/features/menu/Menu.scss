@@ -1,29 +1,24 @@
 @import '../../assets/styles/mixins';
 
 .header {
-  grid-column: center-start / center-end;
+  grid-column: left-padding / right-padding;
   display: flex;
   position: relative;
-  justify-content: space-around;
   align-items: center;
-  height: 5.5rem;
-}
-
-.logo-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-primary);
-  &__icon {
-    width: 2.5rem;
-    height: 2.5rem;
+  height: var(--menu-height);
+  @include rwd(xs) {
+    grid-column: center-start / center-end;
   }
-}
-
-.navbar {
+  @include rwd(md) {
+    grid-column: left-padding / right-padding;
+    position: fixed;
+    width: 100%;
+    justify-content: space-around;
+    z-index: 10;
+    background-color: white;
+  }
   &.open {
-    overflow: hidden;
-    .navbar__list {
+    .navbar {
       z-index: 10;
       opacity: 1;
     }
@@ -39,25 +34,59 @@
       }
     }
   }
+}
+
+.logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5vw;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  @include rwd(md) {
+    margin-left: 0;
+  }
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(249, 249, 249, 1);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s;
+  @include rwd(md) {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    opacity: 1;
+    z-index: inherit;
+  }
   &__list {
     display: flex;
-    @include absoluteCenter;
-    position: fixed;
     flex-direction: column;
     width: 100%;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: rgba(249, 249, 249, 1);
-    opacity: 0;
-    z-index: -1;
-    transition: all 0.3s;
+    @include rwd(md) {
+      flex-direction: row;
+      height: 100%;
+      justify-content: flex-end;
+    }
   }
   &__item {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 2.5rem;
   }
   &__link {
@@ -77,6 +106,9 @@
     padding: 0;
     border: none;
     z-index: 100;
+    @include rwd(md) {
+      display: none;
+    }
     &:focus {
       outline: none;
     }

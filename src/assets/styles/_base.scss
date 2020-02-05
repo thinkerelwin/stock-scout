@@ -2,6 +2,18 @@
 html {
   box-sizing: border-box;
   font-family: 'times new roman', times, serif;
+
+  @include rwd(md) {
+    font-size: 125%;
+  }
+
+  // @include rwd(sm) {
+  //   font-size: 50%; // 8/16 = 50%
+  // }
+
+  // @include rwd(xl) {
+  //   font-size: 75%; // 12/16 = 75%
+  // }
 }
 
 *,
