@@ -5,6 +5,7 @@ import './App.scss';
 import Menu from './menu/Menu';
 import Home from './home/Home';
 import News from './news/News';
+import Contact from './Contact';
 import Stocks from './stocks/Stocks';
 import Footer from './Footer/Footer';
 
@@ -21,6 +22,9 @@ const App = () => {
           </Route>
           <Route path="/stocks">
             <Stocks />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/">
             <Home />

@@ -1,21 +1,19 @@
 import React from 'react';
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
-
+import RecentNews from './RecentNews';
 import './Home.scss';
 
 const Home = () => {
   return (
-    <main className="main">
-      <h1 className="section-about__heading section-about__heading--upper">
+    <main className="home menu-margin">
+      <h1 className="section-about__heading section-about__heading--upper heading-margin">
         Investing
       </h1>
-      <h1 className="section-about__heading section-about__heading--lower">
+      <h1 className="section-about__heading section-about__heading--lower heading-margin">
         in yourself
       </h1>
       <div className="section-about__image"></div>
-      <div className="section-about__explaination">
+      <div className="section-about__explaination heading-margin">
         <h3 className="heading-secondary">Stock Scout - About</h3>
         <p>
           Stock Scout offers an easy way to peek the market price and news. It's
@@ -48,42 +46,7 @@ const Home = () => {
           <p className="section-sector__text">Consumer Services</p>
         </div>
       </section>
-      <section className="recent-news">
-        <div className="recent-news__title">recent news</div>
-        <div className="recent-news__swiper-box">
-          <Carousel
-            showArrows={false}
-            showStatus={false}
-            showThumbs={false}
-            // centerMode={true}
-          >
-            <div className="swiper__inner-box">
-              <img
-                className="swiper__image"
-                src="https://via.placeholder.com/288x160.png"
-                alt="dummytext"
-              />
-              <p className="swiper__title">Image 1</p>
-            </div>
-            <div className="swiper__inner-box">
-              <img
-                className="swiper__image"
-                src="https://via.placeholder.com/288x160.png"
-                alt="dummytext"
-              />
-              <p className="swiper__title">Image 2</p>
-            </div>
-            <div className="swiper__inner-box">
-              <img
-                className="swiper__image"
-                src="https://via.placeholder.com/288x160.png"
-                alt="dummytext"
-              />
-              <p className="swiper__title">Image 3</p>
-            </div>
-          </Carousel>
-        </div>
-      </section>
+      <RecentNews />
     </main>
   );
 };

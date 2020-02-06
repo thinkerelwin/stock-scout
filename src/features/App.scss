@@ -8,9 +8,4 @@
       [col-start] minmax(min-content, 16rem) [col-end]
     )
     [center-end] minmax(1rem, 1fr) [right-padding];
-  // @include rwd(lg) {
-  //   grid-template-columns:
-  //     [left-padding] 1fr [center-start] minmax(20rem, 70%)
-  //     [center-end] 1fr [right-padding];
-  // }
 }

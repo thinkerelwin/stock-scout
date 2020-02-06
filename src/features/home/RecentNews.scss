@@ -1,0 +1,42 @@
+@import '../../assets/styles/mixins';
+
+.recent-news {
+  grid-column: main-center-start / main-center-end;
+  &__title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+  // custom styles
+  .carousel {
+    .slide {
+      background: transparent;
+    }
+    .control-dots {
+      .dot {
+        background-color: rgba(65, 65, 65, 1);
+      }
+    }
+    .swiper__title {
+      background-color: white;
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.normal-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .swiper {
+    &__title {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      padding: 1rem 0;
+      text-align: center;
+    }
+  }
+}

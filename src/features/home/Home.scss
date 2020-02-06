@@ -3,7 +3,7 @@
 $heading-font-size: 3rem;
 $heading-font-size-md: 6rem;
 
-.main {
+.home {
   grid-column: left-padding / right-padding;
   display: grid;
   grid-template-columns:
@@ -12,19 +12,6 @@ $heading-font-size-md: 6rem;
       [main-col-start] minmax(min-content, 16rem) [main-col-end]
     )
     [main-center-end] minmax(1rem, 1fr) [main-right-padding];
-  // [main-left-padding] minmax(1rem, 1fr) [main-center-start] minmax(18rem, 70%)
-  // [main-center-end] minmax(1rem, 1fr) [main-right-padding];
-  @include rwd(md) {
-    margin-top: var(--menu-height);
-  }
-  // @include rwd(lg) {
-  //   grid-template-columns:
-  //     [main-left-padding] minmax(1rem, 1fr) [main-center-start] minmax(
-  //       18rem,
-  //       70%
-  //     )
-  //     [main-center-end] minmax(1rem, 1fr) [main-right-padding];
-  // }
 }
 .section-about {
   &__image {
@@ -59,10 +46,7 @@ $heading-font-size-md: 6rem;
   }
   &__heading {
     grid-column: main-center-start / main-center-end;
-    // position: absolute;
-    // left: 0;
     transform: skewX(-10deg);
-    margin-left: 10%;
     font-size: $heading-font-size;
     font-weight: normal;
     @include rwd(md) {
@@ -75,14 +59,12 @@ $heading-font-size-md: 6rem;
     &--lower {
       top: 3rem;
     }
-    @include rwd(sm) {
-      // width: 40%;
-    }
   }
   &__explaination {
     grid-column: main-center-start / main-center-end;
     margin-top: 2rem;
     margin-bottom: 2rem;
+
     .heading-secondary {
       margin-bottom: 1rem;
     }
@@ -118,31 +100,5 @@ $heading-font-size-md: 6rem;
     width: 70%;
     font-size: 2rem;
     color: white;
-  }
-}
-
-.recent-news {
-  grid-column: main-center-start / main-center-end;
-  &__title {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    text-transform: capitalize;
-  }
-  // custom styles
-  .carousel {
-    .slide {
-      background: transparent;
-    }
-    .control-dots {
-      .dot {
-        background-color: rgba(65, 65, 65, 1);
-      }
-    }
-    .swiper__title {
-      background-color: white;
-      padding-top: 1rem;
-      padding-bottom: 2rem;
-    }
   }
 }
