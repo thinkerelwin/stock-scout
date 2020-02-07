@@ -1,17 +1,14 @@
 @import '../../assets/styles/mixins';
 
 .header {
-  grid-column: left-padding / right-padding;
   display: flex;
   position: relative;
   align-items: center;
   height: var(--menu-height);
-  @include rwd(xs) {
-    grid-column: center-start / center-end;
-  }
   @include rwd(md) {
-    grid-column: left-padding / right-padding;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     justify-content: space-around;
     z-index: 10;

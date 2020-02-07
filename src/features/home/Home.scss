@@ -4,14 +4,15 @@ $heading-font-size: 3rem;
 $heading-font-size-md: 6rem;
 
 .home {
-  grid-column: left-padding / right-padding;
   display: grid;
   grid-template-columns:
-    [main-left-padding] minmax(1rem, 1fr) [main-center-start] repeat(
+    [main-left-padding] minmax(var(--mobile-side-margin), 1fr)
+    [main-center-start] repeat(
       3,
       [main-col-start] minmax(min-content, 16rem) [main-col-end]
     )
-    [main-center-end] minmax(1rem, 1fr) [main-right-padding];
+    [main-center-end] minmax(var(--mobile-side-margin), 1fr)
+    [main-right-padding];
 }
 .section-about {
   &__image {
@@ -65,7 +66,7 @@ $heading-font-size-md: 6rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
 
-    .heading-secondary {
+    .heading-primary {
       margin-bottom: 1rem;
     }
     p {

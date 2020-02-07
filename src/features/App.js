@@ -5,7 +5,7 @@ import './App.scss';
 import Menu from './menu/Menu';
 import Home from './home/Home';
 import News from './news/News';
-import Contact from './Contact';
+import Contact from './contact/Contact';
 import Stocks from './stocks/Stocks';
 import Footer from './Footer/Footer';
 

@@ -1,9 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import baseReducer from './baseReducer';
+import sizeDetectionReducer from '../features/sizeDetection/sizeDetectionSlice';
 
 const rootReducer = combineReducers({
-  base: baseReducer
+  sizeDetection: sizeDetectionReducer
 });
 
 export default rootReducer;

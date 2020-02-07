@@ -1,26 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
+
+import useSizeDetection from '../sizeDetection/useSizeDetection';
 
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import './Menu.scss';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isMediumSize } = useSizeDetection();
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('no-scroll');
+      toggleMobileScrolling(isMenuOpen);
+    } else {
+      document.body.classList.remove('no-scroll');
+      toggleMobileScrolling(isMenuOpen);
+    }
+    if (isMediumSize) {
+      setIsMenuOpen(false);
+    }
+  }, [isMediumSize, isMenuOpen]);
 
   function handleMenuToggle() {
     setIsMenuOpen(!isMenuOpen);
-    document.body.classList.toggle('no-scroll');
-    stopBodyScrolling(!isMenuOpen);
   }
 
-  function stopBodyScrolling(bool) {
-    if (bool === true) {
+  function toggleMobileScrolling(bool) {
+    if (bool) {
       document.body.addEventListener('touchmove', freezeVp, false);
-      console.log('stop', isMenuOpen);
     } else {
       document.body.removeEventListener('touchmove', freezeVp, false);
-      console.log('stop', isMenuOpen);
     }
 
     function freezeVp(e) {

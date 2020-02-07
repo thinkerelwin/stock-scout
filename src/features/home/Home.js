@@ -14,7 +14,7 @@ const Home = () => {
       </h1>
       <div className="section-about__image"></div>
       <div className="section-about__explaination heading-margin">
-        <h3 className="heading-secondary">Stock Scout - About</h3>
+        <h3 className="heading-primary">Stock Scout - About</h3>
         <p>
           Stock Scout offers an easy way to peek the market price and news. It's
           also a place to implement my knowledge on frond-end.

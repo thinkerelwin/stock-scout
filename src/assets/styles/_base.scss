@@ -44,6 +44,9 @@ hr {
 
 a {
   text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
 }
 
 /* Removes discs from ul */
