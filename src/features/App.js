@@ -6,7 +6,7 @@ import Menu from './menu/Menu';
 import Home from './home/Home';
 import News from './news/News';
 import Contact from './contact/Contact';
-import Stocks from './stocks/Stocks';
+import Screener from './screener/Screener';
 import Footer from './Footer/Footer';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -20,8 +20,8 @@ const App = () => {
           <Route path="/news">
             <News />
           </Route>
-          <Route path="/stocks">
-            <Stocks />
+          <Route path="/screener">
+            <Screener />
           </Route>
           <Route path="/contact">
             <Contact />

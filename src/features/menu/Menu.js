@@ -41,12 +41,10 @@ const Menu = () => {
   }
 
   return (
-    <header
-      className={classNames('header heading-primary', { open: isMenuOpen })}
-    >
+    <header className={classNames('header', { open: isMenuOpen })}>
       <Link to="/" className="logo-box">
         <Logo title="logo" className="logo-box__icon" />
-        <p>Stock Scout</p>
+        <p className="heading-primary">Stock Scout</p>
       </Link>
 
       <button className="navbar__button" onClick={handleMenuToggle}>
@@ -55,39 +53,39 @@ const Menu = () => {
 
       <nav className="navbar">
         <ul className="navbar__list">
-          <li className="navbar__item">
+          <li className="navbar__item" onClick={handleMenuToggle}>
             <NavLink
               to="/"
               exact
               className="navbar__link"
-              onClick={handleMenuToggle}
+              activeClassName="navbar__link--active"
             >
               Home
             </NavLink>
           </li>
-          <li className="navbar__item">
+          <li className="navbar__item" onClick={handleMenuToggle}>
             <NavLink
               to="/news"
               className="navbar__link"
-              onClick={handleMenuToggle}
+              activeClassName="navbar__link--active"
             >
               News
             </NavLink>
           </li>
-          <li className="navbar__item">
+          <li className="navbar__item" onClick={handleMenuToggle}>
             <NavLink
-              to="/stocks"
+              to="/screener"
               className="navbar__link"
-              onClick={handleMenuToggle}
+              activeClassName="navbar__link--active"
             >
-              Stocks
+              Screener
             </NavLink>
           </li>
-          <li className="navbar__item">
+          <li className="navbar__item" onClick={handleMenuToggle}>
             <NavLink
               to="/contact"
               className="navbar__link"
-              onClick={handleMenuToggle}
+              activeClassName="navbar__link--active"
             >
               Contact
             </NavLink>

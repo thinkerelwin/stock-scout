@@ -1,0 +1,13 @@
+.screener {
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, 61.25rem) 1fr;
+  grid-template-rows: 3rem 1fr 3rem;
+  height: 100vh;
+  background-color: #f0f3fa;
+}
+
+.screener-box {
+  grid-column: 2 / span 3;
+  grid-row: 2 / span 3;
+  overflow: hidden;
+}
