@@ -1,6 +1,11 @@
+@import '../../assets/styles/mixins';
+
 .categories-box {
   max-width: 61.25rem;
   overflow-x: auto;
+  @include rwd(md) {
+    @include customScrollBar;
+  }
 }
 
 .categories {
@@ -8,6 +13,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  border-top: 1px solid #e0e3eb;
   border-bottom: 1px solid #e0e3eb;
 }
 
@@ -19,7 +25,12 @@
   background-color: white;
   white-space: nowrap; // important, otherwise there will be second or even third row appears
   transition: all 0.3s;
-  &--active {
+  @include rwd(md) {
+    &:hover {
+      background-color: var(--screenerBackgroundColor);
+    }
+  }
+  &.category--active {
     color: white;
     background-color: #2196f3;
   }

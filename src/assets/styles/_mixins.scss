@@ -35,3 +35,20 @@
     }
   }
 }
+
+@mixin customScrollBar {
+  // for firfox
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--screenerBackgroundColor);
+  // for webkit based
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--screenerBackgroundColor);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 8px;
+  }
+}

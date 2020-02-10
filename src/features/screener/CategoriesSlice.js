@@ -40,3 +40,9 @@ export function fetchCategories() {
     }
   };
 }
+
+// const { data } = await instance.get('/stock/market/collection/sector', {
+//   params: {
+//     collectionName: 'Technology'
+//   }
+// });

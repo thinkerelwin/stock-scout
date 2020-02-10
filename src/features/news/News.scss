@@ -16,12 +16,15 @@
   padding-top: 66%;
   background-size: cover;
   background-position: center;
-  &:hover {
-    background-color: transparent;
-    &.news-feature::after {
+  @include rwd(md) {
+    &:hover {
       background-color: transparent;
+      &.news-feature::after {
+        background-color: transparent;
+      }
     }
   }
+
   &::after {
     position: absolute;
     bottom: 0;
@@ -124,9 +127,21 @@
   align-items: center;
   grid-row-gap: 0.5rem;
   grid-column-gap: 0.8rem;
-  &__image {
+  @include rwd(md) {
+    &:hover {
+      .news-card__image {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__image-box {
     grid-column: 1 / -1;
     margin-bottom: 0.5rem;
+    overflow: hidden;
+  }
+  &__image {
+    transition: all 0.3s;
   }
   &__title {
     grid-column: 1 / -1;

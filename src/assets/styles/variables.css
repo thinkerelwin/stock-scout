@@ -10,4 +10,8 @@
   /* $color-grey-light-2: #eee; */
   --menu-height: 5.5rem;
   --mobile-side-margin: 2rem;
+  --screenerBackgroundColor: #f0f3fa;
+
+  --scrollbarBG: #cfd8dc;
+  --thumbBG: #90a4ae;
 }

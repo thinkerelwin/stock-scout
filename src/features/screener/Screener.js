@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useRouteMatch, Switch, Route } from 'react-router-dom';
+import { Column, Table } from 'react-virtualized';
+import 'react-virtualized/styles.css';
 
 import Categories from './Categories';
 
@@ -26,7 +28,19 @@ const Screener = () => {
 
         <Switch>
           <Route path={`${path}/:category`}>
-            {/* <p>category</p> */}
+            {/* TODO example needs to be modified */}
+            <Table
+              width={300}
+              height={300}
+              headerHeight={20}
+              rowHeight={30}
+              rowCount={topList.length}
+              rowGetter={({ index }) => topList[index]}
+            >
+              <Column width={200} label="Description" dataKey="url" />
+              <Column label="Name" dataKey="name" width={100} />
+            </Table>
+            ,
             <Route path={`${path}/:category/:tab`}>
               <p>tab</p>
             </Route>

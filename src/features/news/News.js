@@ -56,11 +56,13 @@ const News = () => {
         <h3 className="news-sector__title heading-secondary">us market</h3>
         <div className="news-cards">
           <a className="news-card" href="/">
-            <img
-              src="https://via.placeholder.com/550x360.png"
-              alt="title"
-              className="news-card__image"
-            />
+            <div className="news-card__image-box">
+              <img
+                src="https://via.placeholder.com/550x360.png"
+                alt="title"
+                className="news-card__image"
+              />
+            </div>
             <h4 className="news-card__title heading-secondary">Lorem</h4>
             <p className="news-card__source">raibercristian</p>
             <time className="news-card__date">May 7, 2017</time>
@@ -70,11 +72,13 @@ const News = () => {
             </p>
           </a>
           <a className="news-card" href="/">
-            <img
-              src="https://via.placeholder.com/550x360.png"
-              alt="title"
-              className="news-card__image"
-            />
+            <div className="news-card__image-box">
+              <img
+                src="https://via.placeholder.com/550x360.png"
+                alt="title"
+                className="news-card__image"
+              />
+            </div>
             <h4 className="news-card__title heading-secondary">Lorem</h4>
             <p className="news-card__source">raibercristian</p>
             <time className="news-card__date">May 7, 2017</time>
@@ -84,11 +88,13 @@ const News = () => {
             </p>
           </a>
           <a className="news-card" href="/">
-            <img
-              src="https://via.placeholder.com/550x360.png"
-              alt="title"
-              className="news-card__image"
-            />
+            <div className="news-card__image-box">
+              <img
+                src="https://via.placeholder.com/550x360.png"
+                alt="title"
+                className="news-card__image"
+              />
+            </div>
             <h4 className="news-card__title heading-secondary">Lorem</h4>
             <p className="news-card__source">raibercristian</p>
             <time className="news-card__date">May 7, 2017</time>
@@ -98,11 +104,13 @@ const News = () => {
             </p>
           </a>
           <a className="news-card" href="/">
-            <img
-              src="https://via.placeholder.com/550x360.png"
-              alt="title"
-              className="news-card__image"
-            />
+            <div className="news-card__image-box">
+              <img
+                src="https://via.placeholder.com/550x360.png"
+                alt="title"
+                className="news-card__image"
+              />
+            </div>
             <h4 className="news-card__title heading-secondary">Lorem</h4>
             <p className="news-card__source">raibercristian</p>
             <time className="news-card__date">May 7, 2017</time>
@@ -117,11 +125,13 @@ const News = () => {
         <h3 className="news-sector__title heading-secondary">etfs</h3>
         <div className="news-cards">
           <a className="news-card" href="/">
-            <img
-              src="https://via.placeholder.com/550x360.png"
-              alt="title"
-              className="news-card__image"
-            />
+            <div className="news-card__image-box">
+              <img
+                src="https://via.placeholder.com/550x360.png"
+                alt="title"
+                className="news-card__image"
+              />
+            </div>
             <h4 className="news-card__title heading-secondary">Lorem</h4>
             <p className="news-card__source">raibercristian</p>
             <time className="news-card__date">May 7, 2017</time>
@@ -131,11 +141,13 @@ const News = () => {
             </p>
           </a>
           <a className="news-card" href="/">
-            <img
-              src="https://via.placeholder.com/550x360.png"
-              alt="title"
-              className="news-card__image"
-            />
+            <div className="news-card__image-box">
+              <img
+                src="https://via.placeholder.com/550x360.png"
+                alt="title"
+                className="news-card__image"
+              />
+            </div>
             <h4 className="news-card__title heading-secondary">Lorem</h4>
             <p className="news-card__source">raibercristian</p>
             <time className="news-card__date">May 7, 2017</time>
@@ -145,11 +157,13 @@ const News = () => {
             </p>
           </a>
           <a className="news-card" href="/">
-            <img
-              src="https://via.placeholder.com/550x360.png"
-              alt="title"
-              className="news-card__image"
-            />
+            <div className="news-card__image-box">
+              <img
+                src="https://via.placeholder.com/550x360.png"
+                alt="title"
+                className="news-card__image"
+              />
+            </div>
             <h4 className="news-card__title heading-secondary">Lorem</h4>
             <p className="news-card__source">raibercristian</p>
             <time className="news-card__date">May 7, 2017</time>
@@ -159,11 +173,13 @@ const News = () => {
             </p>
           </a>
           <a className="news-card" href="/">
-            <img
-              src="https://via.placeholder.com/550x360.png"
-              alt="title"
-              className="news-card__image"
-            />
+            <div className="news-card__image-box">
+              <img
+                src="https://via.placeholder.com/550x360.png"
+                alt="title"
+                className="news-card__image"
+              />
+            </div>
             <h4 className="news-card__title heading-secondary">Lorem</h4>
             <p className="news-card__source">raibercristian</p>
             <time className="news-card__date">May 7, 2017</time>
