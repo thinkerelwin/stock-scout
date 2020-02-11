@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
-import useSizeDetection from '../sizeDetection/useSizeDetection';
+import { useSizeDetection } from '../../utils/customHooks';
 
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import './Menu.scss';

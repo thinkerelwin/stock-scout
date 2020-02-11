@@ -1,3 +1,5 @@
+@import '../../assets/styles/_mixins.scss';
+
 .screener {
   display: grid;
   grid-template-columns: 1fr minmax(min-content, 61.25rem) 1fr;
@@ -12,8 +14,27 @@
   overflow: hidden;
 }
 
+.table-box {
+  height: 100%;
+  // overflow-x: auto;
+}
+
 // custom style
 
 .ReactVirtualized__Table {
   overflow-x: auto;
+}
+
+.ReactVirtualized__Table__headerRow {
+  font-size: 0.75rem;
+  @include rwd(md) {
+    font-size: 0.6rem;
+  }
+}
+
+.ReactVirtualized__Table__row {
+  font-size: 0.75rem;
+  @include rwd(md) {
+    font-size: 0.6rem;
+  }
 }
