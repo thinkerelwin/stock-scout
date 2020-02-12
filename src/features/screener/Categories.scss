@@ -32,7 +32,7 @@
   }
   &.category--active {
     color: white;
-    background-color: #2196f3;
+    background-color: var(--color-tertiary);
   }
   &__link {
     display: flex;
