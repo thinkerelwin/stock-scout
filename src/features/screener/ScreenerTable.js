@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Column, Table } from 'react-virtualized';
 
 import sectorList from '../../utils/sector-stocks.json';
@@ -6,9 +6,16 @@ import sectorList from '../../utils/sector-stocks.json';
 import './ScreenerTable.scss';
 
 const ScreenerTable = ({ currentTab }) => {
+  const [isFetchingScreenerList, setIsFetchingScreenerList] = useState(false);
   const [screenerList, setScreenerList] = useState(sectorList);
   const [sortBy, setSortBy] = useState('symbol');
   const [sortDirection, setSortDirection] = useState('ASC');
+
+  useEffect(() => {
+    setIsFetchingScreenerList(true);
+    // fetching logic here
+    setIsFetchingScreenerList(false);
+  }, [currentTab]);
 
   function _sort({ sortBy, sortDirection }) {
     const sortedList = _sortList({ sortBy, sortDirection });
