@@ -34,7 +34,9 @@ const Categories = ({ topList, currentTab, setCurrentTab }) => {
   let { url } = useRouteMatch();
   const dispatch = useDispatch();
 
-  const { categories, error } = useSelector(state => state.categories);
+  const { categories, error, isFetching } = useSelector(
+    state => state.categories
+  );
 
   useEffect(() => {
     !categories.length && dispatch(fetchCategories());
@@ -54,28 +56,34 @@ const Categories = ({ topList, currentTab, setCurrentTab }) => {
           />
         )}
 
-        {categories.length > 0 && [
-          topList.map(item => (
-            <LinkTemplate
-              key={item.url}
-              routeUrl={url}
-              destinationUrl={item.url}
-              handleClick={setCurrentTab}
-              name={item.name}
-              currentTab={currentTab}
-            />
-          )),
-          categories.map(category => (
-            <LinkTemplate
-              key={category}
-              routeUrl={url}
-              destinationUrl={category}
-              handleClick={setCurrentTab}
-              name={category}
-              currentTab={currentTab}
-            />
-          ))
-        ]}
+        {isFetching ? (
+          <li className="category">
+            <p className="category__link heading-secondary">...loading</p>
+          </li>
+        ) : (
+          categories.length > 0 && [
+            topList.map(item => (
+              <LinkTemplate
+                key={item.url}
+                routeUrl={url}
+                destinationUrl={item.url}
+                handleClick={setCurrentTab}
+                name={item.name}
+                currentTab={currentTab}
+              />
+            )),
+            categories.map(category => (
+              <LinkTemplate
+                key={category}
+                routeUrl={url}
+                destinationUrl={category}
+                handleClick={setCurrentTab}
+                name={category}
+                currentTab={currentTab}
+              />
+            ))
+          ]
+        )}
       </ul>
     </nav>
   );

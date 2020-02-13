@@ -27,7 +27,7 @@ const Screener = () => {
         />
         <Switch>
           <Route path={`${path}/:category`}>
-            <ScreenerTable currentTab={currentTab} />
+            <ScreenerTable currentTab={currentTab} topList={topList} />
           </Route>
         </Switch>
       </div>
