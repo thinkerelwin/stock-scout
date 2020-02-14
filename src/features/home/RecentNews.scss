@@ -2,11 +2,37 @@
 
 .recent-news {
   grid-column: main-center-start / main-center-end;
+  // display: grid;
+  // grid-template-rows: min-content minmax(12rem, max-content);
   &__title {
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 2rem;
     text-transform: capitalize;
+  }
+  .swiper {
+    &__title {
+      height: 6rem;
+    }
+  }
+  @include rwd(md) {
+    .swiper {
+      &__inner-box {
+        // width: 18rem;
+        @include rwd(md) {
+          width: 14.4rem;
+        }
+      }
+      &__image {
+        // width: 100%;
+        // height: 10rem;
+        margin: 0 auto;
+        @include rwd(md) {
+          width: 100%;
+          height: 8rem;
+        }
+      }
+    }
   }
   // custom styles
   .carousel {
@@ -30,6 +56,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 0.8rem;
   .swiper {
     &__title {
       margin-left: auto;

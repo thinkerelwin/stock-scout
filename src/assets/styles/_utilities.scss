@@ -8,3 +8,36 @@
   padding: 0.2rem 0.5rem;
   background-color: #0a396d;
 }
+
+.truncate-overflow {
+  // reference https://css-tricks.com/multi-line-truncation-with-pure-css/
+  position: relative;
+  max-height: calc(3 * 1.15rem); // lines * line-height
+  overflow: hidden;
+  padding-right: 1rem; /* space for ellipsis */
+  &::before {
+    position: absolute;
+    content: '...';
+    /* tempting... but shows when lines == content */
+    /* top: calc(var(--lh) * (var(--max-lines) - 1)); */
+
+    /*
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    */
+    bottom: 0;
+    right: 0;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    /*
+    inset-inline-end: 0;
+    */
+    right: 0;
+    /* missing bottom on purpose*/
+    width: 1rem;
+    height: 1rem;
+    background: white;
+  }
+}

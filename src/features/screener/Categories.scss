@@ -1,10 +1,12 @@
 @import '../../assets/styles/mixins';
 
 .categories-box {
-  max-width: 61.25rem;
+  flex: 1 0 auto;
+  width: 100vw;
   overflow-x: auto;
   @include rwd(md) {
     @include customScrollBar;
+    max-width: calc(var(--screener-max-width) * 0.8);
   }
 }
 
@@ -12,19 +14,29 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  height: 3rem;
   font-size: 1rem;
   border-top: 1px solid #e0e3eb;
   border-bottom: 1px solid #e0e3eb;
+  &--full-width {
+    width: 100%;
+  }
 }
 
 .category {
   display: flex;
-  height: 3.5rem;
-  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-right: 1px solid #e0e3eb;
   background-color: white;
   white-space: nowrap; // important, otherwise there will be second or even third row appears
   transition: all 0.3s;
+  &--loading {
+    width: 100vw;
+  }
   @include rwd(md) {
     &:hover {
       background-color: var(--screenerBackgroundColor);

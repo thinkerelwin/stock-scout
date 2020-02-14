@@ -3,15 +3,15 @@
 
   --color-secondary-dark: rgba(30, 36, 46, 1);
   --color-secondary-light: #2d3643;
+
   --color-tertiary: #2196f3;
-  /* $color-tertiary-dark: #5643fa; */
 
-  /* $color-grey-light-1: #f7f7f7; */
-  /* $color-grey-light-2: #eee; */
-  --menu-height: 5.5rem;
-  --mobile-side-margin: 2rem;
   --screenerBackgroundColor: #f0f3fa;
-
   --scrollbarBG: #cfd8dc;
   --thumbBG: #90a4ae;
+
+  --screener-max-width: 61.25rem; /* 61.25 * 16 = 980px */
+  --menu-height: 5.5rem;
+  --mobile-side-margin: 2rem;
+  /* --default-line-height:  */
 }

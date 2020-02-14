@@ -1,30 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setIsMediumSize } from '../features/sizeDetection/sizeDetectionSlice';
-
-export const useMountDetection = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-
-    return () => {
-      setIsMounted(false);
-    };
-  }, []);
-
-  return { isMounted };
-};
 
 const defaultWidth = '64rem';
 
 export const useSizeDetection = (width = defaultWidth) => {
   const { isMediumSize } = useSelector(state => state.sizeDetection);
   const dispatch = useDispatch();
-  const { isMounted } = useMountDetection();
 
   useEffect(() => {
+    let isMounted = true;
     function carouselSwitch(size) {
       if (size.matches) {
         isMounted && dispatch(setIsMediumSize({ isMediumSize: true }));
@@ -38,8 +24,9 @@ export const useSizeDetection = (width = defaultWidth) => {
     sizeDetector.addListener(carouselSwitch); // Attach listener function on state changes
 
     return () => {
+      isMounted = false;
       sizeDetector.removeListener(carouselSwitch);
     };
-  }, [dispatch, isMounted, width]);
+  }, [dispatch, width]);
   return { isMediumSize };
 };

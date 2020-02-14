@@ -7,27 +7,18 @@ import ScreenerTable from './ScreenerTable';
 import 'react-virtualized/styles.css';
 import './Screener.scss';
 
-const topList = [
-  { url: 'Most Active', name: 'Most Active' },
-  { url: 'Gainers', name: 'Top Gainers' },
-  { url: 'Losers', name: 'Top Losers' }
-];
+const topList = ['Most Active', 'Top Gainers', 'Top Losers'];
 
 const Screener = () => {
   let { path } = useRouteMatch();
-  const [currentTab, setCurrentTab] = useState(topList[0].url);
 
   return (
     <main className="screener menu-margin">
       <div className="screener-box">
-        <Categories
-          topList={topList}
-          currentTab={currentTab}
-          setCurrentTab={setCurrentTab}
-        />
+        <Categories topList={topList} />
         <Switch>
           <Route path={`${path}/:category`}>
-            <ScreenerTable currentTab={currentTab} topList={topList} />
+            <ScreenerTable topList={topList} />
           </Route>
         </Switch>
       </div>

@@ -1,41 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import dayjs from 'dayjs';
+
+import { Carousel } from 'react-responsive-carousel';
+import LoadingBox from '../../components/LoadingBox';
+import ErrorBox from '../../components/ErrorBox';
+
+import instance from '../../api/IEXCloud';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
 import './RecentNews.scss';
 
 const RecentNews = () => {
   const { isMediumSize } = useSelector(state => state.sizeDetection);
 
-  const NewsBox = () => (
-    <>
-      <article className="swiper__inner-box">
+  const [isFetchingRecentNews, setIsFetchingRecentNews] = useState(false);
+  const [recentNews, setRecentNews] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    let isMounted = true;
+    fetchRecentNews();
+
+    async function fetchRecentNews() {
+      setIsFetchingRecentNews(true);
+      try {
+        const { data } = await instance.get('/stock/spy/news/last/3');
+        isMounted && setRecentNews(data);
+      } catch (err) {
+        setErrorMessage(err.toString());
+      }
+      isMounted && setIsFetchingRecentNews(false);
+    }
+    return () => (isMounted = false);
+  }, []);
+
+  const NewsBox = () =>
+    recentNews.map(({ headline, image, summary }) => (
+      <article className="swiper__inner-box" key={headline}>
         <img
           className="swiper__image"
-          src="https://via.placeholder.com/288x160.png"
-          alt="dummytext"
+          src={image}
+          alt={headline}
+          title={summary}
         />
-        <p className="swiper__title">Image 1</p>
+        <p className="swiper__title">{headline}</p>
       </article>
-      <article className="swiper__inner-box">
-        <img
-          className="swiper__image"
-          src="https://via.placeholder.com/288x160.png"
-          alt="dummytext"
-        />
-        <p className="swiper__title">Image 2</p>
-      </article>
-      <article className="swiper__inner-box">
-        <img
-          className="swiper__image"
-          src="https://via.placeholder.com/288x160.png"
-          alt="dummytext"
-        />
-        <p className="swiper__title">Image 3</p>
-      </article>
-    </>
-  );
+    ));
+
+  if (isFetchingRecentNews) {
+    return (
+      <section className="recent-news">
+        <div className="recent-news__title heading-margin">recent news</div>
+        <LoadingBox height={'10rem'} />
+      </section>
+    );
+  }
+
+  if (errorMessage) {
+    return (
+      <section className="recent-news">
+        <div className="recent-news__title heading-margin">recent news</div>
+        <ErrorBox message={errorMessage} />
+      </section>
+    );
+  }
+
   return (
     <section className="recent-news">
       <div className="recent-news__title heading-margin">recent news</div>
@@ -51,31 +81,17 @@ const RecentNews = () => {
           showThumbs={false}
           // centerMode={true}
         >
-          {/* <NewsBox /> */}
-          <article className="swiper__inner-box">
-            <img
-              className="swiper__image"
-              src="https://via.placeholder.com/288x160.png"
-              alt="dummytext"
-            />
-            <p className="swiper__title">Image 1</p>
-          </article>
-          <article className="swiper__inner-box">
-            <img
-              className="swiper__image"
-              src="https://via.placeholder.com/288x160.png"
-              alt="dummytext"
-            />
-            <p className="swiper__title">Image 2</p>
-          </article>
-          <article className="swiper__inner-box">
-            <img
-              className="swiper__image"
-              src="https://via.placeholder.com/288x160.png"
-              alt="dummytext"
-            />
-            <p className="swiper__title">Image 3</p>
-          </article>
+          {recentNews.map(({ headline, image, summary }) => (
+            <article className="swiper__inner-box" key={headline}>
+              <img
+                className="swiper__image"
+                src={image}
+                alt={headline}
+                title={summary}
+              />
+              <p className="swiper__title">{headline}</p>
+            </article>
+          ))}
         </Carousel>
       )}
     </section>

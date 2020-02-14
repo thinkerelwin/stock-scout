@@ -1,6 +1,9 @@
 @import '../../assets/styles/_mixins.scss';
 
 .table-box {
+  flex: 1 1 auto;
+  position: relative;
+  // width: 100%;
   height: 100%;
   background-color: white;
 }
