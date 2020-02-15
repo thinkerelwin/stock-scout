@@ -1,5 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import instance from '../api/IEXCloud';
 
 import { setIsMediumSize } from '../features/sizeDetection/sizeDetectionSlice';
 
@@ -29,4 +31,38 @@ export const useSizeDetection = (width = defaultWidth) => {
     };
   }, [dispatch, width]);
   return { isMediumSize };
+};
+
+export const useLocalStateFetching = ({ route, params, process, naming }) => {
+  const [isFetchingIEXdata, setIsFetchingIEXdata] = useState(false);
+  const [IEXdata, setIEXdata] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    console.log('useEffect', route, params, process);
+    let isMounted = true;
+    fetchRecentNews();
+
+    async function fetchRecentNews() {
+      setIsFetchingIEXdata(true);
+      try {
+        const { data } = await instance.get(route, { params });
+        isMounted && setIEXdata(process(data));
+      } catch (err) {
+        setErrorMessage(err.toString());
+      }
+      isMounted && setIsFetchingIEXdata(false);
+    }
+    return () => (isMounted = false);
+  }, [route, params, process]);
+
+  function capitalizeFirstChar(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  return {
+    [`isFetching${capitalizeFirstChar(naming)}`]: isFetchingIEXdata,
+    [`errorOn${capitalizeFirstChar(naming)}`]: errorMessage,
+    [naming]: IEXdata
+  };
 };

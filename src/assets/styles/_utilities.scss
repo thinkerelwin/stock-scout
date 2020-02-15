@@ -18,22 +18,12 @@
   &::before {
     position: absolute;
     content: '...';
-    /* tempting... but shows when lines == content */
-    /* top: calc(var(--lh) * (var(--max-lines) - 1)); */
-
-    /*
-    inset-block-end: 0;
-    inset-inline-end: 0;
-    */
     bottom: 0;
     right: 0;
   }
   &::after {
     content: '';
     position: absolute;
-    /*
-    inset-inline-end: 0;
-    */
     right: 0;
     /* missing bottom on purpose*/
     width: 1rem;

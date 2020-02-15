@@ -1,56 +1,66 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import dayjs from 'dayjs';
+import { createSelector } from '@reduxjs/toolkit';
+
+import { useLocalStateFetching } from '../../utils/customHooks';
 
 import './News.scss';
 
+const featuresAPIspec = {
+  route: '/stock/market/batch',
+  params: { symbols: 'goog,amzn,fb', types: 'news', last: '1' },
+  process: normalizeBatchNews,
+  naming: 'featureNews'
+};
+
+function normalizeBatchNews(data) {
+  data.idList = Object.keys(data);
+  return data;
+}
+const stateSelector = state => state;
+
+const subtotalSelector = createSelector(
+  stateSelector,
+  state => state && state.idList && state.idList.map(id => state[id].news[0])
+);
+
 const News = () => {
+  const {
+    isFetchingFeatureNews,
+    errorOnFeatureNews,
+    featureNews
+  } = useLocalStateFetching(featuresAPIspec);
+  // TODO change featureNewsList to newsFeatures components
+
+  const featureNewsList = subtotalSelector(featureNews);
   return (
     <main className="news menu-margin">
       <section className="news-features">
-        <a
-          href="/"
-          className="news-feature news-feature--primary"
-          style={{
-            backgroundImage: `url(https://via.placeholder.com/354x231.png)`
-          }}
-        >
-          <div className="news-feature__info">
-            <h4 className="news-feature__title">title</h4>
-            <span className="news-feature__tag">oil</span>
-            <time className="news-feature__date" dateTime="1914-12-20 08:00">
-              May 10, 2017
-            </time>
-          </div>
-        </a>
-        <a
-          href="/"
-          className="news-feature news-feature--secondary"
-          style={{
-            backgroundImage: `url(https://via.placeholder.com/354x231.png)`
-          }}
-        >
-          <div className="news-feature__info">
-            <h4 className="news-feature__title">title</h4>
-            <span className="news-feature__tag">bond</span>
-            <time className="news-feature__date" dateTime="1914-12-20 08:00">
-              May 1, 2017
-            </time>
-          </div>
-        </a>
-        <a
-          href="/"
-          className="news-feature news-feature--tertiary"
-          style={{
-            backgroundImage: `url(https://via.placeholder.com/354x231.png)`
-          }}
-        >
-          <div className="news-feature__info">
-            <h4 className="news-feature__title">title</h4>
-            <span className="news-feature__tag">etf</span>
-            <time className="news-feature__date" dateTime="1914-12-20 08:00">
-              May 7, 2017
-            </time>
-          </div>
-        </a>
+        {featureNewsList &&
+          featureNewsList.map(
+            ({ url, summary, image, headline, related, datetime }) => (
+              <a
+                href={url}
+                className="news-feature news-feature--primary"
+                title={summary}
+                style={{
+                  backgroundImage: `url(${image})`
+                }}
+                key={headline}
+              >
+                <div className="news-feature__info">
+                  <h4 className="news-feature__title">{headline}</h4>
+                  <span className="news-feature__tag">{related}</span>
+                  <time
+                    className="news-feature__date"
+                    dateTime={dayjs(datetime).format('YYYY-MM-DD')}
+                  >
+                    {dayjs(datetime).format('MMM DD, YYYY')}
+                  </time>
+                </div>
+              </a>
+            )
+          )}
       </section>
       <section className="news-sector">
         <h3 className="news-sector__title heading-secondary">us market</h3>

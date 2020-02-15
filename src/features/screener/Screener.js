@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useRouteMatch, Switch, Route } from 'react-router-dom';
 
 import Categories from './Categories';

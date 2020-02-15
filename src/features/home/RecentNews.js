@@ -1,42 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import dayjs from 'dayjs';
 
 import { Carousel } from 'react-responsive-carousel';
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
-import instance from '../../api/IEXCloud';
+import { useLocalStateFetching } from '../../utils/customHooks';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './RecentNews.scss';
 
+const APIspec = {
+  route: '/stock/spy/news/last/3',
+  params: undefined,
+  process: d => d,
+  naming: 'recentNewsList'
+};
+
 const RecentNews = () => {
   const { isMediumSize } = useSelector(state => state.sizeDetection);
 
-  const [isFetchingRecentNews, setIsFetchingRecentNews] = useState(false);
-  const [recentNews, setRecentNews] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
-
-  useEffect(() => {
-    let isMounted = true;
-    fetchRecentNews();
-
-    async function fetchRecentNews() {
-      setIsFetchingRecentNews(true);
-      try {
-        const { data } = await instance.get('/stock/spy/news/last/3');
-        isMounted && setRecentNews(data);
-      } catch (err) {
-        setErrorMessage(err.toString());
-      }
-      isMounted && setIsFetchingRecentNews(false);
-    }
-    return () => (isMounted = false);
-  }, []);
+  const {
+    isFetchingRecentNewsList,
+    errorOnRecentNewsList,
+    recentNewsList
+  } = useLocalStateFetching(APIspec);
 
   const NewsBox = () =>
-    recentNews.map(({ headline, image, summary }) => (
+    recentNewsList.map(({ headline, image, summary }) => (
       <article className="swiper__inner-box" key={headline}>
         <img
           className="swiper__image"
@@ -48,7 +39,7 @@ const RecentNews = () => {
       </article>
     ));
 
-  if (isFetchingRecentNews) {
+  if (isFetchingRecentNewsList) {
     return (
       <section className="recent-news">
         <div className="recent-news__title heading-margin">recent news</div>
@@ -57,11 +48,11 @@ const RecentNews = () => {
     );
   }
 
-  if (errorMessage) {
+  if (errorOnRecentNewsList) {
     return (
       <section className="recent-news">
         <div className="recent-news__title heading-margin">recent news</div>
-        <ErrorBox message={errorMessage} />
+        <ErrorBox message={errorOnRecentNewsList} />
       </section>
     );
   }
@@ -81,7 +72,8 @@ const RecentNews = () => {
           showThumbs={false}
           // centerMode={true}
         >
-          {recentNews.map(({ headline, image, summary }) => (
+          {/* <NewsBox />, due to limitation on react-responsive-carousel, can't use component */}
+          {recentNewsList.map(({ headline, image, summary }) => (
             <article className="swiper__inner-box" key={headline}>
               <img
                 className="swiper__image"
