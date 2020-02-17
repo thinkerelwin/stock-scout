@@ -70,7 +70,7 @@ const ScreenerTable = ({ topList }) => {
       <AutoSizer disableWidth>
         {({ height }) =>
           error ? (
-            <ErrorBox message={error} absolutePosition />
+            <ErrorBox message={error} boxClassName="error--absolute" />
           ) : (
             <Table
               width={980}

@@ -5,9 +5,9 @@ import LoadingIcon from '../assets/images/loading_icon.svg';
 
 import './LoadingBox.scss';
 
-const LoadingBox = ({ size = 'medium' }) => {
+const LoadingBox = ({ size = 'medium', boxClassName = '' }) => {
   return (
-    <div className="loading">
+    <div className={`loading ${boxClassName}`}>
       <img
         className={`loading__icon loading__icon--${size}`}
         src={LoadingIcon}

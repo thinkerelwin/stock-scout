@@ -43,7 +43,7 @@ const RecentNews = () => {
     return (
       <section className="recent-news">
         <div className="recent-news__title heading-margin">recent news</div>
-        <LoadingBox height={'10rem'} />
+        <LoadingBox />
       </section>
     );
   }
