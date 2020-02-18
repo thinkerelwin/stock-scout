@@ -55,23 +55,22 @@ const NewsSectors = () => {
     );
   }
 
-  // const test =
-  //   sectorNews &&
-  //   sectorNews.idList &&
-  //   sectorNews.idList.map(id => sectorNews[id].news[0]);
-
   const sectors = Object.keys(symbolsOfSectors);
   console.log('sectorNews', sectorNews, sectors);
 
   return (
     <section className="news-sectors">
       {sectors.map(sector => (
-        <div className="news-sector">
+        <div className="news-sector" key={sector}>
           <h3 className="news-sector__title heading-secondary">{sector}</h3>
           <div className="news-cards">
             {sectorNews.idList &&
               symbolsOfSectors[sector].map(symbol => (
-                <a className="news-card" href={sectorNews[symbol].news[0].url}>
+                <a
+                  className="news-card"
+                  href={sectorNews[symbol].news[0].url}
+                  key={symbol}
+                >
                   <div className="news-card__image-box">
                     <img
                       src={sectorNews[symbol].news[0].image}
@@ -103,144 +102,6 @@ const NewsSectors = () => {
           </div>
         </div>
       ))}
-      {/* <div className="news-sector">
-        <h3 className="news-sector__title heading-secondary">us market</h3>
-        <div className="news-cards">
-          <a className="news-card" href="/">
-            <div className="news-card__image-box">
-              <img
-                src="https://via.placeholder.com/550x360.png"
-                alt="title"
-                className="news-card__image"
-              />
-            </div>
-            <h4 className="news-card__title heading-secondary">Lorem</h4>
-            <p className="news-card__source">raibercristian</p>
-            <time className="news-card__date">May 7, 2017</time>
-            <p className="news-card__summary">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Consectetur, corporis?
-            </p>
-          </a>
-          <a className="news-card" href="/">
-            <div className="news-card__image-box">
-              <img
-                src="https://via.placeholder.com/550x360.png"
-                alt="title"
-                className="news-card__image"
-              />
-            </div>
-            <h4 className="news-card__title heading-secondary">Lorem</h4>
-            <p className="news-card__source">raibercristian</p>
-            <time className="news-card__date">May 7, 2017</time>
-            <p className="news-card__summary">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Consectetur, corporis?
-            </p>
-          </a>
-          <a className="news-card" href="/">
-            <div className="news-card__image-box">
-              <img
-                src="https://via.placeholder.com/550x360.png"
-                alt="title"
-                className="news-card__image"
-              />
-            </div>
-            <h4 className="news-card__title heading-secondary">Lorem</h4>
-            <p className="news-card__source">raibercristian</p>
-            <time className="news-card__date">May 7, 2017</time>
-            <p className="news-card__summary">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Consectetur, corporis?
-            </p>
-          </a>
-          <a className="news-card" href="/">
-            <div className="news-card__image-box">
-              <img
-                src="https://via.placeholder.com/550x360.png"
-                alt="title"
-                className="news-card__image"
-              />
-            </div>
-            <h4 className="news-card__title heading-secondary">Lorem</h4>
-            <p className="news-card__source">raibercristian</p>
-            <time className="news-card__date">May 7, 2017</time>
-            <p className="news-card__summary">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Consectetur, corporis?
-            </p>
-          </a>
-        </div>
-      </div>
-      <div className="news-sector">
-        <h3 className="news-sector__title heading-secondary">etfs</h3>
-        <div className="news-cards">
-          <a className="news-card" href="/">
-            <div className="news-card__image-box">
-              <img
-                src="https://via.placeholder.com/550x360.png"
-                alt="title"
-                className="news-card__image"
-              />
-            </div>
-            <h4 className="news-card__title heading-secondary">Lorem</h4>
-            <p className="news-card__source">raibercristian</p>
-            <time className="news-card__date">May 7, 2017</time>
-            <p className="news-card__summary">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Consectetur, corporis?
-            </p>
-          </a>
-          <a className="news-card" href="/">
-            <div className="news-card__image-box">
-              <img
-                src="https://via.placeholder.com/550x360.png"
-                alt="title"
-                className="news-card__image"
-              />
-            </div>
-            <h4 className="news-card__title heading-secondary">Lorem</h4>
-            <p className="news-card__source">raibercristian</p>
-            <time className="news-card__date">May 7, 2017</time>
-            <p className="news-card__summary">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Consectetur, corporis?
-            </p>
-          </a>
-          <a className="news-card" href="/">
-            <div className="news-card__image-box">
-              <img
-                src="https://via.placeholder.com/550x360.png"
-                alt="title"
-                className="news-card__image"
-              />
-            </div>
-            <h4 className="news-card__title heading-secondary">Lorem</h4>
-            <p className="news-card__source">raibercristian</p>
-            <time className="news-card__date">May 7, 2017</time>
-            <p className="news-card__summary">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Consectetur, corporis?
-            </p>
-          </a>
-          <a className="news-card" href="/">
-            <div className="news-card__image-box">
-              <img
-                src="https://via.placeholder.com/550x360.png"
-                alt="title"
-                className="news-card__image"
-              />
-            </div>
-            <h4 className="news-card__title heading-secondary">Lorem</h4>
-            <p className="news-card__source">raibercristian</p>
-            <time className="news-card__date">May 7, 2017</time>
-            <p className="news-card__summary">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Consectetur, corporis?
-            </p>
-          </a>
-        </div>
-      </div> */}
     </section>
   );
 };

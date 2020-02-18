@@ -8,7 +8,6 @@
     minmax(var(--mobile-side-margin), 1fr);
   width: 100%;
   min-height: 5rem;
-  margin-bottom: 4rem;
   background-color: #0e0e11;
   &--white {
     color: white;
@@ -20,6 +19,7 @@
   padding-top: 66%;
   background-size: cover;
   background-position: center;
+  background-blend-mode: screen;
   @include rwd(md) {
     &:hover {
       background-color: transparent;
@@ -46,6 +46,9 @@
     grid-column: 2 / span 3;
   }
   &--tertiary {
+    grid-column: 2 / span 3;
+  }
+  &--status {
     grid-column: 2 / span 3;
   }
 
@@ -79,6 +82,9 @@
     &--tertiary {
       grid-column: 4 / 5;
       grid-row: 2;
+    }
+    &--status {
+      grid-column: 2 / 5;
     }
   }
 }

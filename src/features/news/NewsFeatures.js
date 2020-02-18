@@ -32,7 +32,7 @@ const NewsFeatures = () => {
   if (isFetchingFeatureNews) {
     return (
       <section className="news-features">
-        <LoadingBox boxClassName={'news-feature--secondary'} />
+        <LoadingBox boxClassName={'news-feature--status'} />
       </section>
     );
   }
@@ -42,7 +42,7 @@ const NewsFeatures = () => {
       <section className="news-features">
         <ErrorBox
           message={errorOnFeatureNews}
-          boxClassName={'news-feature--secondary news-feature--white'}
+          boxClassName={'news-feature--status news-feature--white'}
         />
       </section>
     );
