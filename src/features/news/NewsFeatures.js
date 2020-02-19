@@ -1,7 +1,6 @@
 import React from 'react';
 import dayjs from 'dayjs';
 import classNames from 'classnames';
-import { createSelector } from '@reduxjs/toolkit';
 
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
@@ -48,9 +47,14 @@ const NewsFeatures = () => {
     );
   }
 
+  const featureNewsList =
+    featureNews && featureNews.idList
+      ? featureNews.idList.map(id => featureNews[id].news[0])
+      : [];
+
   return (
     <section className="news-features">
-      {subtotalSelector(featureNews).map(
+      {featureNewsList.map(
         ({ url, summary, image, headline, related, datetime }, index) => (
           <a
             href={url}
@@ -61,9 +65,9 @@ const NewsFeatures = () => {
             })}
             title={summary}
             style={{
-              backgroundImage: `url(${image})`
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) , url(${image})`
             }}
-            key={headline}
+            key={related}
           >
             <div className="news-feature__info">
               <h4 className="news-feature__title">{headline}</h4>
@@ -81,11 +85,5 @@ const NewsFeatures = () => {
     </section>
   );
 };
-
-const stateSelector = state => state;
-
-const subtotalSelector = createSelector(stateSelector, state =>
-  state && state.idList ? state.idList.map(id => state[id].news[0]) : []
-);
 
 export default NewsFeatures;

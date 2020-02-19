@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Column, Table, AutoSizer } from 'react-virtualized';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
-import { fetchscreenerTable } from './ScreenerTableSlice';
+import { fetchscreenerTable } from './screenerTableSlice';
 
 import './ScreenerTable.scss';
 
@@ -36,26 +36,9 @@ const ScreenerTable = ({ topList }) => {
   const [sortDirection, setSortDirection] = useState('ASC');
 
   useEffect(() => {
-    // console.log('category', category, urlChecker(category));
     const CollectionType = findCollectionType(category, topList);
     dispatch(fetchscreenerTable(CollectionType, urlChecker(category)));
   }, [category, dispatch, topList]);
-
-  function findCollectionType(category, topList) {
-    return topList.find(item => item === category) ? 'list' : 'sector';
-  }
-
-  function _sort({ sortBy, sortDirection }) {
-    const sortedList = _sortList({ sortBy, sortDirection });
-
-    // setScreenerList(sortedList);
-    setSortBy(sortBy);
-    setSortDirection(sortDirection);
-  }
-
-  function _sortList({ sortBy, sortDirection }) {
-    return screenerList.reverse();
-  }
 
   if (isFetchingList) {
     return (
@@ -91,6 +74,7 @@ const ScreenerTable = ({ topList }) => {
                 maxWidth={130}
                 // minWidth={100}
                 flexGrow={1}
+                cellRenderer={cellRender}
               />
               <Column
                 label="Name"
@@ -125,6 +109,31 @@ const ScreenerTable = ({ topList }) => {
       </AutoSizer>
     </div>
   );
+
+  function findCollectionType(category, topList) {
+    return topList.find(item => item === category) ? 'list' : 'sector';
+  }
+
+  // TODO using react-sortable-hoc for column sorting
+  function _sort({ sortBy, sortDirection }) {
+    const sortedList = _sortList({ sortBy, sortDirection });
+
+    // setScreenerList(sortedList);
+    setSortBy(sortBy);
+    setSortDirection(sortDirection);
+  }
+
+  function _sortList({ sortBy, sortDirection }) {
+    return screenerList.reverse();
+  }
+
+  function cellRender({ cellData }) {
+    if (cellData == null) {
+      return '';
+    } else {
+      return <Link to={`/detail/${cellData}`}>{cellData}</Link>;
+    }
+  }
 };
 
 export default ScreenerTable;

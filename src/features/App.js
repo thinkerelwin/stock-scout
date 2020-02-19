@@ -5,9 +5,10 @@ import './App.scss';
 import Menu from './menu/Menu';
 import Home from './home/Home';
 import News from './news/News';
-import Contact from './contact/Contact';
 import Screener from './screener/Screener';
-import Footer from './Footer/Footer';
+import Detail from './detail/Detail';
+import Contact from './contact/Contact';
+import Footer from './footer/Footer';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -25,6 +26,9 @@ const App = () => {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/detail/:symbol">
+            <Detail />
           </Route>
           <Route path="/">
             <Home />

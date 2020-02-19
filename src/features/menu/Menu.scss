@@ -90,8 +90,14 @@
     color: inherit;
     padding: 0.5rem 1rem;
     letter-spacing: 0.1rem;
+    transition: color 0.3s;
     &.navbar__link--active {
       color: var(--color-primary);
+    }
+    @include rwd(md) {
+      &:hover {
+        color: var(--color-primary);
+      }
     }
   }
   &__button {

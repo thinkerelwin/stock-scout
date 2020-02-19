@@ -27,8 +27,8 @@ const RecentNews = () => {
   } = useLocalStateFetching(APIspec);
 
   const NewsBox = () =>
-    recentNewsList.map(({ headline, image, summary }) => (
-      <article className="swiper__inner-box" key={headline}>
+    recentNewsList.map(({ url, headline, image, summary }) => (
+      <a className="swiper__inner-box" href={url} key={headline}>
         <img
           className="swiper__image"
           src={image}
@@ -36,7 +36,7 @@ const RecentNews = () => {
           title={summary}
         />
         <p className="swiper__title">{headline}</p>
-      </article>
+      </a>
     ));
 
   if (isFetchingRecentNewsList) {
@@ -73,8 +73,8 @@ const RecentNews = () => {
           // centerMode={true}
         >
           {/* <NewsBox />, due to limitation on react-responsive-carousel, can't use component */}
-          {recentNewsList.map(({ headline, image, summary }) => (
-            <article className="swiper__inner-box" key={headline}>
+          {recentNewsList.map(({ url, headline, image, summary }) => (
+            <a className="swiper__inner-box" href={url} key={headline}>
               <img
                 className="swiper__image"
                 src={image}
@@ -82,7 +82,7 @@ const RecentNews = () => {
                 title={summary}
               />
               <p className="swiper__title">{headline}</p>
-            </article>
+            </a>
           ))}
         </Carousel>
       )}

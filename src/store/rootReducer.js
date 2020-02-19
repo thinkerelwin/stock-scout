@@ -1,12 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import sizeDetectionReducer from '../features/sizeDetection/sizeDetectionSlice';
-import categoriesReducer from '../features/screener/CategoriesSlice';
-import screenerTableReducer from '../features/screener/ScreenerTableSlice';
+import screenerCategoriesReducer from '../features/screener/screenerCategoriesSlice';
+import screenerTableReducer from '../features/screener/screenerTableSlice';
 
 const rootReducer = combineReducers({
   sizeDetection: sizeDetectionReducer,
-  categories: categoriesReducer,
+  screenerCategories: screenerCategoriesReducer,
   screenerTable: screenerTableReducer
 });
 

@@ -14,10 +14,8 @@ const Menu = () => {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add('no-scroll');
-      toggleMobileScrolling(isMenuOpen);
     } else {
       document.body.classList.remove('no-scroll');
-      toggleMobileScrolling(isMenuOpen);
     }
     if (isMediumSize) {
       setIsMenuOpen(false);
@@ -26,18 +24,6 @@ const Menu = () => {
 
   function handleMenuToggle() {
     setIsMenuOpen(!isMenuOpen);
-  }
-
-  function toggleMobileScrolling(bool) {
-    if (bool) {
-      document.body.addEventListener('touchmove', freezeVp, false);
-    } else {
-      document.body.removeEventListener('touchmove', freezeVp, false);
-    }
-
-    function freezeVp(e) {
-      e.preventDefault();
-    }
   }
 
   return (
@@ -74,7 +60,7 @@ const Menu = () => {
           </li>
           <li className="navbar__item" onClick={handleMenuToggle}>
             <NavLink
-              to="/screener"
+              to="/screener/Most Active"
               className="navbar__link"
               activeClassName="navbar__link--active"
             >

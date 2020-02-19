@@ -1,6 +1,5 @@
 import React from 'react';
 import dayjs from 'dayjs';
-import { createSelector } from '@reduxjs/toolkit';
 
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
@@ -56,7 +55,6 @@ const NewsSectors = () => {
   }
 
   const sectors = Object.keys(symbolsOfSectors);
-  console.log('sectorNews', sectorNews, sectors);
 
   return (
     <section className="news-sectors">
@@ -105,11 +103,5 @@ const NewsSectors = () => {
     </section>
   );
 };
-
-const stateSelector = state => state;
-
-const subtotalSelector = createSelector(stateSelector, state =>
-  state && state.idList ? state.idList.map(id => state[id].news[0]) : []
-);
 
 export default NewsSectors;

@@ -82,6 +82,7 @@ button * {
 
 // Utility
 .no-scroll {
+  touch-action: none;
   overflow: hidden;
   // for mobile safari
   -webkit-overflow-scrolling: touch;

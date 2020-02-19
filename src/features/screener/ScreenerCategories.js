@@ -6,16 +6,16 @@ import classNames from 'classnames';
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
-import { fetchCategories } from './CategoriesSlice';
-import './Categories.scss';
+import { fetchCategories } from './screenerCategoriesSlice';
+import './ScreenerCategories.scss';
 
-const Categories = ({ topList }) => {
+const ScreenerCategories = ({ topList }) => {
   const { url } = useRouteMatch();
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 
   const { categories, error, isFetching } = useSelector(
-    state => state.categories
+    state => state.screenerCategories
   );
 
   const currentCategory = pathname.slice(url.length + 1);
@@ -91,4 +91,4 @@ const LinkTemplate = ({ routeUrl, destinationUrl, name, currentCategory }) => {
   );
 };
 
-export default Categories;
+export default ScreenerCategories;
