@@ -7,7 +7,7 @@
   &__title {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: var(--heading-font-size);
     text-transform: capitalize;
   }
   .swiper {

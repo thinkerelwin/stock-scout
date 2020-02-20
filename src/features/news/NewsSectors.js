@@ -54,11 +54,9 @@ const NewsSectors = () => {
     );
   }
 
-  const sectors = Object.keys(symbolsOfSectors);
-
   return (
     <section className="news-sectors">
-      {sectors.map(sector => (
+      {Object.keys(symbolsOfSectors).map(sector => (
         <div className="news-sector" key={sector}>
           <h3 className="news-sector__title heading-secondary">{sector}</h3>
           <div className="news-cards">

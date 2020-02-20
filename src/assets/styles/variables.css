@@ -6,6 +6,10 @@
 
   --color-tertiary: #2196f3;
 
+  --color-rising: #26a69a;
+  --color-falling: #ef5350;
+  --color-title-small: #787b86;
+
   --screenerBackgroundColor: #f0f3fa;
   --scrollbarBG: #cfd8dc;
   --thumbBG: #90a4ae;
@@ -13,5 +17,7 @@
   --screener-max-width: 61.25rem; /* 61.25 * 16 = 980px */
   --menu-height: 5.5rem;
   --mobile-side-margin: 2rem;
-  /* --default-line-height:  */
+  --heading-font-size: 2rem;
+  --title-medium-font-size: 1.1rem;
+  --title-small-font-size: 0.75rem;
 }

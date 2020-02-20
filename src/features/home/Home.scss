@@ -70,7 +70,7 @@ $heading-font-size-md: 6rem;
       margin-bottom: 1rem;
     }
     p {
-      font-size: 2rem;
+      font-size: var(--heading-font-size);
     }
   }
 }
@@ -99,7 +99,7 @@ $heading-font-size-md: 6rem;
   }
   &__text {
     width: 70%;
-    font-size: 2rem;
+    font-size: var(--heading-font-size);
     color: white;
   }
 }
