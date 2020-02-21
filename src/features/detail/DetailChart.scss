@@ -1,4 +1,9 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/utilities';
+
 .detail-chart {
-  grid-column: 2 / 3;
-  margin-top: 1.6rem;
+  // @extend .mobile-side-margin;
+  @extend .mobile-bottom-border;
+  padding-top: 1.6rem;
+  background-color: var(--themeBG);
 }

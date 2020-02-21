@@ -4,7 +4,7 @@ html {
   font-family: 'times new roman', times, serif;
 
   @include rwd(md) {
-    font-size: 125%;
+    font-size: 115%;
   }
 
   // @include rwd(sm) {

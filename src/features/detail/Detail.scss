@@ -1,12 +1,15 @@
 @import '../../assets/styles/mixins';
 
 .detail {
-  display: grid;
-  grid-template-columns: 1fr 100vw 1fr;
+  // display: grid;
+  // grid-template-columns:
+  //   minmax(var(--mobile-side-margin), 1fr) minmax(min-content, 69rem)
+  //   minmax(var(--mobile-side-margin), 1fr);
   font-family: 'Roboto', sans-serif;
+}
+
+.theme-background {
   @include rwd(md) {
-    grid-template-columns:
-      1fr minmax(min-content, calc(var(--screener-max-width) * 0.8))
-      1fr;
+    background-color: var(--themeBG);
   }
 }

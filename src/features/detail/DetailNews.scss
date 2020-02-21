@@ -1,0 +1,37 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/utilities';
+
+$article-height: 1.5rem;
+
+.detail-news {
+  @extend .mobile-bottom-border;
+  &__section-name {
+    font-size: var(--heading-font-size);
+    font-weight: 400;
+    @include mobileSideMargin($ratio: 0.75rem);
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  // &__label {
+  //   display: inline-block;
+  //   font-size: 0.9rem;
+  //   font-weight: normal;
+  //   color: #4c525e;
+  //   line-height: $article-height;
+  //   padding-right: 0.25rem;
+  // }
+  // &__value {
+  //   display: inline-block;
+  //   font-size: 0.9rem;
+  //   font-weight: bold;
+  //   line-height: $article-height;
+  //   letter-spacing: 0.5px;
+  //   &--link {
+  //     color: var(--color-tertiary);
+  //   }
+  // }
+  // &__description {
+  //   margin-top: 0.75rem;
+  //   line-height: $article-height;
+  // }
+}

@@ -39,13 +39,13 @@
 @mixin customScrollBar {
   // for firfox
   scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--screenerBackgroundColor);
+  scrollbar-color: var(--thumbBG) var(--themeBG);
   // for webkit based
   &::-webkit-scrollbar {
     height: 6px;
   }
   &::-webkit-scrollbar-track {
-    background-color: var(--screenerBackgroundColor);
+    background-color: var(--themeBG);
   }
   &::-webkit-scrollbar-thumb {
     background-color: var(--thumbBG);
@@ -56,4 +56,9 @@
 @mixin squareSize($size) {
   width: $size;
   height: $size;
+}
+
+@mixin mobileSideMargin($ratio: var(--mobile-side-margin)) {
+  margin-left: $ratio;
+  margin-right: $ratio;
 }

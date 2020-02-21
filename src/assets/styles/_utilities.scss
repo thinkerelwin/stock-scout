@@ -9,6 +9,10 @@
   background-color: #0a396d;
 }
 
+.mobile-bottom-border {
+  border-bottom: 2px solid var(--color-border);
+}
+
 .truncate-overflow {
   // reference https://css-tricks.com/multi-line-truncation-with-pure-css/
   position: relative;

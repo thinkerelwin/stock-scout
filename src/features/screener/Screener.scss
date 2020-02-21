@@ -10,7 +10,7 @@
   background-color: #f8f9fd;
   @include rwd(md) {
     grid-template-columns:
-      1fr minmax(min-content, calc(var(--screener-max-width) * 0.8))
+      1fr minmax(min-content, calc(var(--screener-max-width) * 0.87))
       1fr;
   }
 }

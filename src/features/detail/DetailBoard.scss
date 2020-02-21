@@ -1,7 +1,8 @@
 @import '../../assets/styles/mixins';
+@import '../../assets/styles/utilities';
 
 @mixin titleStyle {
-  grid-column: 3 / 5;
+  grid-column: 2 / 4;
   grid-row: 2 / 3;
   color: #131722;
   font-size: var(--heading-font-size);
@@ -10,7 +11,7 @@
 }
 
 @mixin subtitleStyle {
-  grid-column: 3 / 4;
+  grid-column: 2 / 3;
   grid-row: 3 / 4;
   color: #787b86;
   font-size: 1rem;
@@ -25,21 +26,19 @@
 }
 
 .detail-board {
-  grid-column: 2 / 3;
+  @extend .mobile-bottom-border;
   &__title-box {
     display: grid;
-    grid-template-columns:
-      0.5rem 3.5rem min-content minmax(min-content, 19.5rem)
-      0.5rem;
+    grid-template-columns: 3.5rem min-content 1fr;
     grid-template-rows: 1.5rem repeat(3, min-content) 1.5rem;
     align-items: center;
     grid-column-gap: 0.75rem;
     grid-row-gap: 0.25rem;
-
     font-family: sans-serif;
+    @include mobileSideMargin;
   }
   &__logo {
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
     grid-row: 2 / 4;
   }
   &__name {
@@ -55,19 +54,18 @@
     }
   }
   &__exchange {
-    grid-column: 3 / 4;
+    grid-column: 2 / 3;
     grid-row: 4 / 5;
     color: var(--color-title-small);
     font-weight: normal;
     @include rwd(xs) {
-      grid-column: 4 / 5;
+      grid-column: 3 / 4;
       grid-row: 3 / 4;
     }
   }
   &__quote {
     display: flex;
     flex-direction: column;
-    // overflow-x: auto;
     @include rwd(md) {
       flex-direction: row;
     }
@@ -77,7 +75,8 @@
     grid-template-columns: max-content min-content 1fr;
     align-items: flex-end;
     grid-row-gap: 0.8rem;
-    margin: 1.5rem 1.25rem 0;
+    @include mobileSideMargin;
+    margin-top: 1.5rem;
   }
   &__last-price {
     font-size: var(--heading-font-size);
@@ -94,6 +93,9 @@
   }
   &__change {
     font-size: var(--title-medium-font-size);
+    @include rwd(md) {
+      white-space: nowrap;
+    }
     &--rising {
       color: var(--color-rising);
     }
@@ -101,14 +103,20 @@
       color: var(--color-falling);
     }
   }
-  &__core-data-box {
+  &__scroll-box-outer {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  &__scroll-box-inner {
     overflow-x: auto;
+    @include rwd(md) {
+      text-align: right;
+    }
   }
   &__core-data {
     display: inline-flex;
+    @include mobileSideMargin;
     margin-top: 1.5rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
     & > * {
       flex: 1 0 auto;
       white-space: nowrap;
@@ -119,6 +127,7 @@
   }
   &__extended-change {
     display: inline-block;
+    padding-left: 1rem;
   }
   &__extended-last-time {
     @extend .title-small;

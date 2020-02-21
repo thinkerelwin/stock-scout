@@ -3,6 +3,7 @@ import React from 'react';
 import DetailBoard from './DetailBoard';
 import DetailChart from './DetailChart';
 import DetailProfile from './DetailProfile';
+import DetailNews from './DetailNews';
 
 import './Detail.scss';
 
@@ -10,9 +11,11 @@ const Detail = () => {
   return (
     <main className="detail menu-margin">
       <DetailBoard />
-      <DetailChart />
-      <DetailProfile />
-      <section className="detail-news"></section>
+      <div className="theme-background">
+        <DetailChart />
+        <DetailProfile />
+        <DetailNews />
+      </div>
     </main>
   );
 };

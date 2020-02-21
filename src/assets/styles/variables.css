@@ -9,14 +9,15 @@
   --color-rising: #26a69a;
   --color-falling: #ef5350;
   --color-title-small: #787b86;
+  --color-border: #e0e3eb;
 
-  --screenerBackgroundColor: #f0f3fa;
+  --themeBG: #f0f3fa;
   --scrollbarBG: #cfd8dc;
   --thumbBG: #90a4ae;
 
   --screener-max-width: 61.25rem; /* 61.25 * 16 = 980px */
   --menu-height: 5.5rem;
-  --mobile-side-margin: 2rem;
+  --mobile-side-margin: 1.25rem;
   --heading-font-size: 2rem;
   --title-medium-font-size: 1.1rem;
   --title-small-font-size: 0.75rem;
