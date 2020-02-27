@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './DetailNews.scss';
 
@@ -60,7 +59,5 @@ const DetailNews = props => {
     </section>
   );
 };
-
-DetailNews.propTypes = {};
 
 export default DetailNews;

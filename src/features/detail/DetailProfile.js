@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './DetailProfile.scss';
 
@@ -45,7 +44,5 @@ const DetailProfile = props => {
     </section>
   );
 };
-
-DetailProfile.propTypes = {};
 
 export default DetailProfile;

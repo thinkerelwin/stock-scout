@@ -22,10 +22,6 @@ const Menu = () => {
     }
   }, [isMediumSize, isMenuOpen]);
 
-  function handleMenuToggle() {
-    setIsMenuOpen(!isMenuOpen);
-  }
-
   return (
     <header className={classNames('header', { open: isMenuOpen })}>
       <Link to="/" className="logo-box">
@@ -80,6 +76,10 @@ const Menu = () => {
       </nav>
     </header>
   );
+
+  function handleMenuToggle() {
+    setIsMenuOpen(!isMenuOpen);
+  }
 };
 
 export default Menu;
