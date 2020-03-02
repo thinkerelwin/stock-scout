@@ -1,5 +1,5 @@
 import React from 'react';
-import dayjs from 'dayjs';
+import { normalDate, monthFirstDate } from '../../utils/formatHelper';
 import classNames from 'classnames';
 
 import LoadingBox from '../../components/LoadingBox';
@@ -55,7 +55,7 @@ const NewsFeatures = () => {
   return (
     <section className="news-features">
       {featureNewsList.map(
-        ({ url, summary, image, headline, related, datetime }, index) => (
+        ({ url, image, headline, related, datetime }, index) => (
           <a
             href={url}
             className={classNames('news-feature', {
@@ -63,7 +63,7 @@ const NewsFeatures = () => {
               'news-feature--secondary': index === 1,
               'news-feature--tertiary': index === 2
             })}
-            title={summary}
+            title={headline}
             style={{
               backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) , url(${image})`
             }}
@@ -74,9 +74,9 @@ const NewsFeatures = () => {
               <span className="news-feature__tag">{related}</span>
               <time
                 className="news-feature__date"
-                dateTime={dayjs(datetime).format('YYYY-MM-DD')}
+                dateTime={normalDate(datetime)}
               >
-                {dayjs(datetime).format('MMM DD, YYYY')}
+                {monthFirstDate(datetime)}
               </time>
             </div>
           </a>

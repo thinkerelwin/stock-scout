@@ -1,8 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './DetailProfile.scss';
 
-const DetailProfile = props => {
+const DetailProfile = ({
+  profile: {
+    website,
+    companyName,
+    sector,
+    industry,
+    employees,
+    country,
+    description
+  }
+}) => {
   return (
     <section className="detail-profile">
       <h3 className="detail-profile__section-name">Profile</h3>
@@ -10,39 +21,54 @@ const DetailProfile = props => {
         <h5 className="detail-profile__label">Name:</h5>
         <a
           className="detail-profile__value detail-profile__value--link"
-          href="http://www.apple.com"
+          href={website}
         >
-          Alphabet Inc.
+          {companyName}
         </a>
       </div>
       <div>
         <h5 className="detail-profile__label">Sector:</h5>
-        <p className="detail-profile__value">Technology Services</p>
+        <p className="detail-profile__value">{sector}</p>
       </div>
       <div>
         <h5 className="detail-profile__label">Industry:</h5>
-        <p className="detail-profile__value">Internet Software/Services</p>
+        <p className="detail-profile__value">{industry}</p>
       </div>
       <div>
         <h5 className="detail-profile__label">Employees:</h5>
-        <p className="detail-profile__value">118899</p>
+        <p className="detail-profile__value">{employees}</p>
       </div>
       <div>
         <h5 className="detail-profile__label">Country:</h5>
-        <p className="detail-profile__value">US</p>
+        <p className="detail-profile__value">{country}</p>
       </div>
-      <p className="detail-profile__description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illo
-        numquam repellendus quam facilis provident animi laudantium voluptatibus
-        asperiores est tenetur, odio ex vitae eum nulla delectus eius sunt
-        itaque. Culpa neque magni facere fugit. Magnam ut, veritatis enim
-        laudantium temporibus minima, amet veniam, sequi inventore ipsum aperiam
-        reiciendis asperiores libero velit recusandae aliquam omnis saepe?
-        Quisquam perspiciatis aspernatur beatae. Est molestiae nostrum sunt
-        quos? Dignissimos fugit aut distinctio earum, nam labore ipsa eius.
-      </p>
+      <p className="detail-profile__description">{description}</p>
     </section>
   );
+};
+
+DetailProfile.defaultProps = {
+  profile: {
+    companyName: '',
+    website: '',
+    sector: '',
+    industry: '',
+    employees: 0,
+    country: '',
+    description: ''
+  }
+};
+
+DetailProfile.propTypes = {
+  profile: PropTypes.shape({
+    website: PropTypes.string.isRequired,
+    companyName: PropTypes.string.isRequired,
+    sector: PropTypes.string.isRequired,
+    industry: PropTypes.string.isRequired,
+    employees: PropTypes.number.isRequired,
+    country: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+  })
 };
 
 export default DetailProfile;

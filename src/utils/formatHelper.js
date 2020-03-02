@@ -1,0 +1,28 @@
+import dayjs from 'dayjs';
+
+const relativeTime = require('dayjs/plugin/relativeTime');
+dayjs.extend(relativeTime);
+
+export function normalDate(time) {
+  return dayjs(time).format('YYYY-MM-DD');
+}
+
+export function monthFirstDate(time) {
+  return dayjs(time).format('MMM DD, YYYY');
+}
+
+export function monthFirstDateTime(time) {
+  return dayjs(time).format('MMM DD HH:mm');
+}
+
+export function minimalDateTime(time) {
+  return dayjs(time).format('HH:mm');
+}
+
+export function smartDate(time) {
+  if (dayjs().diff(dayjs(time), 'day') >= 1) {
+    return monthFirstDate(time);
+  }
+
+  return dayjs(time).fromNow();
+}

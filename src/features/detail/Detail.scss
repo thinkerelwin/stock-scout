@@ -1,10 +1,8 @@
 @import '../../assets/styles/mixins';
 
 .detail {
-  // display: grid;
-  // grid-template-columns:
-  //   minmax(var(--mobile-side-margin), 1fr) minmax(min-content, 69rem)
-  //   minmax(var(--mobile-side-margin), 1fr);
+  position: relative;
+  min-height: calc(100vh - var(--menu-height));
   font-family: 'Roboto', sans-serif;
 }
 

@@ -5,6 +5,8 @@ import DetailBoard from './DetailBoard';
 import DetailChart from './DetailChart';
 import DetailProfile from './DetailProfile';
 import DetailNews from './DetailNews';
+import LoadingBox from '../../components/LoadingBox';
+import ErrorBox from '../../components/ErrorBox';
 
 import { useLocalStateFetching } from '../../utils/customHooks';
 
@@ -33,6 +35,26 @@ const Detail = () => {
     detailsOfSymbol
   } = useLocalStateFetching(detailsOfSymbolAPIspec);
   console.log('Detail', isFetchingDetailsOfSymbol, detailsOfSymbol);
+
+  if (isFetchingDetailsOfSymbol) {
+    return (
+      <main className="detail menu-margin">
+        <LoadingBox boxClassName="loading--absolute" />
+      </main>
+    );
+  }
+
+  if (errorOnDetailsOfSymbol) {
+    return (
+      <main className="detail menu-margin">
+        <ErrorBox
+          message={errorOnDetailsOfSymbol}
+          boxClassName="error--absolute"
+        />
+      </main>
+    );
+  }
+
   return (
     <main className="detail menu-margin">
       <DetailBoard quote={detailsOfSymbol.quote} logo={detailsOfSymbol.logo} />

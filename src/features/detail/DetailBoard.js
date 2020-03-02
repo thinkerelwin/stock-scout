@@ -1,12 +1,14 @@
 import React from 'react';
-import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 
+import { monthFirstDateTime, minimalDateTime } from '../../utils/formatHelper';
 import './DetailBoard.scss';
 
 const DetailBoard = ({ quote, logo }) => {
   const isPreMarketExist =
-    quote.extendedPrice && quote.extendedChange && quote.extendedPriceTime;
+    quote.extendedPrice !== null &&
+    quote.extendedChange !== null &&
+    quote.extendedPriceTime !== null;
   return (
     <section className="detail-board">
       <div className="detail-board__title-box">
@@ -23,10 +25,7 @@ const DetailBoard = ({ quote, logo }) => {
             {quote.change} ({displayAsPercent(quote.changePercent)}%)
           </p>
           <span className="detail-board__last-time">
-            &#8226; LAST PRICE (
-            {quote.latestUpdate &&
-              dayjs(quote.latestUpdate).format('MMM DD HH:mm')}
-            )
+            &#8226; LAST PRICE ({monthFirstDateTime(quote.latestUpdate)})
           </span>
         </div>
         <div className="detail-board__scroll-box-outer">
@@ -42,10 +41,7 @@ const DetailBoard = ({ quote, logo }) => {
                     {displayAsPercent(quote.extendedChangePercent)}%)
                   </h5>
                   <span className="detail-board__extended-last-time">
-                    PRE MARKET (
-                    {quote.extendedPriceTime &&
-                      dayjs(quote.extendedPriceTime).format('HH:mm')}
-                    )
+                    PRE MARKET ({minimalDateTime(quote.extendedPriceTime)})
                   </span>
                 </div>
               )}
@@ -95,28 +91,59 @@ const DetailBoard = ({ quote, logo }) => {
 
 DetailBoard.defaultProps = {
   quote: {
-    symbol: null,
-    companyName: null,
-    primaryExchange: null,
-    latestPrice: null,
-    change: null,
-    changePercent: null,
+    symbol: '',
+    companyName: '',
+    primaryExchange: '',
+    latestPrice: 0,
+    change: 0,
+    changePercent: 0,
     latestUpdate: null,
     extendedPrice: null,
     extendedChange: null,
     extendedChangePercent: null,
     extendedPriceTime: null,
-    marketCap: null,
-    peRatio: null,
-    week52High: null,
-    week52Low: null
+    marketCap: 0,
+    peRatio: 0,
+    week52High: 0,
+    week52Low: 0
   },
-  logo: { url: 'https://via.placeholder.com/56' }
+  logo: { url: '' }
 };
 
 DetailBoard.propTypes = {
-  quote: PropTypes.object.isRequired,
-  logo: PropTypes.object.isRequired
+  quote: PropTypes.shape({
+    symbol: PropTypes.string.isRequired,
+    companyName: PropTypes.string.isRequired,
+    primaryExchange: PropTypes.string.isRequired,
+    latestPrice: PropTypes.number.isRequired,
+    change: PropTypes.number.isRequired,
+    changePercent: PropTypes.number.isRequired,
+    latestUpdate: validifyNullAndNumber,
+    extendedPrice: validifyNullAndNumber,
+    extendedChange: validifyNullAndNumber,
+    extendedChangePercent: validifyNullAndNumber,
+    extendedPriceTime: validifyNullAndNumber,
+    marketCap: PropTypes.number.isRequired,
+    peRatio: PropTypes.number.isRequired,
+    week52High: PropTypes.number.isRequired,
+    week52Low: PropTypes.number.isRequired
+  }),
+  logo: PropTypes.shape({
+    url: PropTypes.string.isRequired
+  })
 };
+
+function validifyNullAndNumber(props, propName, componentName) {
+  if (props[propName] !== null && typeof props[propName] !== 'number') {
+    return new Error(
+      'Invalid prop `' +
+        propName +
+        '` supplied to' +
+        ' `' +
+        componentName +
+        '`. Validation failed.'
+    );
+  }
+}
 
 export default DetailBoard;

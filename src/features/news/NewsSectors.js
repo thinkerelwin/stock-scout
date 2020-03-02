@@ -1,10 +1,10 @@
 import React from 'react';
-import dayjs from 'dayjs';
 
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
 import { useLocalStateFetching } from '../../utils/customHooks';
+import { normalDate, monthFirstDate } from '../../utils/formatHelper';
 
 import './NewsSectors.scss';
 
@@ -70,7 +70,7 @@ const NewsSectors = () => {
                   <div className="news-card__image-box">
                     <img
                       src={sectorNews[symbol].news[0].image}
-                      alt="title"
+                      alt={sectorNews[symbol].news[0].headline}
                       className="news-card__image"
                     />
                   </div>
@@ -82,13 +82,9 @@ const NewsSectors = () => {
                   </p>
                   <time
                     className="news-card__date"
-                    dateTime={dayjs(sectorNews[symbol].news[0].datetime).format(
-                      'YYYY-MM-DD'
-                    )}
+                    dateTime={normalDate(sectorNews[symbol].news[0].datetime)}
                   >
-                    {dayjs(sectorNews[symbol].news[0].datetime).format(
-                      'MMM DD, YYYY'
-                    )}
+                    {monthFirstDate(sectorNews[symbol].news[0].datetime)}
                   </time>
                   <p className="news-card__summary">
                     {sectorNews[symbol].news[0].summary}

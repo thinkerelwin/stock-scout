@@ -41,5 +41,8 @@
     @include rwd(sm) {
       flex: 1 1 auto;
     }
+    &__source {
+      white-space: nowrap;
+    }
   }
 }

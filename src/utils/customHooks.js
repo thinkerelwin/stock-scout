@@ -39,7 +39,6 @@ export const useLocalStateFetching = ({ route, params, process, naming }) => {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    console.log('useEffect', route, params, process);
     let isMounted = true;
     fetchRecentNews();
 

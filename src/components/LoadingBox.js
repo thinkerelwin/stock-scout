@@ -18,7 +18,8 @@ const LoadingBox = ({ size = 'medium', boxClassName = '' }) => {
 };
 
 LoadingBox.propTypes = {
-  size: PropTypes.string
+  size: PropTypes.string,
+  boxClassName: PropTypes.string
 };
 
 export default LoadingBox;
