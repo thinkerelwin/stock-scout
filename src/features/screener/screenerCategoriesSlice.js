@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import categoriesJson from '../../utils/categories.json'; // TODO temp
 
 import instance from '../../api/IEXCloud';
 
@@ -41,7 +40,6 @@ export function fetchCategories() {
     dispatch(setIsFetching(true));
     try {
       const { data } = await instance.get('/ref-data/sectors');
-      // const data = categoriesJson; // TODO temp
       dispatch(setCategoriesSuccess({ categories: data }));
       dispatch(setIsFetching(false));
     } catch (err) {

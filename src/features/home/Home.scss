@@ -28,22 +28,22 @@ $heading-font-size-md: 6rem;
     @include rwd(xs) {
       grid-column: main-center-start / main-center-end;
     }
+    @include rwd(md) {
+      background-image: url('../../assets/images/spiderman_reading-large.jpg');
+    }
     @include rwd(lg) {
       grid-column: main-left-padding / main-right-padding;
       height: 80vh;
       background-attachment: fixed;
       background-position: center top;
     }
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   background: white;
-    //   opacity: 0.1;
-    //   top: 0;
-    //   left: 0;
-    //   bottom: 0;
-    //   right: 0;
-    // }
+    .image-credit {
+      position: absolute;
+      font-size: 0.75rem;
+      bottom: -1.25rem;
+      right: 0.5rem;
+      color: var(--color-title-small);
+    }
   }
   &__heading {
     grid-column: main-center-start / main-center-end;

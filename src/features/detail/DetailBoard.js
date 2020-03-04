@@ -1,7 +1,13 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { monthFirstDateTime, minimalDateTime } from '../../utils/formatHelper';
+import {
+  monthFirstDateTime,
+  minimalDateTime,
+  displayAsPercent,
+  bigNumberFormat
+} from '../../utils/formatHelper';
 import './DetailBoard.scss';
 
 const DetailBoard = ({ quote, logo }) => {
@@ -21,8 +27,14 @@ const DetailBoard = ({ quote, logo }) => {
         <div className="detail-board__last-price-box">
           <h3 className="detail-board__last-price">{quote.latestPrice}</h3>
           <span className="detail-board__currency">USD</span>
-          <p className="detail-board__change detail-board__change--rising">
-            {quote.change} ({displayAsPercent(quote.changePercent)}%)
+          <p
+            className={classNames('detail-board__change', {
+              'detail-board__change--rising': quote.change > 0,
+              'detail-board__change--falling': quote.change < 0
+            })}
+          >
+            {formatChangePrice(quote.change)} (
+            {displayAsPercentWithIcon(displayAsPercent(quote.changePercent))}%)
           </p>
           <span className="detail-board__last-time">
             &#8226; LAST PRICE ({monthFirstDateTime(quote.latestUpdate)})
@@ -37,8 +49,11 @@ const DetailBoard = ({ quote, logo }) => {
                     {quote.extendedPrice}
                   </h4>
                   <h5 className="detail-board__extended-change">
-                    {quote.extendedChange}(
-                    {displayAsPercent(quote.extendedChangePercent)}%)
+                    {formatChangePrice(quote.extendedChange)} (
+                    {displayAsPercentWithIcon(
+                      displayAsPercent(quote.extendedChangePercent)
+                    )}
+                    %)
                   </h5>
                   <span className="detail-board__extended-last-time">
                     PRE MARKET ({minimalDateTime(quote.extendedPriceTime)})
@@ -70,22 +85,16 @@ const DetailBoard = ({ quote, logo }) => {
     </section>
   );
 
-  function displayAsPercent(number) {
-    return number && number.toFixed(2) * 100;
+  function displayAsPercentWithIcon(number) {
+    return number && plusIconDecider(number) + number;
   }
-  function bigNumberFormat(number) {
-    const billion = 1000000000;
-    const million = 1000000;
-    const thousand = 1000;
-    if (number >= billion) {
-      return (number / billion).toFixed(3) + 'B';
-    } else if (number >= million) {
-      return (number / million).toFixed(3) + 'M';
-    } else if (number >= thousand) {
-      return (number / thousand).toFixed(3) + 'K';
-    } else {
-      return number;
-    }
+
+  function formatChangePrice(number) {
+    return plusIconDecider(number) + number;
+  }
+
+  function plusIconDecider(number) {
+    return number > 0 ? '+' : '';
   }
 };
 

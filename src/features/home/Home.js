@@ -12,7 +12,11 @@ const Home = () => {
       <h1 className="section-about__heading section-about__heading--lower heading-margin">
         in yourself
       </h1>
-      <div className="section-about__image"></div>
+      <div className="section-about__image">
+        <span className="image-credit">
+          Photo by Road Trip with Raj on Unsplash
+        </span>
+      </div>
       <div className="section-about__explaination heading-margin">
         <h3 className="heading-primary">Stock Scout - About</h3>
         <p>

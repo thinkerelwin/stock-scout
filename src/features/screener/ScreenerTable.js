@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Column, Table, AutoSizer } from 'react-virtualized';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
 import { fetchscreenerTable } from './screenerTableSlice';
+import { displayAsPercent, bigNumberFormat } from '../../utils/formatHelper';
 
 import './ScreenerTable.scss';
 
@@ -74,7 +76,7 @@ const ScreenerTable = ({ topList }) => {
                 maxWidth={130}
                 // minWidth={100}
                 flexGrow={1}
-                cellRenderer={cellRender}
+                cellRenderer={descriptionCellRender}
               />
               <Column
                 label="Name"
@@ -93,14 +95,22 @@ const ScreenerTable = ({ topList }) => {
                 dataKey="changePercent"
                 width={70}
                 flexGrow={1}
+                cellRenderer={changePercentCellRender}
               />
-              <Column label="CHG" dataKey="change" width={70} flexGrow={1} />
+              <Column
+                label="CHG"
+                dataKey="change"
+                width={70}
+                flexGrow={1}
+                cellRenderer={changeCellRender}
+              />
               <Column label="VOL" dataKey="volume" width={70} flexGrow={1} />
               <Column
                 label="MKT CAP"
                 dataKey="marketCap"
                 width={70}
                 flexGrow={1}
+                cellRenderer={marketCapCellRender}
               />
               <Column label="P/E" dataKey="peRatio" width={70} flexGrow={1} />
             </Table>
@@ -127,12 +137,42 @@ const ScreenerTable = ({ topList }) => {
     return screenerList.reverse();
   }
 
-  function cellRender({ cellData }) {
-    if (cellData == null) {
-      return '';
-    } else {
-      return <Link to={`/detail/${cellData}`}>{cellData}</Link>;
-    }
+  function cellRender(cellData, component) {
+    return cellData === null ? '' : component(cellData);
+  }
+
+  function descriptionCellRender({ cellData }) {
+    return cellRender(cellData, cellData => (
+      <Link to={`/detail/${cellData}`}>{cellData}</Link>
+    ));
+  }
+
+  function changePercentCellRender({ cellData }) {
+    return cellRender(cellData, cellData => (
+      <p
+        className={classNames('table-cell__change-percent', {
+          'table-cell__change-percent--rising': cellData > 0,
+          'table-cell__change-percent--falling': cellData < 0
+        })}
+      >{`${displayAsPercent(cellData)}%`}</p>
+    ));
+  }
+
+  function changeCellRender({ cellData }) {
+    return cellRender(cellData, cellData => (
+      <p
+        className={classNames('table-cell__change', {
+          'table-cell__change--rising': cellData > 0,
+          'table-cell__change--falling': cellData < 0
+        })}
+      >
+        {cellData}
+      </p>
+    ));
+  }
+
+  function marketCapCellRender({ cellData }) {
+    return cellData === null ? '' : bigNumberFormat(cellData);
   }
 };
 

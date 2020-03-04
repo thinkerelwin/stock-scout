@@ -63,15 +63,6 @@ const Menu = () => {
               Screener
             </NavLink>
           </li>
-          <li className="navbar__item" onClick={handleMenuToggle}>
-            <NavLink
-              to="/contact"
-              className="navbar__link"
-              activeClassName="navbar__link--active"
-            >
-              Contact
-            </NavLink>
-          </li>
         </ul>
       </nav>
     </header>

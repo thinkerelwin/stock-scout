@@ -3,17 +3,7 @@ import PropTypes from 'prop-types';
 
 import './DetailProfile.scss';
 
-const DetailProfile = ({
-  profile: {
-    website,
-    companyName,
-    sector,
-    industry,
-    employees,
-    country,
-    description
-  }
-}) => {
+const DetailProfile = ({ profile }) => {
   return (
     <section className="detail-profile">
       <h3 className="detail-profile__section-name">Profile</h3>
@@ -21,28 +11,28 @@ const DetailProfile = ({
         <h5 className="detail-profile__label">Name:</h5>
         <a
           className="detail-profile__value detail-profile__value--link"
-          href={website}
+          href={profile.website}
         >
-          {companyName}
+          {profile.companyName}
         </a>
       </div>
       <div>
         <h5 className="detail-profile__label">Sector:</h5>
-        <p className="detail-profile__value">{sector}</p>
+        <p className="detail-profile__value">{profile.sector}</p>
       </div>
       <div>
         <h5 className="detail-profile__label">Industry:</h5>
-        <p className="detail-profile__value">{industry}</p>
+        <p className="detail-profile__value">{profile.industry}</p>
       </div>
       <div>
         <h5 className="detail-profile__label">Employees:</h5>
-        <p className="detail-profile__value">{employees}</p>
+        <p className="detail-profile__value">{profile.employees}</p>
       </div>
       <div>
         <h5 className="detail-profile__label">Country:</h5>
-        <p className="detail-profile__value">{country}</p>
+        <p className="detail-profile__value">{profile.country}</p>
       </div>
-      <p className="detail-profile__description">{description}</p>
+      <p className="detail-profile__description">{profile.description}</p>
     </section>
   );
 };

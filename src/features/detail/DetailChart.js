@@ -1,100 +1,89 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
+import PropTypes from 'prop-types';
 import HighCharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
-import chartData from '../../utils/chart-data.json';
 
 import './DetailChart.scss';
 
-// require('highcharts/indicators/indicators')(HighCharts);
 require('highcharts/indicators/pivot-points')(HighCharts);
 require('highcharts/indicators/macd')(HighCharts);
-// require('highcharts/modules/exporting')(HighCharts);
-// require('highcharts/modules/map')(HighCharts);
 
-const DetailChart = () => {
-  const [chartOptions, setChartOptions] = useState(defaultChartOptions);
-  return (
-    <section className="detail-chart">
-      <StockChart options={chartOptions} highcharts={HighCharts} />
-    </section>
-  );
-};
-
-const StockChart = ({ options, highcharts }) => (
-  <HighchartsReact
-    highcharts={highcharts}
-    constructorType={'stockChart'}
-    options={options}
-  />
-);
-
-const defaultChartOptions = {
-  chart: {
-    height: 400
-  },
-
-  title: {
-    text: `${'GOOG'} Stock Chart`
-  },
-
-  subtitle: {
-    text:
-      'Click small/large buttons or change window size to test responsiveness'
-  },
-
-  rangeSelector: {
-    selected: 1
-  },
-
-  series: [
-    {
-      name: 'AAPL Stock Price',
-      data: chartData,
-      type: 'area',
-      threshold: null,
-      tooltip: {
-        valueDecimals: 2
+const DetailChart = ({
+  chartData = { data: [] },
+  quote: { symbol } = { symbol: '' }
+}) => {
+  const chartWidth = 430;
+  var chartOptions = useMemo(
+    () => ({
+      chart: {
+        height: chartWidth
       },
-      fillColor: {
-        linearGradient: {
-          x1: 0,
-          y1: 0,
-          x2: 0,
-          y2: 1
-        },
-        stops: [
-          [0, HighCharts.getOptions().colors[0]],
-          [
-            1,
-            HighCharts.color(HighCharts.getOptions().colors[0])
-              .setOpacity(0)
-              .get('rgba')
-          ]
-        ]
-      }
-    }
-  ],
-
-  responsive: {
-    rules: [
-      {
-        condition: {
-          maxWidth: 500
-        },
-        chartOptions: {
-          chart: {
-            height: 430
-          },
-          subtitle: {
-            text: null
-          },
-          navigator: {
-            enabled: false
+      title: {
+        text: `${symbol} Stock Chart`
+      },
+      rangeSelector: {
+        selected: 1,
+        inputEnabled: false
+      },
+      series: [
+        {
+          name: `${symbol} Stock Price`,
+          data: formatChartData(chartData.data),
+          type: 'candlestick',
+          tooltip: {
+            valueDecimals: 2
           }
         }
+      ],
+      responsive: {
+        rules: [
+          {
+            condition: {
+              maxWidth: 500
+            },
+            chartOptions: {
+              chart: {
+                height: chartWidth
+              },
+              navigator: {
+                enabled: false
+              }
+            }
+          }
+        ]
       }
-    ]
+    }),
+    [chartData.data, symbol]
+  );
+
+  return (
+    <section className="detail-chart">
+      <HighchartsReact
+        highcharts={HighCharts}
+        constructorType={'stockChart'}
+        options={chartOptions}
+      />
+    </section>
+  );
+
+  function formatChartData(data) {
+    return data.map(({ date, high, low, open, close }) => ({
+      x: Date.parse(date),
+      high,
+      low,
+      open,
+      close
+    }));
   }
+};
+
+DetailChart.propTypes = {
+  chartData: PropTypes.shape({
+    data: PropTypes.array.isRequired
+  }),
+  quote: PropTypes.shape({
+    symbol: PropTypes.string.isRequired
+  })
 };
 
 export default DetailChart;

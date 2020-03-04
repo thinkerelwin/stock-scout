@@ -13,6 +13,17 @@
   border-bottom: 2px solid var(--color-border);
 }
 
+.page-error-layout {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #ff7f2e;
+  overflow: hidden;
+  z-index: 200;
+}
+
 .truncate-overflow {
   // reference https://css-tricks.com/multi-line-truncation-with-pure-css/
   position: relative;

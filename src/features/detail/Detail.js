@@ -59,7 +59,10 @@ const Detail = () => {
     <main className="detail menu-margin">
       <DetailBoard quote={detailsOfSymbol.quote} logo={detailsOfSymbol.logo} />
       <div className="theme-background">
-        <DetailChart chartData={detailsOfSymbol.chart} />
+        <DetailChart
+          chartData={detailsOfSymbol.chart}
+          quote={detailsOfSymbol.quote}
+        />
         <DetailProfile profile={detailsOfSymbol.company} />
         <DetailNews news={detailsOfSymbol.news} />
       </div>

@@ -13,8 +13,11 @@
   .swiper {
     &__title {
       height: 6rem;
+      color: black;
+      text-align: center;
     }
     &__inner-box {
+      display: block;
       width: auto;
       @include rwd(md) {
         width: 14.4rem;
@@ -30,19 +33,26 @@
   }
 
   // custom styles
-  .carousel {
-    .slide {
-      background: transparent;
-    }
-    .control-dots {
-      .dot {
-        background-color: rgba(65, 65, 65, 1);
+  .swiper-layout {
+    width: calc(100vw - var(--mobile-side-margin) * 2);
+    padding-bottom: 2rem;
+    .swiper {
+      &__inner-box {
+        display: block;
+      }
+      &__title {
+        height: 4.5rem;
+        background-color: white;
+        padding-top: 1rem;
+        overflow-y: hidden;
+      }
+      &__image {
+        width: 100%;
+        height: auto;
       }
     }
-    .swiper__title {
-      background-color: white;
-      padding-top: 1rem;
-      padding-bottom: 2rem;
+    .slick-dots {
+      position: static;
     }
   }
 }
@@ -58,8 +68,6 @@
       margin-right: auto;
       width: 80%;
       padding: 1rem 0;
-      color: black;
-      text-align: center;
     }
   }
 }

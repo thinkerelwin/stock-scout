@@ -1,9 +1,11 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/utilities';
 
+$detail-board-vertical-space: 1.5rem;
+
 @mixin titleStyle {
   grid-column: 2 / 4;
-  grid-row: 2 / 3;
+  grid-row: 1 / 2;
   color: #131722;
   font-size: var(--heading-font-size);
   font-weight: bold;
@@ -12,7 +14,7 @@
 
 @mixin subtitleStyle {
   grid-column: 2 / 4;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
   color: #787b86;
   font-size: 1rem;
   font-weight: normal;
@@ -26,24 +28,39 @@
 }
 
 .detail-board {
+  @include rwd(md) {
+    & > div {
+      @include desktopDetailStyle;
+    }
+    .detail-board__quote {
+      margin-top: $detail-board-vertical-space;
+    }
+  }
+
   @extend .mobile-bottom-border;
   &__title-box {
     display: grid;
     grid-template-columns: 3.5rem min-content 1fr;
-    grid-template-rows: 1.5rem repeat(3, min-content) 1.5rem;
+    grid-template-rows: repeat(3, min-content);
     align-items: center;
     grid-column-gap: 0.75rem;
     grid-row-gap: 0.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     font-family: sans-serif;
     @include mobileSideMargin;
   }
   &__logo {
     grid-column: 1 / 2;
-    grid-row: 2 / 4;
+    grid-row: 1 / 3;
     align-self: flex-start;
   }
   &__name {
+    white-space: nowrap;
     @include subtitleStyle;
+    @include rwd(sm) {
+      grid-column: 2 / 3;
+    }
     @include rwd(md) {
       @include titleStyle;
     }
@@ -52,13 +69,22 @@
     @include titleStyle;
     @include rwd(md) {
       @include subtitleStyle;
+      grid-column: 3 / 4;
     }
   }
   &__exchange {
-    grid-column: 2 / 3;
-    grid-row: 4 / 5;
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
     color: var(--color-title-small);
     font-weight: normal;
+    white-space: nowrap;
+    @include rwd(sm) {
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
+    }
+    @include rwd(md) {
+      grid-column: 2 / 3;
+    }
   }
   &__quote {
     display: flex;
@@ -73,7 +99,11 @@
     align-items: flex-end;
     grid-row-gap: 0.8rem;
     @include mobileSideMargin;
-    margin-top: 1.5rem;
+    margin-top: $detail-board-vertical-space;
+    @include rwd(md) {
+      margin-top: 0;
+      margin-left: 0;
+    }
   }
   &__last-price {
     font-size: var(--heading-font-size);

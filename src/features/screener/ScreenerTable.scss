@@ -41,3 +41,21 @@
 .ReactVirtualized__Table__rowColumn {
   padding: 0.75rem;
 }
+
+.table-cell__change-percent {
+  &--rising {
+    color: var(--color-rising);
+  }
+  &--falling {
+    color: var(--color-falling);
+  }
+}
+
+.table-cell__change {
+  &--rising {
+    color: var(--color-rising);
+  }
+  &--falling {
+    color: var(--color-falling);
+  }
+}

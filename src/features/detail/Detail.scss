@@ -1,4 +1,5 @@
 @import '../../assets/styles/mixins';
+@import '../../assets/styles/utilities';
 
 .detail {
   position: relative;
@@ -9,5 +10,8 @@
 .theme-background {
   @include rwd(md) {
     background-color: var(--themeBG);
+    & > * {
+      @include desktopDetailStyle;
+    }
   }
 }

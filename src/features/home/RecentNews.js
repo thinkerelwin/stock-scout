@@ -1,13 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Slider from 'react-slick';
 
-import { Carousel } from 'react-responsive-carousel';
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
 import { useLocalStateFetching } from '../../utils/customHooks';
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import './RecentNews.scss';
 
 const APIspec = {
@@ -25,6 +27,16 @@ const RecentNews = () => {
     errorOnRecentNewsList,
     recentNewsList
   } = useLocalStateFetching(APIspec);
+
+  console.log('recentNewsList', recentNewsList);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
 
   const NewsBox = () =>
     recentNewsList.map(({ url, headline, image, summary }) => (
@@ -66,25 +78,21 @@ const RecentNews = () => {
           <NewsBox />
         </div>
       ) : (
-        <Carousel
-          showArrows={false}
-          showStatus={false}
-          showThumbs={false}
-          // centerMode={true}
-        >
-          {/* <NewsBox />, due to limitation on react-responsive-carousel, can't use component */}
-          {recentNewsList.map(({ url, headline, image, summary }) => (
-            <a className="swiper__inner-box" href={url} key={headline}>
-              <img
-                className="swiper__image"
-                src={image}
-                alt={headline}
-                title={summary}
-              />
-              <p className="swiper__title">{headline}</p>
-            </a>
-          ))}
-        </Carousel>
+        <div className="swiper-layout">
+          <Slider {...settings}>
+            {recentNewsList.map(({ url, headline, image, summary }) => (
+              <a className="swiper__inner-box" href={url} key={headline}>
+                <img
+                  className="swiper__image"
+                  src={image}
+                  alt={headline}
+                  title={summary}
+                />
+                <p className="swiper__title">{headline}</p>
+              </a>
+            ))}
+          </Slider>
+        </div>
       )}
     </section>
   );
