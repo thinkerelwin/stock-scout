@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Column, Table, AutoSizer } from 'react-virtualized';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
@@ -9,10 +9,9 @@ import ErrorBox from '../../components/ErrorBox';
 
 import { fetchscreenerTable } from './screenerTableSlice';
 import { displayAsPercent, bigNumberFormat } from '../../utils/formatHelper';
+import { usePrevious } from '../../utils/customHooks';
 
 import './ScreenerTable.scss';
-
-// TODO  handle setScreenerList
 
 function urlChecker(category) {
   const categoriesDictionary = {
@@ -30,17 +29,36 @@ const ScreenerTable = ({ topList }) => {
   const dispatch = useDispatch();
   let { category } = useParams();
 
+  const prevCategory = usePrevious(category);
+
   const { screenerList, isFetchingList, error } = useSelector(
     state => state.screenerTable
   );
 
-  const [sortBy, setSortBy] = useState('symbol');
-  const [sortDirection, setSortDirection] = useState('ASC');
+  const [sortBy, setSortBy] = useState(undefined);
+  const [sortedDirection, setSortedDirection] = useState(undefined);
 
   useEffect(() => {
-    const CollectionType = findCollectionType(category, topList);
-    dispatch(fetchscreenerTable(CollectionType, urlChecker(category)));
-  }, [category, dispatch, topList]);
+    const isCategoryChanged =
+      category !== prevCategory && prevCategory !== undefined;
+
+    if (!screenerList.length || isCategoryChanged) {
+      const CollectionType = findCollectionType(category, topList);
+      dispatch(fetchscreenerTable(CollectionType, urlChecker(category)));
+    }
+  }, [category, dispatch, prevCategory, screenerList.length, topList]);
+
+  const sortedScreenerList = useMemo(() => {
+    if (!sortBy) return screenerList;
+
+    const isNumberType = typeof screenerList[0][sortBy] === 'number';
+
+    if (isNumberType) {
+      return sortByNumber(screenerList, sortBy, sortedDirection);
+    } else {
+      return sortByCharacter(screenerList, sortBy, sortedDirection);
+    }
+  }, [sortBy, screenerList, sortedDirection]);
 
   if (isFetchingList) {
     return (
@@ -62,11 +80,11 @@ const ScreenerTable = ({ topList }) => {
               height={height}
               headerHeight={46}
               rowHeight={40}
-              rowCount={screenerList.length}
-              rowGetter={({ index }) => screenerList[index]}
-              sort={_sort}
+              rowCount={sortedScreenerList.length}
+              rowGetter={({ index }) => sortedScreenerList[index]}
+              sort={handleSort}
               sortBy={sortBy}
-              sortDirection={sortDirection}
+              sortDirection={sortedDirection}
             >
               <Column
                 className="table-box__symbole heading-tertiary"
@@ -124,17 +142,10 @@ const ScreenerTable = ({ topList }) => {
     return topList.find(item => item === category) ? 'list' : 'sector';
   }
 
-  // TODO using react-sortable-hoc for column sorting
-  function _sort({ sortBy, sortDirection }) {
-    const sortedList = _sortList({ sortBy, sortDirection });
-
-    // setScreenerList(sortedList);
+  function handleSort({ sortBy }) {
     setSortBy(sortBy);
-    setSortDirection(sortDirection);
-  }
-
-  function _sortList({ sortBy, sortDirection }) {
-    return screenerList.reverse();
+    const newDirection = sortedDirection === 'DESC' ? 'ASC' : 'DESC';
+    setSortedDirection(newDirection);
   }
 
   function cellRender(cellData, component) {
@@ -175,5 +186,31 @@ const ScreenerTable = ({ topList }) => {
     return cellData === null ? '' : bigNumberFormat(cellData);
   }
 };
+
+function sortByNumber(list, sortBy, direction) {
+  return direction === 'ASC'
+    ? list.slice().sort((a, b) => {
+        return a[sortBy] - b[sortBy];
+      })
+    : list.slice().sort((a, b) => {
+        return b[sortBy] - a[sortBy];
+      });
+}
+
+function sortByCharacter(list, sortBy, direction) {
+  return list.slice().sort((a, b) => {
+    const nameA = a[sortBy].toUpperCase(); // ignore upper and lowercase
+    const nameB = b[sortBy].toUpperCase(); // ignore upper and lowercase
+
+    if (nameA < nameB) {
+      return direction === 'ASC' ? -1 : 1;
+    }
+    if (nameA > nameB) {
+      return direction === 'ASC' ? 1 : -1;
+    }
+    // names must be equal
+    return 0;
+  });
+}
 
 export default ScreenerTable;

@@ -7,6 +7,12 @@ import { useSizeDetection } from '../../utils/customHooks';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import './Menu.scss';
 
+const menuLink = [
+  { name: 'Home', route: '/' },
+  { name: 'News', route: '/news' },
+  { name: 'Screener', route: '/screener/Most Active' }
+];
+
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isMediumSize } = useSizeDetection();
@@ -35,34 +41,18 @@ const Menu = () => {
 
       <nav className="navbar">
         <ul className="navbar__list">
-          <li className="navbar__item" onClick={handleMenuToggle}>
-            <NavLink
-              to="/"
-              exact
-              className="navbar__link"
-              activeClassName="navbar__link--active"
-            >
-              Home
-            </NavLink>
-          </li>
-          <li className="navbar__item" onClick={handleMenuToggle}>
-            <NavLink
-              to="/news"
-              className="navbar__link"
-              activeClassName="navbar__link--active"
-            >
-              News
-            </NavLink>
-          </li>
-          <li className="navbar__item" onClick={handleMenuToggle}>
-            <NavLink
-              to="/screener/Most Active"
-              className="navbar__link"
-              activeClassName="navbar__link--active"
-            >
-              Screener
-            </NavLink>
-          </li>
+          {menuLink.map(({ name, route }) => (
+            <li className="navbar__item" onClick={handleMenuToggle} key={name}>
+              <NavLink
+                to={route}
+                exact
+                className="navbar__link"
+                activeClassName="navbar__link--active"
+              >
+                {name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
@@ -73,4 +63,4 @@ const Menu = () => {
   }
 };
 
-export default Menu;
+export { Menu as default, menuLink };

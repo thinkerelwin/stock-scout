@@ -1,7 +1,15 @@
 {
-  "extends": ["react-app", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
+  "extends": [
+    "react-app",
+    "prettier",
+    "prettier/react",
+    "plugin:testing-library/react"
+  ],
+  "plugins": ["prettier", "testing-library"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debug": "warn"
   }
 }

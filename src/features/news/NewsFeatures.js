@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { normalDate, monthFirstDate } from '../../utils/formatHelper';
 import classNames from 'classnames';
 
@@ -28,6 +28,12 @@ const NewsFeatures = () => {
     featureNews
   } = useLocalStateFetching(featuresAPIspec);
 
+  const featureNewsList = useMemo(() => {
+    return featureNews.idList
+      ? featureNews.idList.map(id => featureNews[id].news[0])
+      : [];
+  }, [featureNews]);
+
   if (isFetchingFeatureNews) {
     return (
       <section className="news-features">
@@ -46,11 +52,6 @@ const NewsFeatures = () => {
       </section>
     );
   }
-
-  const featureNewsList =
-    featureNews && featureNews.idList
-      ? featureNews.idList.map(id => featureNews[id].news[0])
-      : [];
 
   return (
     <section className="news-features">

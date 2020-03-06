@@ -28,8 +28,6 @@ const RecentNews = () => {
     recentNewsList
   } = useLocalStateFetching(APIspec);
 
-  console.log('recentNewsList', recentNewsList);
-
   const settings = {
     dots: true,
     infinite: true,

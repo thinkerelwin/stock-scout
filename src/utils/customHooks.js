@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import instance from '../api/IEXCloud';
@@ -64,4 +64,12 @@ export const useLocalStateFetching = ({ route, params, process, naming }) => {
     [`errorOn${capitalizeFirstChar(naming)}`]: errorMessage,
     [naming]: IEXdata
   };
+};
+
+export const usePrevious = value => {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
 };

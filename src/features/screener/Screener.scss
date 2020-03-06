@@ -6,7 +6,7 @@
   grid-template-rows:
     3rem minmax(max-content, 100vh)
     3rem;
-  height: calc(100vh - var(--menu-height) - 4.5rem);
+  height: calc(100vh - var(--menu-height) - var(--footer-height));
   background-color: #f8f9fd;
   @include rwd(md) {
     grid-template-columns:
