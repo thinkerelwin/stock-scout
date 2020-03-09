@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import HighCharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 
+import { formatIntradayDate } from '../../utils/formatHelper';
+
 import './DetailChart.scss';
 
 require('highcharts/indicators/pivot-points')(HighCharts);
@@ -28,7 +30,7 @@ const DetailChart = ({
       series: [
         {
           name: `${symbol} Stock Price`,
-          data: formatChartData(chartData.data),
+          data: formatChartData(chartData.data, chartData.range),
           type: 'candlestick',
           tooltip: {
             valueDecimals: 2
@@ -53,8 +55,10 @@ const DetailChart = ({
         ]
       }
     }),
-    [chartData.data, symbol]
+    [chartData.data, chartData.range, symbol]
   );
+
+  console.log('chartData', formatChartData(chartData.data));
 
   return (
     <section className="detail-chart">
@@ -66,20 +70,31 @@ const DetailChart = ({
     </section>
   );
 
-  function formatChartData(data) {
-    return data.map(({ date, high, low, open, close }) => ({
-      x: Date.parse(date),
-      high,
-      low,
-      open,
-      close
-    }));
+  function formatChartData(data, range) {
+    if (range !== 'today') {
+      return data.map(({ date, high, low, open, close }) => ({
+        x: Date.parse(date),
+        high,
+        low,
+        open,
+        close
+      }));
+    } else {
+      return data.map(({ date, minute, high, low, open, close }) => ({
+        x: formatIntradayDate(date, minute),
+        high,
+        low,
+        open,
+        close
+      }));
+    }
   }
 };
 
 DetailChart.propTypes = {
   chartData: PropTypes.shape({
-    data: PropTypes.array.isRequired
+    data: PropTypes.array.isRequired,
+    range: PropTypes.string.isRequired
   }),
   quote: PropTypes.shape({
     symbol: PropTypes.string.isRequired

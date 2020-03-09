@@ -29,6 +29,10 @@ export function smartDate(time) {
   return dayjs(time).fromNow();
 }
 
+export function formatIntradayDate(pointDate, pointTime) {
+  return dayjs(`${pointDate} ${pointTime}`, 'YYYY-MM-DD HH:mm').unix();
+}
+
 // number
 
 export function displayAsPercent(number) {
