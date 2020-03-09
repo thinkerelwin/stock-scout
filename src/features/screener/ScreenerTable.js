@@ -138,8 +138,8 @@ const ScreenerTable = ({ topList }) => {
     </div>
   );
 
-  function findCollectionType(category, topList) {
-    return topList.find(item => item === category) ? 'list' : 'sector';
+  function findCollectionType(type, listOfCategories) {
+    return listOfCategories.find(item => item === type) ? 'list' : 'sector';
   }
 
   function handleSort({ sortBy }) {

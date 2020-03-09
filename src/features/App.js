@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import '../assets/styles/main.scss';
-import './App.scss';
 
 import Menu from './menu/Menu';
 import Home from './home/Home';
