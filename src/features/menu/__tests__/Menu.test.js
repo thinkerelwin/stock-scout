@@ -13,13 +13,14 @@ function renderWithRedux(ui) {
 }
 
 it('loads and displays Menu noramlly', async () => {
-  const { findByText } = renderWithRedux(
+  const { findAllByTestId } = renderWithRedux(
     <Router>
       <Menu />
     </Router>
   );
 
-  expect(await findByText(menuLink[0].name)).toBeInTheDocument();
-  expect(await findByText(menuLink[1].name)).toBeInTheDocument();
-  expect(await findByText(menuLink[2].name)).toBeInTheDocument();
+  const renderedMenuElment = await findAllByTestId('menu-link');
+  const renderedMenu = renderedMenuElment.map(elment => elment.textContent);
+  const MenuItems = menuLink.map(item => item.name);
+  expect(renderedMenu).toEqual(MenuItems);
 });

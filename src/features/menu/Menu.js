@@ -48,6 +48,7 @@ const Menu = () => {
                 exact
                 className="navbar__link"
                 activeClassName="navbar__link--active"
+                data-testid="menu-link"
               >
                 {name}
               </NavLink>
