@@ -5,7 +5,7 @@ import NewsSectors from './NewsSectors';
 
 const News = () => {
   return (
-    <main className="news menu-margin">
+    <main className="news menu-margin" data-testid="location-News">
       <NewsFeatures />
       <NewsSectors />
     </main>

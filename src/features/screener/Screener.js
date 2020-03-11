@@ -13,7 +13,7 @@ const Screener = () => {
   let { path } = useRouteMatch();
 
   return (
-    <main className="screener menu-margin">
+    <main className="screener menu-margin" data-testid="location-Screener">
       <div className="screener-box">
         <ScreenerCategories topList={topList} />
         <Switch>

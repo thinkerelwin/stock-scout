@@ -35,7 +35,11 @@ const Menu = () => {
         <p className="heading-primary">Stock Scout</p>
       </Link>
 
-      <button className="navbar__button" onClick={handleMenuToggle}>
+      <button
+        className="navbar__button"
+        onClick={handleMenuToggle}
+        data-testid="navbar-button"
+      >
         <span className="navbar__icon">&nbsp;</span>
       </button>
 

@@ -16,19 +16,26 @@ const App = () => {
   return (
     <Router>
       <div className="container">
-        <Menu />
         <Switch>
-          <Route path="/" exact>
+          <Route exact path="/">
+            <Menu />
             <Home />
+            <Footer />
           </Route>
           <Route path="/news">
+            <Menu />
             <News />
+            <Footer />
           </Route>
           <Route path="/screener">
+            <Menu />
             <Screener />
+            <Footer />
           </Route>
           <Route path="/detail/:symbol">
+            <Menu />
             <Detail />
+            <Footer />
           </Route>
           <Suspense fallback={<div className="page-error-layout"></div>}>
             <Route path="*">
@@ -36,7 +43,6 @@ const App = () => {
             </Route>
           </Suspense>
         </Switch>
-        <Footer />
       </div>
     </Router>
   );

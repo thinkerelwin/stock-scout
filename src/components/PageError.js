@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import './PageError.scss';
 
 function PageError() {
-  return ReactDOM.createPortal(
+  return (
     <div className="page-error">
       <div className="text">
         <p>404</p>
@@ -74,8 +73,7 @@ function PageError() {
           <p>watch other pens</p>
         </div>
       </a>
-    </div>,
-    document.getElementById('root')
+    </div>
   );
 }
 

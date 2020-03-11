@@ -5,7 +5,7 @@ import './Home.scss';
 
 const Home = () => {
   return (
-    <main className="home menu-margin">
+    <main className="home menu-margin" data-testid="location-Home">
       <h1 className="section-about__heading section-about__heading--upper heading-margin">
         Investing
       </h1>
