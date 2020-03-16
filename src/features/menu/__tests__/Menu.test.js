@@ -1,22 +1,16 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-
-import store from '../../../store';
+import { fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { menuLink } from '../Menu';
 import App from '../../App';
-
-export function renderWithRedux(ui) {
-  return render(<Provider store={store}>{ui}</Provider>);
-}
+import Menu from '../Menu';
+import { renderWithRedux } from '../../../setupTests';
 
 it('loads and displays Menu noramlly', async () => {
   const { findAllByTestId } = renderWithRedux(
     <MemoryRouter>
-      <App />
+      <Menu />
     </MemoryRouter>
   );
 
@@ -29,7 +23,7 @@ it('loads and displays Menu noramlly', async () => {
 it('open menus when navbar button is clicked', async () => {
   const { findByTestId } = renderWithRedux(
     <MemoryRouter>
-      <App />
+      <Menu />
     </MemoryRouter>
   );
 
@@ -42,7 +36,7 @@ it('open menus when navbar button is clicked', async () => {
 it('close menus when navbar button is clicked on open state', async () => {
   const { findByTestId } = renderWithRedux(
     <MemoryRouter>
-      <App />
+      <Menu />
     </MemoryRouter>
   );
   fireEvent.click(await findByTestId('navbar-button'));

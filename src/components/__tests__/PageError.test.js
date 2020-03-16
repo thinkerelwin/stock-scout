@@ -1,14 +1,14 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
 
-import { createMemoryHistory } from 'history';
+import { createBrowserHistory } from 'history';
 import { Router } from 'react-router';
 
 import App from '../../features/App';
-import { renderWithRedux } from '../../features/menu/__tests__/Menu.test';
+import { renderWithRedux } from '../../setupTests';
 
 it('shows 404 page when landing on a non exist page', async () => {
-  const history = createMemoryHistory();
+  // using browserhistory here, otherwise loading pageError component won't be trigger
+  const history = createBrowserHistory();
   history.push('/not-match');
   const { findByText } = renderWithRedux(
     <Router history={history}>
@@ -16,7 +16,7 @@ it('shows 404 page when landing on a non exist page', async () => {
     </Router>
   );
 
-  // TODO failed despite it's the same structure for example
   expect(await findByText('watch other pens')).toBeInTheDocument();
-  // expect(history.location.pathname).toBe('/not-exist');
+  // manual return to homepage after testing
+  history.push('/');
 });
