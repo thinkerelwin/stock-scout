@@ -49,30 +49,33 @@ const RecentNews = () => {
       </a>
     ));
 
+  const RecentNewsContainer = ({ children }) => (
+    <section className="recent-news">
+      <div className="recent-news__title heading-margin">recent news</div>
+      {children}
+    </section>
+  );
+
   if (isFetchingRecentNewsList) {
     return (
-      <section className="recent-news">
-        <div className="recent-news__title heading-margin">recent news</div>
+      <RecentNewsContainer>
         <LoadingBox />
-      </section>
+      </RecentNewsContainer>
     );
   }
 
   if (errorOnRecentNewsList) {
     return (
-      <section className="recent-news">
-        <div className="recent-news__title heading-margin">recent news</div>
+      <RecentNewsContainer>
         <ErrorBox message={errorOnRecentNewsList} />
-      </section>
+      </RecentNewsContainer>
     );
   }
 
   return (
-    <section className="recent-news">
-      <div className="recent-news__title heading-margin">recent news</div>
-
+    <RecentNewsContainer>
       {isMediumSize ? (
-        <div className="normal-layout">
+        <div className="normal-layout" data-testid="mdAbove">
           <NewsBox />
         </div>
       ) : (
@@ -92,7 +95,7 @@ const RecentNews = () => {
           </Slider>
         </div>
       )}
-    </section>
+    </RecentNewsContainer>
   );
 };
 

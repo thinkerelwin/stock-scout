@@ -10,6 +10,7 @@ it('shows 404 page when landing on a non exist page', async () => {
   // using browserhistory here, otherwise loading pageError component won't be trigger
   const history = createBrowserHistory();
   history.push('/not-match');
+
   const { findByText } = renderWithRedux(
     <Router history={history}>
       <App />

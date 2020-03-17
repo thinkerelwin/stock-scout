@@ -13,6 +13,11 @@ export const useSizeDetection = (width = defaultWidth) => {
 
   useEffect(() => {
     let isMounted = true;
+
+    const sizeDetector = window.matchMedia(`(min-width: ${width})`);
+    carouselSwitch(sizeDetector); // Call listener function at run time
+    sizeDetector.addListener(carouselSwitch); // Attach listener function on state changes
+
     function carouselSwitch(size) {
       if (size.matches) {
         isMounted && dispatch(setIsMediumSize({ isMediumSize: true }));
@@ -21,15 +26,12 @@ export const useSizeDetection = (width = defaultWidth) => {
       }
     }
 
-    const sizeDetector = window.matchMedia(`(min-width: ${width})`);
-    carouselSwitch(sizeDetector); // Call listener function at run time
-    sizeDetector.addListener(carouselSwitch); // Attach listener function on state changes
-
     return () => {
       isMounted = false;
       sizeDetector.removeListener(carouselSwitch);
     };
   }, [dispatch, width]);
+
   return { isMediumSize };
 };
 

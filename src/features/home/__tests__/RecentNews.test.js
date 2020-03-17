@@ -1,11 +1,12 @@
 // import React from 'react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+
 import { renderWithRedux } from '../../../setupTests';
 
-import App from '../../App';
-
+import * as reduxHooks from 'react-redux';
 import * as hookCollections from '../../../utils/customHooks';
+import App from '../../App';
 
 const mockRecentNewsData = [
   {
@@ -53,13 +54,15 @@ const mockRecentNewsData = [
   }
 ];
 
-it.only('render slider correctly', async () => {
-  jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValue({
-    isFetchingRecentNewsList: false,
-    errorOnRecentNewsList: '',
-    recentNewsList: mockRecentNewsData
-  });
+// default state
+jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValue({
+  isFetchingRecentNewsList: false,
+  errorOnRecentNewsList: '',
+  recentNewsList: mockRecentNewsData
+});
+jest.spyOn(reduxHooks, 'useSelector').mockReturnValue({ isMediumSize: false });
 
+it('render slider correctly on small screen', async () => {
   const { findAllByText } = renderWithRedux(
     <MemoryRouter>
       <App />
@@ -69,4 +72,20 @@ it.only('render slider correctly', async () => {
   // react slick will return multiple same object for input
   const headlineText = await findAllByText(mockRecentNewsData[0].headline);
   expect(headlineText.length).toBeGreaterThan(1);
+});
+
+it('render news normally on large screen', async () => {
+  jest
+    .spyOn(reduxHooks, 'useSelector')
+    .mockReturnValueOnce({ isMediumSize: false })
+    .mockReturnValueOnce({ isMediumSize: true });
+
+  const { findAllByText } = renderWithRedux(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  );
+
+  const headlineText = await findAllByText(mockRecentNewsData[0].headline);
+  expect(headlineText.length).toBe(1);
 });
