@@ -7,7 +7,7 @@ import ScreenerTable from './ScreenerTable';
 import 'react-virtualized/styles.css';
 import './Screener.scss';
 
-const topList = ['Most Active', 'Top Gainers', 'Top Losers'];
+export const topList = ['Most Active', 'Top Gainers', 'Top Losers'];
 
 const Screener = () => {
   let { path } = useRouteMatch();

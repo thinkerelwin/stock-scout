@@ -8,43 +8,41 @@ import Screener from './screener/Screener';
 import Detail from './detail/Detail';
 import Footer from './footer/Footer';
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 const PageError = lazy(() => import('../components/PageError'));
 
 const App = () => {
   return (
-    <Router>
-      <div className="container">
-        <Switch>
-          <Route exact path="/">
-            <Menu />
-            <Home />
-            <Footer />
+    <div className="container">
+      <Switch>
+        <Route path="/news">
+          <Menu />
+          <News />
+          <Footer />
+        </Route>
+        <Route path="/screener">
+          <Menu />
+          <Screener />
+          <Footer />
+        </Route>
+        <Route path="/detail/:symbol">
+          <Menu />
+          <Detail />
+          <Footer />
+        </Route>
+        <Route exact path="/">
+          <Menu />
+          <Home />
+          <Footer />
+        </Route>
+        <Suspense fallback={<div className="page-error-layout"></div>}>
+          <Route path="*">
+            <PageError />
           </Route>
-          <Route path="/news">
-            <Menu />
-            <News />
-            <Footer />
-          </Route>
-          <Route path="/screener">
-            <Menu />
-            <Screener />
-            <Footer />
-          </Route>
-          <Route path="/detail/:symbol">
-            <Menu />
-            <Detail />
-            <Footer />
-          </Route>
-          <Suspense fallback={<div className="page-error-layout"></div>}>
-            <Route path="*">
-              <PageError />
-            </Route>
-          </Suspense>
-        </Switch>
-      </div>
-    </Router>
+        </Suspense>
+      </Switch>
+    </div>
   );
 };
 

@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
-import { useLocalStateFetching } from '../../utils/customHooks';
+import { useRecentNewsDataFetching } from '../../utils/customHooks';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -26,7 +26,7 @@ const RecentNews = () => {
     isFetchingRecentNewsList,
     errorOnRecentNewsList,
     recentNewsList
-  } = useLocalStateFetching(APIspec);
+  } = useRecentNewsDataFetching(APIspec);
 
   const settings = {
     dots: true,

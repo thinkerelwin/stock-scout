@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
-import { useLocalStateFetching } from '../../utils/customHooks';
+import { useNewsFeaturesDataFetching } from '../../utils/customHooks';
 
 import './NewsFeatures.scss';
 
@@ -26,7 +26,7 @@ const NewsFeatures = () => {
     isFetchingFeatureNews,
     errorOnFeatureNews,
     featureNews
-  } = useLocalStateFetching(featuresAPIspec);
+  } = useNewsFeaturesDataFetching(featuresAPIspec);
 
   const featureNewsList = useMemo(() => {
     return featureNews.idList

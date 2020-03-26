@@ -68,6 +68,23 @@ export const useLocalStateFetching = ({ route, params, process, naming }) => {
   };
 };
 
+export const useRecentNewsDataFetching = ({ route, params, process, naming }) =>
+  useLocalStateFetching({ route, params, process, naming });
+
+export const useNewsFeaturesDataFetching = ({
+  route,
+  params,
+  process,
+  naming
+}) => useLocalStateFetching({ route, params, process, naming });
+
+export const useNewsSectorsDataFetching = ({
+  route,
+  params,
+  process,
+  naming
+}) => useLocalStateFetching({ route, params, process, naming });
+
 export const usePrevious = value => {
   const ref = useRef();
   useEffect(() => {

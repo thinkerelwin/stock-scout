@@ -49,7 +49,7 @@ it('close menus when navbar button is clicked on open state', async () => {
 
 describe('route navigation', () => {
   menuLink.forEach(({ name }) => {
-    it(`navigate to news section when "${name}" link is clicked`, async () => {
+    xit(`navigate to news section when "${name}" link is clicked`, async () => {
       const { findByText, findByTestId } = renderWithRedux(
         <MemoryRouter>
           <App />

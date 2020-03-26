@@ -40,6 +40,7 @@ export function fetchCategories() {
     dispatch(setIsFetching(true));
     try {
       const { data } = await instance.get('/ref-data/sectors');
+
       dispatch(setCategoriesSuccess({ categories: data }));
       dispatch(setIsFetching(false));
     } catch (err) {

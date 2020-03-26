@@ -45,6 +45,7 @@ export function fetchscreenerTable(CollectionType, currentTab) {
           }
         }
       );
+
       dispatch(setScreenerTableSuccess({ screenerList: data }));
       dispatch(setIsFetchingList(false));
     } catch (err) {

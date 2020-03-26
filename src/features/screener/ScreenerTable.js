@@ -25,6 +25,8 @@ function urlChecker(category) {
     : category;
 }
 
+const defaultHeightOnTable = 100;
+
 const ScreenerTable = ({ topList }) => {
   const dispatch = useDispatch();
   let { category } = useParams();
@@ -39,10 +41,7 @@ const ScreenerTable = ({ topList }) => {
   const [sortedDirection, setSortedDirection] = useState(undefined);
 
   useEffect(() => {
-    const isCategoryChanged =
-      category !== prevCategory && prevCategory !== undefined;
-
-    if (!screenerList.length || isCategoryChanged) {
+    if (category !== prevCategory) {
       const CollectionType = findCollectionType(category, topList);
       dispatch(fetchscreenerTable(CollectionType, urlChecker(category)));
     }
@@ -77,7 +76,7 @@ const ScreenerTable = ({ topList }) => {
           ) : (
             <Table
               width={980}
-              height={height}
+              height={height || defaultHeightOnTable}
               headerHeight={46}
               rowHeight={40}
               rowCount={sortedScreenerList.length}
