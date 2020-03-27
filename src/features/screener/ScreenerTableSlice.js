@@ -5,7 +5,7 @@ import instance from '../../api/IEXCloud';
 let initialState = {
   screenerList: [],
   isFetchingList: false,
-  error: null
+  listError: null
 };
 
 const screenerTableSlice = createSlice({
@@ -17,10 +17,10 @@ const screenerTableSlice = createSlice({
     },
     setScreenerTableSuccess(state, action) {
       state.screenerList = action.payload.screenerList;
-      state.error = null;
+      state.listError = null;
     },
     setScreenerTableFailed(state, action) {
-      state.error = action.payload;
+      state.listError = action.payload;
     }
   }
 });

@@ -33,7 +33,7 @@ const ScreenerTable = ({ topList }) => {
 
   const prevCategory = usePrevious(category);
 
-  const { screenerList, isFetchingList, error } = useSelector(
+  const { screenerList, isFetchingList, listError } = useSelector(
     state => state.screenerTable
   );
 
@@ -71,8 +71,8 @@ const ScreenerTable = ({ topList }) => {
     <div className="table-box">
       <AutoSizer disableWidth>
         {({ height }) =>
-          error ? (
-            <ErrorBox message={error} boxClassName="error--absolute" />
+          listError ? (
+            <ErrorBox message={listError} boxClassName="error--absolute" />
           ) : (
             <Table
               width={980}
@@ -91,7 +91,6 @@ const ScreenerTable = ({ topList }) => {
                 dataKey="symbol"
                 width={120}
                 maxWidth={130}
-                // minWidth={100}
                 flexGrow={1}
                 cellRenderer={descriptionCellRender}
               />
@@ -153,7 +152,9 @@ const ScreenerTable = ({ topList }) => {
 
   function descriptionCellRender({ cellData }) {
     return cellRender(cellData, cellData => (
-      <Link to={`/detail/${cellData}`}>{cellData}</Link>
+      <Link to={`/detail/${cellData}`} data-testid="sortOnCharacter">
+        {cellData}
+      </Link>
     ));
   }
 
@@ -175,6 +176,7 @@ const ScreenerTable = ({ topList }) => {
           'table-cell__change--rising': cellData > 0,
           'table-cell__change--falling': cellData < 0
         })}
+        data-testid="sortOnNumber"
       >
         {cellData}
       </p>

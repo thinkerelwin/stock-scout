@@ -2,10 +2,20 @@ import React from 'react';
 import { fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
+import { renderWithRedux } from '../../../setupTests';
+import {
+  mockRecentNewsData,
+  mockNewsFeaturesData,
+  mockNewsSectorsData,
+  mockCategories,
+  mockScreenerList
+} from '../../../__mocks__/mockData';
+
+import * as hookCollections from '../../../utils/customHooks';
+import instance from '../../../api/IEXCloud';
 import { menuLink } from '../Menu';
 import App from '../../App';
 import Menu from '../Menu';
-import { renderWithRedux } from '../../../setupTests';
 
 it('loads and displays Menu noramlly', async () => {
   const { findAllByTestId } = renderWithRedux(
@@ -48,8 +58,32 @@ it('close menus when navbar button is clicked on open state', async () => {
 });
 
 describe('route navigation', () => {
+  jest.spyOn(hookCollections, 'useNewsFeaturesDataFetching').mockReturnValue({
+    isFetchingFeatureNews: false,
+    errorOnFeatureNews: '',
+    featureNews: mockNewsFeaturesData
+  });
+
+  jest.spyOn(hookCollections, 'useNewsSectorsDataFetching').mockReturnValue({
+    isFetchingSectorNews: false,
+    errorOnSectorNews: '',
+    sectorNews: mockNewsSectorsData
+  });
+  jest.spyOn(hookCollections, 'useRecentNewsDataFetching').mockReturnValue({
+    isFetchingRecentNewsList: false,
+    errorOnRecentNewsList: '',
+    recentNewsList: mockRecentNewsData
+  });
+
+  jest.spyOn(instance, 'get').mockImplementation((route, params) => {
+    return route === categoryRoute
+      ? { data: mockCategories }
+      : { data: mockScreenerList };
+  });
+  const categoryRoute = '/ref-data/sectors';
+
   menuLink.forEach(({ name }) => {
-    xit(`navigate to news section when "${name}" link is clicked`, async () => {
+    it(`navigate to news section when "${name}" link is clicked`, async () => {
       const { findByText, findByTestId } = renderWithRedux(
         <MemoryRouter>
           <App />

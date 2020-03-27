@@ -34,7 +34,6 @@ const Detail = () => {
     errorOnDetailsOfSymbol,
     detailsOfSymbol
   } = useLocalStateFetching(detailsOfSymbolAPIspec);
-  console.log('Detail', isFetchingDetailsOfSymbol, detailsOfSymbol);
 
   if (isFetchingDetailsOfSymbol) {
     return (
