@@ -5,11 +5,11 @@ import classNames from 'classnames';
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
-import { useNewsFeaturesDataFetching } from '../../utils/customHooks';
+import { useLocalStateFetching } from '../../utils/customHooks';
 
 import './NewsFeatures.scss';
 
-const featuresAPIspec = {
+export const featuresAPIspec = {
   route: '/stock/market/batch',
   params: { symbols: 'goog,amzn,fb', types: 'news', last: '1' },
   process: normalizeBatchNews,
@@ -26,7 +26,7 @@ const NewsFeatures = () => {
     isFetchingFeatureNews,
     errorOnFeatureNews,
     featureNews
-  } = useNewsFeaturesDataFetching(featuresAPIspec);
+  } = useLocalStateFetching(featuresAPIspec);
 
   const featureNewsList = useMemo(() => {
     return featureNews.idList

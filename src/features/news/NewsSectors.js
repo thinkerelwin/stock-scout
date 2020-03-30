@@ -3,7 +3,7 @@ import React from 'react';
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
 
-import { useNewsSectorsDataFetching } from '../../utils/customHooks';
+import { useLocalStateFetching } from '../../utils/customHooks';
 import { normalDate, monthFirstDate } from '../../utils/formatHelper';
 
 import './NewsSectors.scss';
@@ -36,7 +36,7 @@ const NewsSectors = () => {
     isFetchingSectorNews,
     errorOnSectorNews,
     sectorNews
-  } = useNewsSectorsDataFetching(sectorsAPIspec);
+  } = useLocalStateFetching(sectorsAPIspec);
 
   if (isFetchingSectorNews) {
     return (

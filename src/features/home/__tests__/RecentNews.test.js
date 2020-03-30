@@ -10,11 +10,23 @@ import * as hookCollections from '../../../utils/customHooks';
 import App from '../../App';
 
 // default state
-jest.spyOn(hookCollections, 'useRecentNewsDataFetching').mockReturnValue({
+const fakeRecentNewsData = {
   isFetchingRecentNewsList: false,
   errorOnRecentNewsList: '',
   recentNewsList: mockRecentNewsData
-});
+};
+
+jest
+  .spyOn(hookCollections, 'useLocalStateFetching')
+  .mockImplementation(({ naming }) => {
+    switch (naming) {
+      case 'recentNewsList':
+        return fakeRecentNewsData;
+      default:
+        throw Error('fake data not found');
+    }
+  });
+
 jest.spyOn(reduxHooks, 'useSelector').mockReturnValue({ isMediumSize: false });
 
 it('render slider correctly on small screen', async () => {
@@ -47,7 +59,7 @@ it('render news normally on large screen', async () => {
 });
 
 it('render loading icon when fetching news', async () => {
-  jest.spyOn(hookCollections, 'useRecentNewsDataFetching').mockReturnValueOnce({
+  jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValueOnce({
     isFetchingRecentNewsList: true,
     errorOnRecentNewsList: '',
     recentNewsList: ''
@@ -64,7 +76,7 @@ it('render loading icon when fetching news', async () => {
 
 it('render error message when fetching news failed', async () => {
   const errorMessage = 'Error: timeout of 1ms exceeded';
-  jest.spyOn(hookCollections, 'useRecentNewsDataFetching').mockReturnValueOnce({
+  jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValueOnce({
     isFetchingRecentNewsList: false,
     errorOnRecentNewsList: errorMessage,
     recentNewsList: ''

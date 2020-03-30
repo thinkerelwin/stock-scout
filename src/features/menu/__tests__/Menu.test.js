@@ -58,22 +58,38 @@ it('close menus when navbar button is clicked on open state', async () => {
 });
 
 describe('route navigation', () => {
-  jest.spyOn(hookCollections, 'useNewsFeaturesDataFetching').mockReturnValue({
+  const fakeNewsFeaturesData = {
     isFetchingFeatureNews: false,
     errorOnFeatureNews: '',
     featureNews: mockNewsFeaturesData
-  });
+  };
 
-  jest.spyOn(hookCollections, 'useNewsSectorsDataFetching').mockReturnValue({
+  const fakeNewsSectorsData = {
     isFetchingSectorNews: false,
     errorOnSectorNews: '',
     sectorNews: mockNewsSectorsData
-  });
-  jest.spyOn(hookCollections, 'useRecentNewsDataFetching').mockReturnValue({
+  };
+
+  const fakeRecentNewsData = {
     isFetchingRecentNewsList: false,
     errorOnRecentNewsList: '',
     recentNewsList: mockRecentNewsData
-  });
+  };
+
+  jest
+    .spyOn(hookCollections, 'useLocalStateFetching')
+    .mockImplementation(({ naming }) => {
+      switch (naming) {
+        case 'featureNews':
+          return fakeNewsFeaturesData;
+        case 'sectorNews':
+          return fakeNewsSectorsData;
+        case 'recentNewsList':
+          return fakeRecentNewsData;
+        default:
+          throw Error('fake data not found');
+      }
+    });
 
   jest.spyOn(instance, 'get').mockImplementation((route, params) => {
     return route === categoryRoute

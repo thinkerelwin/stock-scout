@@ -42,7 +42,7 @@ it('render default Screener page normally', async () => {
 });
 
 it('render loading icon when fetching screener data', async () => {
-  mockUseSelector.mockClear();
+  // mockUseSelector.mockClear();
   mockUseSelector
     .mockReturnValueOnce({
       categories: [],
