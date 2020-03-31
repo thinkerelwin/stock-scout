@@ -6,7 +6,7 @@ const urlToRequest =
     : 'http://localhost:5000/';
 
 const instance = axios.create({
-  baseURL: 'https://stock-scout-backend.herokuapp.com/',
+  baseURL: urlToRequest,
   timeout: 3000
 });
 
