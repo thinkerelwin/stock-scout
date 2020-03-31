@@ -1,7 +1,12 @@
 import axios from 'axios';
 
+const urlToRequest =
+  process.env.NODE_ENV === 'production'
+    ? 'https://stock-scout-backend.herokuapp.com/'
+    : 'http://localhost:5000/';
+
 const instance = axios.create({
-  baseURL: 'http://localhost:5000/',
+  baseURL: 'https://stock-scout-backend.herokuapp.com/',
   timeout: 3000
 });
 

@@ -58,8 +58,6 @@ const DetailChart = ({
     [chartData.data, chartData.range, symbol]
   );
 
-  // console.log('chartData', formatChartData(chartData.data));
-
   return (
     <section className="detail-chart">
       <HighchartsReact
