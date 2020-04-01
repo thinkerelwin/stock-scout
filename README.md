@@ -1,8 +1,10 @@
-# Stock-scout
+# stock-scout
 
 ![screen shot on news page](./readme_photo.png 'screen shot on news page')
 
 An app provides stock market news and detail info of stocks, a simple screener with a sortable column header, using **Redux Toolkit** to simplify redux state management, testing with **Jest** and **React Testing Library**.
+
+online demo: https://stock-scout.now.sh
 
 p.s. Due to data usage limitation, numbers on the Screener page aren't real.
 
