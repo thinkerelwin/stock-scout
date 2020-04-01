@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Stock-scout
 
-## Available Scripts
+![screen shot on news page](./readme_photo.png 'screen shot on news page')
 
-In the project directory, you can run:
+An app provides stock market news and detail info of stocks, a simple screener with a sortable column header, using **Redux Toolkit** to simplify redux state management, testing with **Jest** and **React Testing Library**.
 
-### `npm start`
+p.s. Due to data usage limitation, numbers on the Screener page aren't real.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User story
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. User can slide to see different recent news on the homepage if using mobile or pad device, or full layout on the desktop version
+2. A news page to see recent news on various sections, clicking on the image or text will open a new window to reveal the full story
+3. Loading icon or error message will be shown to let the user know the current state on data fetching
 
-### `npm test`
+### on Screener page
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. User can click a different category to navigate to get a list of that section
+5. User can click the column header to sort the stock list
+6. User can click on the stock symbol to get detail information on that stock, including price charts, company profile, and recent news about this company
 
-### `npm run build`
+p.s. price charts will return 1d or 1m data, Depending on the day or week and time of day. Intraday per minute data is only returned during market hours.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installing
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+1. to run it locally, you will need [this node.js app](https://github.com/thinkerelwin/stock-scout-backend)
+2. clone this project down
+3. run command `npm i`
+4. type `npm start` to run on development mode
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running the tests
 
-### `npm run eject`
+85%+ test coverage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- `npm run test` to run the test on watch mode
+- `npm run test:coverage` to get a jest coverage report
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**

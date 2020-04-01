@@ -5,6 +5,7 @@ import ErrorBox from '../../components/ErrorBox';
 
 import { useLocalStateFetching } from '../../utils/customHooks';
 import { normalDate, monthFirstDate } from '../../utils/formatHelper';
+import { normalizeBatchNews } from './NewsFeatures';
 
 import './NewsSectors.scss';
 
@@ -25,11 +26,6 @@ const sectorsAPIspec = {
   process: normalizeBatchNews,
   naming: 'sectorNews'
 };
-
-function normalizeBatchNews(data) {
-  data.idList = Object.keys(data);
-  return data;
-}
 
 const NewsSectors = () => {
   const {

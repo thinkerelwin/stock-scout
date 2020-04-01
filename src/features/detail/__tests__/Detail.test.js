@@ -5,16 +5,13 @@ import { renderWithRedux } from '../../../setupTests';
 import { mockDetailData } from '../../../__mocks__/mockData';
 
 import * as hookCollections from '../../../utils/customHooks';
+import instance from '../../../api/IEXCloud';
 import App from '../../App';
 
 const mockSymbol = mockDetailData.quote.symbol;
-const dataFetchingMethod = jest.spyOn(hookCollections, 'useLocalStateFetching');
-
-dataFetchingMethod.mockReturnValue({
-  isFetchingDetailsOfSymbol: false,
-  errorOnDetailsOfSymbol: '',
-  detailsOfSymbol: mockDetailData
-});
+const mockAxiosInstance = jest
+  .spyOn(instance, 'get')
+  .mockReturnValue({ data: mockDetailData });
 
 it('render default Detail page normally', async () => {
   const { findByText } = renderWithRedux(
@@ -36,7 +33,7 @@ it('render default Detail page normally', async () => {
 });
 
 it('render loading icon when fetching Detail data', async () => {
-  dataFetchingMethod.mockReturnValueOnce({
+  jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValueOnce({
     isFetchingDetailsOfSymbol: true,
     errorOnDetailsOfSymbol: '',
     detailsOfSymbol: ''
@@ -54,11 +51,9 @@ it('render loading icon when fetching Detail data', async () => {
 it('render error message when fetching encounter a problem', async () => {
   const errorMessage = 'timeout';
 
-  dataFetchingMethod.mockReturnValueOnce({
-    isFetchingDetailsOfSymbol: false,
-    errorOnDetailsOfSymbol: errorMessage,
-    detailsOfSymbol: ''
-  });
+  mockAxiosInstance.mockReturnValueOnce(
+    Promise.reject(new Error(errorMessage))
+  );
 
   const { findByText } = renderWithRedux(
     <MemoryRouter initialEntries={[`/detail/${mockSymbol}`]}>
@@ -66,5 +61,5 @@ it('render error message when fetching encounter a problem', async () => {
     </MemoryRouter>
   );
 
-  expect(await findByText(errorMessage)).toBeInTheDocument();
+  expect(await findByText(`Error: ${errorMessage}`)).toBeInTheDocument();
 });

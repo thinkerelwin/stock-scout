@@ -16,7 +16,7 @@ export const featuresAPIspec = {
   naming: 'featureNews'
 };
 
-function normalizeBatchNews(data) {
+export function normalizeBatchNews(data) {
   data.idList = Object.keys(data);
   return data;
 }

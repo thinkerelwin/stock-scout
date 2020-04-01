@@ -30,7 +30,7 @@ export function smartDate(time) {
 }
 
 export function formatIntradayDate(pointDate, pointTime) {
-  return dayjs(`${pointDate} ${pointTime}`, 'YYYY-MM-DD HH:mm').unix();
+  return new Date(`${pointDate} ${pointTime}`).getTime();
 }
 
 // number
@@ -50,6 +50,6 @@ export function bigNumberFormat(number) {
   } else if (number >= thousand) {
     return (number / thousand).toFixed(3) + 'K';
   } else {
-    return number;
+    return number.toString();
   }
 }

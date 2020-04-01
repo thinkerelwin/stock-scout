@@ -8,7 +8,6 @@ import {
 } from '../../../__mocks__/mockData';
 
 import * as hookCollections from '../../../utils/customHooks';
-import { normalDate } from '../../../utils/formatHelper.js';
 import App from '../../App';
 
 const fakeNewsFeaturesData = {

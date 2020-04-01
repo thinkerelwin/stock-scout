@@ -120,13 +120,19 @@ const ScreenerTable = ({ topList }) => {
                 flexGrow={1}
                 cellRenderer={changeCellRender}
               />
-              <Column label="VOL" dataKey="volume" width={70} flexGrow={1} />
+              <Column
+                label="VOL"
+                dataKey="volume"
+                width={70}
+                flexGrow={1}
+                cellRenderer={bigNumberRender}
+              />
               <Column
                 label="MKT CAP"
                 dataKey="marketCap"
                 width={70}
                 flexGrow={1}
-                cellRenderer={marketCapCellRender}
+                cellRenderer={bigNumberRender}
               />
               <Column label="P/E" dataKey="peRatio" width={70} flexGrow={1} />
             </Table>
@@ -183,7 +189,7 @@ const ScreenerTable = ({ topList }) => {
     ));
   }
 
-  function marketCapCellRender({ cellData }) {
+  function bigNumberRender({ cellData }) {
     return cellData === null ? '' : bigNumberFormat(cellData);
   }
 };
