@@ -79,13 +79,3 @@ it('render error message when fetching featureNews failed', async () => {
 
   expect(await findByText(errorMessage)).toBeInTheDocument();
 });
-
-// it('render formated time correctly', async () => {
-//   const { findByText } = renderWithRedux(
-//     <MemoryRouter initialEntries={['/news']}>
-//       <App />
-//     </MemoryRouter>
-//   );
-
-//   expect(await findByText('Mar 24, 2020')).toBeInTheDocument();
-// });

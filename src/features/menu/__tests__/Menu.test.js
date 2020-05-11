@@ -13,7 +13,7 @@ import {
 
 import * as hookCollections from '../../../utils/customHooks';
 import instance from '../../../api/IEXCloud';
-import { menuLink } from '../Menu';
+import menuLink from '../../../utils/constant/menuLink.json';
 import App from '../../App';
 import Menu from '../Menu';
 

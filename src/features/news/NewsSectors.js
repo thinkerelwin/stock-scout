@@ -61,6 +61,7 @@ const NewsSectors = () => {
                 <a
                   className="news-card"
                   href={sectorNews[symbol].news[0].url}
+                  title={sectorNews[symbol].news[0].headline}
                   key={symbol}
                 >
                   <div className="news-card__image-box">

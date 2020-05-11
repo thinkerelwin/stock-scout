@@ -4,14 +4,9 @@ import classNames from 'classnames';
 
 import { useSizeDetection } from '../../utils/customHooks';
 
+import menuLink from '../../utils/constant/menuLink.json';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import './Menu.scss';
-
-const menuLink = [
-  { name: 'Home', route: '/' },
-  { name: 'News', route: '/news' },
-  { name: 'Screener', route: '/screener/Most Active' }
-];
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,4 +63,4 @@ const Menu = () => {
   }
 };
 
-export { Menu as default, menuLink };
+export default Menu;

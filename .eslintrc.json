@@ -3,7 +3,8 @@
     "react-app",
     "prettier",
     "prettier/react",
-    "plugin:testing-library/react"
+    "plugin:testing-library/react",
+    "plugin:cypress/recommended"
   ],
   "plugins": ["prettier", "testing-library"],
   "rules": {

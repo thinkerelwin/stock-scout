@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Home",
+    "route": "/"
+  },
+  {
+    "name": "News",
+    "route": "/news"
+  },
+  {
+    "name": "Screener",
+    "route": "/screener/Most Active"
+  }
+]

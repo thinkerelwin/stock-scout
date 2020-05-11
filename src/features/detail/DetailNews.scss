@@ -13,7 +13,7 @@
   }
   .news-cards {
     display: flex;
-    padding-top: 0.25rem; // temp
+    padding-top: 0.25rem;
     padding-bottom: 2rem;
     overflow-x: auto;
     @include rwd(sm) {

@@ -7,6 +7,7 @@
     "axios": "^0.19.1",
     "classnames": "^2.2.6",
     "dayjs": "^1.8.20",
+    "eslint-plugin-cypress": "^2.10.3",
     "highcharts": "^8.0.0",
     "highcharts-react-official": "^3.0.0",
     "node-sass": "^4.13.0",
@@ -25,6 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "cypress": "npx cypress open",
+    "cypress-report": "npx nyc report --reporter=text-summary",
     "eject": "react-scripts eject",
     "analyze-window": "source-map-explorer build/static/js/*.js"
   },
@@ -71,9 +74,11 @@
     "clearMocks": true
   },
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.5.0",
     "@testing-library/react-hooks": "^3.2.1",
+    "cypress": "^4.5.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-testing-library": "^2.2.3",
