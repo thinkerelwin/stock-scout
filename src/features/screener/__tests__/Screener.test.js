@@ -110,7 +110,7 @@ it('render error message when fetching encounter a problem', async () => {
   expect(errorMessages.length).toBe(2);
 });
 
-it('change categories on click aother category', async () => {
+it('change categories on clicking aother category', async () => {
   const { findByText } = renderWithRedux(
     <MemoryRouter initialEntries={['/screener/Most Active']}>
       <App />
@@ -134,7 +134,7 @@ it('change categories on click aother category', async () => {
   );
 });
 
-it('navigate to detail page when click on the symbol of a company in the ScreenerTable', async () => {
+it('navigate to detail page when clicking on the symbol of a company in the ScreenerTable', async () => {
   jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValueOnce({
     isFetchingDetailsOfSymbol: false,
     errorOnDetailsOfSymbol: '',
@@ -160,7 +160,7 @@ it('navigate to detail page when click on the symbol of a company in the Screene
   ).toBeInTheDocument();
 });
 
-it('sort correctly with number when click on the correspond column header', async () => {
+it('sort correctly with number when clicking on the correspond column header', async () => {
   const { findByTitle, findAllByTestId } = renderWithRedux(
     <MemoryRouter initialEntries={['/screener/Most Active']}>
       <App />
@@ -185,7 +185,7 @@ it('sort correctly with number when click on the correspond column header', asyn
   expect(reversedSortedList).toEqual(resultSortedScreenerList.reverse());
 });
 
-it('sort correctly with characters when click on the correspond column header', async () => {
+it('sort correctly with characters when clicking on the correspond column header', async () => {
   const { findByTitle, findAllByTestId } = renderWithRedux(
     <MemoryRouter initialEntries={['/screener/Most Active']}>
       <App />

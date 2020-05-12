@@ -17,26 +17,6 @@ describe('homepage', () => {
     cy.findByText('© Copyright 2020 by Elwin Huang.').should('be.visible');
   });
 
-  // describe('navigation', () => {
-  //   const textToMatchForTestOnNavigation = [
-  //     'Stock Scout - About',
-  //     'energy',
-  //     'Most Active'
-  //   ];
-
-  //   menuLink.forEach(({ name }, index) => {
-  //     it(`navigate to ${name} page when clicking on the corresponding link`, () => {
-  //       cy.visit('/');
-
-  //       cy.findByText(name).click();
-
-  //       cy.findByText(textToMatchForTestOnNavigation[index]).should(
-  //         'be.visible'
-  //       );
-  //     });
-  //   });
-  // });
-
   describe('stubbing responses', () => {
     it('navigate to news source website when clicking on one of the photo shown on "Recent news" section', () => {
       cy.server();

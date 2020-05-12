@@ -15,7 +15,7 @@ const headlinesForTest = [
   headlineOfFirstArticleOnNewsSectors
 ];
 
-describe('news', () => {
+describe('news page', () => {
   it('renders page correctly', () => {
     cy.visit('/');
 
@@ -33,6 +33,7 @@ describe('news', () => {
       delete mockNewsSectorsDataWithOutIdList.idList;
 
       cy.server();
+
       cy.route(
         'GET',
         `${urlToRequest}/stock/market/batch?symbols=goog,amzn,fb&types=news&last=1`,
