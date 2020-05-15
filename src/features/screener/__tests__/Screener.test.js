@@ -110,7 +110,7 @@ it('render error message when fetching encounter a problem', async () => {
   expect(errorMessages.length).toBe(2);
 });
 
-it('change categories on clicking aother category', async () => {
+it('change categories on clicking another category', async () => {
   const { findByText } = renderWithRedux(
     <MemoryRouter initialEntries={['/screener/Most Active']}>
       <App />

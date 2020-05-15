@@ -22,12 +22,13 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "test:coverage": "react-app-rewired test --coverage --watchAll=false",
     "cypress": "npx cypress open",
-    "eject": "react-scripts eject",
+    "cypress-report": "npx nyc report --reporter=text-summary",
+    "eject": "react-app-rewired eject",
     "analyze-window": "source-map-explorer build/static/js/*.js"
   },
   "husky": {
@@ -73,17 +74,23 @@
     "clearMocks": true
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.7.2",
     "@testing-library/cypress": "^6.0.0",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.5.0",
     "@testing-library/react-hooks": "^3.2.1",
+    "babel-plugin-istanbul": "^6.0.0",
+    "customize-cra": "^0.9.1",
     "cypress": "^4.5.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-testing-library": "^2.2.3",
     "husky": "^3.1.0",
+    "istanbul-lib-coverage": "^3.0.0",
     "lint-staged": "^9.5.0",
+    "nyc": "^15.0.1",
     "prettier": "^1.19.1",
+    "react-app-rewired": "^2.1.6",
     "react-test-renderer": "^16.13.0",
     "source-map-explorer": "^2.3.1"
   }

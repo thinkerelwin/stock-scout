@@ -95,7 +95,7 @@ describe('screener page', () => {
       });
     });
 
-    it.only('sort correctly with characters when clicking on the correspond column header', () => {
+    it('sort correctly with characters when clicking on the correspond column header', () => {
       const resultSortedScreenerList = mockSortedScreenerListWithCharacter.map(
         ({ symbol }) => symbol
       );
