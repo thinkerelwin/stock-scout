@@ -40,6 +40,8 @@ export function displayAsPercent(number) {
 }
 
 export function bigNumberFormat(number) {
+  if (!number) return '';
+
   const billion = 1000000000;
   const million = 1000000;
   const thousand = 1000;
