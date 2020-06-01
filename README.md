@@ -1,6 +1,7 @@
 # stock-scout
 
 ![screen shot on news page](./readme_photo.png 'screen shot on news page')
+![screen shot on E2E coverage report](./E2E_coverage.png 'screen shot on E2E coverage report')
 
 An app provides stock market news and detail info of stocks, a simple screener with a sortable column header, using **Redux Toolkit** to simplify redux state management, testing with **Jest** and **React Testing Library**.
 
@@ -31,10 +32,19 @@ p.s. price charts will return 1d or 1m data, Depending on the day or week and ti
 
 ## Running the tests
 
-85%+ test coverage
+85%+ test coverage on unit, integration test.
+90%+ on E2E test coverage.
 
 - `npm run test` to run the test on watch mode
 - `npm run test:coverage` to get a jest coverage report
+
+E2E
+
+- `npx nyc instrument --compact=false src instrumented` To instrument the application code
+- `npm run cypress` to generate info required for coverage report
+- `npm run cypress-report` to get summary on coverage report
+
+the full report html will be located in /coverage/Icov-report/index.html
 
 ## License
 
