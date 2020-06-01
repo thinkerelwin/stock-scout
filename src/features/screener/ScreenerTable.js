@@ -190,7 +190,9 @@ const ScreenerTable = ({ topList }) => {
   }
 
   function bigNumberRender({ cellData }) {
-    return cellData === null ? '' : bigNumberFormat(cellData);
+    if (!cellData || cellData === null) return '';
+
+    return bigNumberFormat(cellData);
   }
 };
 
