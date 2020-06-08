@@ -1,7 +1,7 @@
 import { urlToRequest } from '../../src/api/IEXCloud';
 import { mockDetailData } from '../../src/__mocks__/mockData';
 
-describe('screener page', () => {
+describe('detail page', () => {
   const targetURL = '/detail/AAL';
 
   it('renders page correctly', () => {
