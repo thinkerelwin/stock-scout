@@ -5,7 +5,7 @@
 
 An app provides stock market news and detail info of stocks, a simple screener with a sortable column header, using **Redux Toolkit** to simplify redux state management, testing with **Jest** and **React Testing Library**.
 
-online demo: https://stock-scout.now.sh
+online demo: https://stock-scout.vercel.app
 
 p.s. Due to data usage limitation, numbers on the Screener page aren't real.
 
