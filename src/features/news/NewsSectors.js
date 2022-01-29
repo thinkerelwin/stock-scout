@@ -58,37 +58,41 @@ const NewsSectors = () => {
           <div className="news-cards">
             {sectorNews.idList &&
               symbolsOfSectors[sector].map(symbol => {
-                return sectorNews[symbol] && (
-                  <a
-                    className="news-card"
-                    href={sectorNews[symbol].news[0].url}
-                    title={sectorNews[symbol].news[0].headline}
-                    key={symbol}
-                  >
-                    <div className="news-card__image-box">
-                      <img
-                        src={sectorNews[symbol].news[0].image}
-                        alt={sectorNews[symbol].news[0].headline}
-                        className="news-card__image"
-                      />
-                    </div>
-                    <h4 className="news-card__title heading-secondary">
-                      {sectorNews[symbol].news[0].headline}
-                    </h4>
-                    <p className="news-card__source">
-                      {sectorNews[symbol].news[0].related}
-                    </p>
-                    <time
-                      className="news-card__date"
-                      dateTime={normalDate(sectorNews[symbol].news[0].datetime)}
+                return (
+                  sectorNews[symbol] && (
+                    <a
+                      className="news-card"
+                      href={sectorNews[symbol].news[0].url}
+                      title={sectorNews[symbol].news[0].headline}
+                      key={symbol}
                     >
-                      {monthFirstDate(sectorNews[symbol].news[0].datetime)}
-                    </time>
-                    <p className="news-card__summary">
-                      {sectorNews[symbol].news[0].summary}
-                    </p>
-                  </a>
-                )
+                      <div className="news-card__image-box">
+                        <img
+                          src={sectorNews[symbol].news[0].image}
+                          alt={sectorNews[symbol].news[0].headline}
+                          className="news-card__image"
+                        />
+                      </div>
+                      <h4 className="news-card__title heading-secondary">
+                        {sectorNews[symbol].news[0].headline}
+                      </h4>
+                      <p className="news-card__source">
+                        {sectorNews[symbol].news[0].related}
+                      </p>
+                      <time
+                        className="news-card__date"
+                        dateTime={normalDate(
+                          sectorNews[symbol].news[0].datetime
+                        )}
+                      >
+                        {monthFirstDate(sectorNews[symbol].news[0].datetime)}
+                      </time>
+                      <p className="news-card__summary">
+                        {sectorNews[symbol].news[0].summary}
+                      </p>
+                    </a>
+                  )
+                );
               })}
           </div>
         </div>

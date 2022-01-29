@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.2.2",
-    "axios": "^0.19.1",
+    "@reduxjs/toolkit": "^1.7.1",
+    "axios": "^0.25.0",
     "classnames": "^2.2.6",
     "dayjs": "^1.8.20",
     "highcharts": "^8.0.0",
@@ -73,9 +73,9 @@
     "clearMocks": true
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.7.2",
+    "@cypress/code-coverage": "^3.9.12",
     "@testing-library/cypress": "^6.0.0",
-    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^9.5.0",
     "@testing-library/react-hooks": "^3.2.1",
     "babel-plugin-istanbul": "^6.0.0",
@@ -90,7 +90,7 @@
     "lint-staged": "^9.5.0",
     "nyc": "^15.0.1",
     "prettier": "^1.19.1",
-    "react-app-rewired": "^2.1.6",
+    "react-app-rewired": "^2.1.11",
     "react-test-renderer": "^16.13.0",
     "source-map-explorer": "^2.3.1"
   }
