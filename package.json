@@ -9,7 +9,7 @@
     "dayjs": "^1.8.20",
     "highcharts": "^8.0.0",
     "highcharts-react-official": "^3.0.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
