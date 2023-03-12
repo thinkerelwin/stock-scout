@@ -88,7 +88,7 @@
     "istanbul-lib-coverage": "^3.0.0",
     "lint-staged": "^9.5.0",
     "nyc": "^15.0.1",
-    "prettier": "^1.19.1",
+    "prettier": "^2.8.4",
     "react-app-rewired": "^2.1.11",
     "react-scripts": "^5.0.1",
     "react-test-renderer": "^16.14.0",
