@@ -8,40 +8,64 @@ import Screener from './screener/Screener';
 import Detail from './detail/Detail';
 import Footer from './footer/Footer';
 
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 const PageError = lazy(() => import('../components/PageError'));
 
 const App = () => {
   return (
     <div className="container">
-      <Switch>
-        <Route path="/news">
-          <Menu />
-          <News />
-          <Footer />
-        </Route>
-        <Route path="/screener">
-          <Menu />
-          <Screener />
-          <Footer />
-        </Route>
-        <Route path="/detail/:symbol">
-          <Menu />
-          <Detail />
-          <Footer />
-        </Route>
-        <Route exact path="/">
-          <Menu />
-          <Home />
-          <Footer />
-        </Route>
-        <Suspense fallback={<div className="page-error-layout"></div>}>
-          <Route path="*">
-            <PageError />
-          </Route>
-        </Suspense>
-      </Switch>
+      <Routes>
+        <Route
+          path="/news"
+          element={
+            <>
+              <Menu />
+              <News />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/screener/*"
+          element={
+            <>
+              <Menu />
+              <Screener />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/detail/:symbol"
+          element={
+            <>
+              <Menu />
+              <Detail />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <>
+              <Menu />
+              <Home />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={<div className="page-error-layout"></div>}>
+              <PageError />
+            </Suspense>
+          }
+        />
+      </Routes>
     </div>
   );
 };

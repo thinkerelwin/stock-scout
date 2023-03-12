@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouteMatch, Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import ScreenerCategories from './ScreenerCategories';
 import ScreenerTable from './ScreenerTable';
@@ -10,17 +10,16 @@ import './Screener.scss';
 export const topList = ['Most Active', 'Top Gainers', 'Top Losers'];
 
 const Screener = () => {
-  let { path } = useRouteMatch();
-
   return (
     <main className="screener menu-margin" data-testid="location-Screener">
       <div className="screener-box">
         <ScreenerCategories topList={topList} />
-        <Switch>
-          <Route path={`${path}/:category`}>
-            <ScreenerTable topList={topList} />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route
+            path={`:category`}
+            element={<ScreenerTable topList={topList} />}
+          ></Route>
+        </Routes>
       </div>
     </main>
   );

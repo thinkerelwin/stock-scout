@@ -2,19 +2,24 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import HighCharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
+import highchartsPivotPoints from 'highcharts/indicators/pivot-points';
+import highchartsMACD from 'highcharts/indicators/macd';
 
 import { formatIntradayDate } from '../../utils/formatHelper';
 
 import './DetailChart.scss';
 
-require('highcharts/indicators/pivot-points')(HighCharts);
-require('highcharts/indicators/macd')(HighCharts);
+if (typeof Highcharts === 'object') {
+  highchartsPivotPoints(HighCharts);
+  highchartsMACD(HighCharts);
+}
 
 const DetailChart = ({
   chartData = { data: [] },
   quote: { symbol } = { symbol: '' }
 }) => {
   const chartWidth = 430;
+
   var chartOptions = useMemo(
     () => ({
       chart: {

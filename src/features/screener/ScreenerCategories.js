@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useRouteMatch, useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, matchRoutes, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
@@ -10,15 +10,12 @@ import { fetchCategories } from './screenerCategoriesSlice';
 import './ScreenerCategories.scss';
 
 const ScreenerCategories = ({ topList }) => {
-  const { url } = useRouteMatch();
-  const { pathname } = useLocation();
+  const { '*': currentCategory } = useParams();
   const dispatch = useDispatch();
 
   const { categories, error, isFetching } = useSelector(
     state => state.screenerCategories
   );
-
-  const currentCategory = pathname.slice(url.length + 1);
 
   useEffect(() => {
     !categories.length && dispatch(fetchCategories());
@@ -53,7 +50,6 @@ const ScreenerCategories = ({ topList }) => {
           topList.map(item => (
             <LinkTemplate
               key={item}
-              routeUrl={url}
               destinationUrl={item}
               name={item}
               currentCategory={currentCategory}
@@ -62,7 +58,6 @@ const ScreenerCategories = ({ topList }) => {
           categories.map(category => (
             <LinkTemplate
               key={category}
-              routeUrl={url}
               destinationUrl={category}
               name={category}
               currentCategory={currentCategory}
@@ -74,7 +69,7 @@ const ScreenerCategories = ({ topList }) => {
   );
 };
 
-const LinkTemplate = ({ routeUrl, destinationUrl, name, currentCategory }) => {
+const LinkTemplate = ({ destinationUrl, name, currentCategory }) => {
   return (
     <li
       className={classNames('category', {
@@ -83,7 +78,7 @@ const LinkTemplate = ({ routeUrl, destinationUrl, name, currentCategory }) => {
     >
       <Link
         className="category__link heading-secondary"
-        to={`${routeUrl}/${destinationUrl}`}
+        to={`${destinationUrl}`}
       >
         {name}
       </Link>
