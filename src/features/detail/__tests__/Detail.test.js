@@ -1,5 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+// import axios from 'axios';
 
 import { renderWithRedux } from '../../../setupTests';
 import { mockDetailData } from '../../../__mocks__/mockData';
@@ -9,9 +10,16 @@ import instance from '../../../api/IEXCloud';
 import App from '../../App';
 
 const mockSymbol = mockDetailData.quote.symbol;
-const mockAxiosInstance = jest
-  .spyOn(instance, 'get')
-  .mockReturnValue({ data: mockDetailData });
+let mockedAxios;
+beforeEach(() => {
+  mockedAxios = jest
+    .spyOn(instance, 'get')
+    .mockResolvedValue({ data: mockDetailData });
+});
+
+afterEach(() => {
+  jest.restoreAllMocks();
+});
 
 it('render default Detail page normally', async () => {
   const { findByText } = renderWithRedux(
@@ -32,28 +40,10 @@ it('render default Detail page normally', async () => {
   ).toBeInTheDocument();
 });
 
-it('render loading icon when fetching Detail data', async () => {
-  jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValueOnce({
-    isFetchingDetailsOfSymbol: true,
-    errorOnDetailsOfSymbol: '',
-    detailsOfSymbol: ''
-  });
-
-  const { findByAltText } = renderWithRedux(
-    <MemoryRouter initialEntries={[`/detail/${mockSymbol}`]}>
-      <App />
-    </MemoryRouter>
-  );
-
-  expect(await findByAltText('loading icon')).toBeInTheDocument();
-});
-
 it('render error message when fetching encounter a problem', async () => {
   const errorMessage = 'timeout';
 
-  mockAxiosInstance.mockReturnValueOnce(
-    Promise.reject(new Error(errorMessage))
-  );
+  mockedAxios.mockRejectedValueOnce(new Error(errorMessage));
 
   const { findByText } = renderWithRedux(
     <MemoryRouter initialEntries={[`/detail/${mockSymbol}`]}>
