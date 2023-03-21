@@ -71,7 +71,7 @@ const ScreenerCategories = ({ topList }) => {
 };
 
 ScreenerCategories.propTypes = {
-  topList: PropTypes.object,
+  topList: PropTypes.array,
 };
 
 const LinkTemplate = ({ destinationUrl, name, currentCategory }) => {

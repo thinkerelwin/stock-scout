@@ -44,11 +44,12 @@ const Menu = () => {
             <NavLink
               key={name}
               to={route}
-              exact
-              className="navbar__link"
-              activeClassName="navbar__link--active"
+              className={({ isActive }) =>
+                'navbar__link' + (isActive ? ' navbar__link--active' : '')
+              }
               data-testid="menu-link"
               onClick={handleMenuToggle}
+              end
             >
               {name}
             </NavLink>

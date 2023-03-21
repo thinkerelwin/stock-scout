@@ -13,10 +13,10 @@ import { mockNewsFeaturesData } from '../../mockData';
 describe('useLocalStateFetching', () => {
   it('should fetch IEX data in a correct form', async () => {
     const dataFetchingMethod = jest.spyOn(instance, 'get');
-
     dataFetchingMethod.mockImplementationOnce((route, params) => {
       return { data: mockNewsFeaturesData };
     });
+
     const { result, waitForNextUpdate } = renderHook(() =>
       useLocalStateFetching(featuresAPIspec)
     );
@@ -29,6 +29,9 @@ describe('useLocalStateFetching', () => {
   });
 
   it('should reply with error message if network request failed', async () => {
+    const dataFetchingMethod = jest.spyOn(instance, 'get');
+    dataFetchingMethod.mockRejectedValueOnce(new Error('Network Error'));
+
     const { result, waitForNextUpdate } = renderHook(() =>
       useLocalStateFetching(featuresAPIspec)
     );

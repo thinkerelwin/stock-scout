@@ -94,7 +94,7 @@ it('change categories on clicking another category', async () => {
   fireEvent.click(nextCategory);
 
   expect(
-    await screen.findByTestId(`category-${nextCategory}--selected`)
+    await screen.findByTestId(`category-${nameOfNextCategory}--selected`)
   ).toHaveClass('category--active');
   expect(jest.spyOn(instance, 'get')).toHaveBeenCalledWith(
     `/stock/market/collection/sector`,

@@ -4,6 +4,7 @@ import HighCharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import highchartsPivotPoints from 'highcharts/indicators/pivot-points';
 import highchartsMACD from 'highcharts/indicators/macd';
+import highchartsAccessibility from 'highcharts/modules/accessibility';
 
 import { formatIntradayDate } from '../../utils/formatHelper';
 
@@ -12,6 +13,7 @@ import './DetailChart.scss';
 if (typeof Highcharts === 'object') {
   highchartsPivotPoints(HighCharts);
   highchartsMACD(HighCharts);
+  highchartsAccessibility(HighCharts);
 }
 
 const DetailChart = ({

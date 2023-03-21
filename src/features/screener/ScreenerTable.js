@@ -222,7 +222,7 @@ function sortByCharacter(list, sortBy, direction) {
 }
 
 ScreenerTable.propTypes = {
-  topList: PropTypes.object,
+  topList: PropTypes.array,
 };
 
 export default ScreenerTable;
