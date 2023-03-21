@@ -13,7 +13,7 @@ const ErrorBox = ({ message, boxClassName = '' }) => {
 
 ErrorBox.propTypes = {
   message: PropTypes.string.isRequired,
-  boxClassName: PropTypes.string
+  boxClassName: PropTypes.string,
 };
 
 export default ErrorBox;

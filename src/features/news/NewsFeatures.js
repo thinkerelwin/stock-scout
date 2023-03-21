@@ -13,7 +13,7 @@ export const featuresAPIspec = {
   route: '/stock/market/batch',
   params: { symbols: 'goog,amzn,fb', types: 'news', last: '1' },
   process: normalizeBatchNews,
-  naming: 'featureNews'
+  naming: 'featureNews',
 };
 
 export function normalizeBatchNews(data) {
@@ -22,15 +22,12 @@ export function normalizeBatchNews(data) {
 }
 
 const NewsFeatures = () => {
-  const {
-    isFetchingFeatureNews,
-    errorOnFeatureNews,
-    featureNews
-  } = useLocalStateFetching(featuresAPIspec);
+  const { isFetchingFeatureNews, errorOnFeatureNews, featureNews } =
+    useLocalStateFetching(featuresAPIspec);
 
   const featureNewsList = useMemo(() => {
     return featureNews.idList
-      ? featureNews.idList.map(id => featureNews[id].news[0])
+      ? featureNews.idList.map((id) => featureNews[id].news[0])
       : [];
   }, [featureNews]);
 
@@ -62,11 +59,11 @@ const NewsFeatures = () => {
             className={classNames('news-feature', {
               'news-feature--primary': index === 0,
               'news-feature--secondary': index === 1,
-              'news-feature--tertiary': index === 2
+              'news-feature--tertiary': index === 2,
             })}
             title={headline}
             style={{
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) , url(${image})`
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) , url(${image})`,
             }}
             key={related}
           >

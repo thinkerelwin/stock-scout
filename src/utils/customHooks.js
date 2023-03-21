@@ -48,7 +48,6 @@ export const useLocalStateFetching = ({ route, params, process, naming }) => {
       setIsFetchingIEXdata(true);
       try {
         const response = await instance.get(route, { params });
-        console.log('response', response);
         isMounted && setIEXdata(process(response.data));
       } catch (err) {
         setErrorMessage(err.toString());

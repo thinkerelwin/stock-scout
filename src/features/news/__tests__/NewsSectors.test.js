@@ -1,11 +1,9 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 
 import { renderWithRedux } from '../../../setupTests';
-import {
-  mockNewsFeaturesData,
-  mockNewsSectorsData
-} from '../../../__mocks__/mockData';
+import { mockNewsFeaturesData, mockNewsSectorsData } from '../../../mockData';
 
 import * as hookCollections from '../../../utils/customHooks';
 import App from '../../App';
@@ -13,13 +11,13 @@ import App from '../../App';
 const fakeNewsFeaturesData = {
   isFetchingFeatureNews: false,
   errorOnFeatureNews: '',
-  featureNews: mockNewsFeaturesData
+  featureNews: mockNewsFeaturesData,
 };
 
 const fakeNewsSectorsData = {
   isFetchingSectorNews: false,
   errorOnSectorNews: '',
-  sectorNews: mockNewsSectorsData
+  sectorNews: mockNewsSectorsData,
 };
 
 jest
@@ -36,14 +34,14 @@ jest
   });
 
 it('render NewsSectors normally', async () => {
-  const { findByText } = renderWithRedux(
+  renderWithRedux(
     <MemoryRouter initialEntries={['/news']}>
       <App />
     </MemoryRouter>
   );
 
   expect(
-    await findByText(mockNewsSectorsData.XOM.news[0].headline)
+    await screen.findByText(mockNewsSectorsData.XOM.news[0].headline)
   ).toBeInTheDocument();
 });
 
@@ -54,16 +52,16 @@ it('render loading icon when fetching sectorNews', async () => {
     .mockReturnValueOnce({
       isFetchingSectorNews: true,
       errorOnSectorNews: '',
-      sectorNews: ''
+      sectorNews: '',
     });
 
-  const { findByAltText } = renderWithRedux(
+  renderWithRedux(
     <MemoryRouter initialEntries={['/news']}>
       <App />
     </MemoryRouter>
   );
 
-  expect(await findByAltText('loading icon')).toBeInTheDocument();
+  expect(await screen.findByAltText('loading icon')).toBeInTheDocument();
 });
 
 it('render error message when fetching sectorNews failed', async () => {
@@ -74,14 +72,14 @@ it('render error message when fetching sectorNews failed', async () => {
     .mockReturnValueOnce({
       isFetchingSectorNews: false,
       errorOnSectorNews: errorMessage,
-      sectorNews: ''
+      sectorNews: '',
     });
 
-  const { findByText } = renderWithRedux(
+  renderWithRedux(
     <MemoryRouter initialEntries={['/news']}>
       <App />
     </MemoryRouter>
   );
 
-  expect(await findByText(errorMessage)).toBeInTheDocument();
+  expect(await screen.findByText(errorMessage)).toBeInTheDocument();
 });

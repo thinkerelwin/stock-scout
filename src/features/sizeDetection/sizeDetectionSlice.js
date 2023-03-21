@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 let initialState = {
-  isMediumSize: false
+  isMediumSize: false,
 };
 
 const sizeDetectionSlice = createSlice({
@@ -10,8 +10,8 @@ const sizeDetectionSlice = createSlice({
   reducers: {
     setIsMediumSize(state, action) {
       state.isMediumSize = action.payload.isMediumSize;
-    }
-  }
+    },
+  },
 });
 
 export const { setIsMediumSize } = sizeDetectionSlice.actions;

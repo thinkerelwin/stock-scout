@@ -5,7 +5,7 @@ import instance from '../../api/IEXCloud';
 let initialState = {
   categories: [],
   isFetching: false,
-  error: null
+  error: null,
 };
 
 const categoriesSlice = createSlice({
@@ -17,26 +17,23 @@ const categoriesSlice = createSlice({
     },
     setCategoriesSuccess(state, action) {
       state.categories = action.payload.categories.map(
-        category => category.name
+        (category) => category.name
       );
       state.error = null;
     },
     setCategoriesFailed(state, action) {
       state.error = action.payload;
-    }
-  }
+    },
+  },
 });
 
-export const {
-  setIsFetching,
-  setCategoriesSuccess,
-  setCategoriesFailed
-} = categoriesSlice.actions;
+export const { setIsFetching, setCategoriesSuccess, setCategoriesFailed } =
+  categoriesSlice.actions;
 
 export default categoriesSlice.reducer;
 
 export function fetchCategories() {
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch(setIsFetching(true));
     try {
       const { data } = await instance.get('/ref-data/sectors');

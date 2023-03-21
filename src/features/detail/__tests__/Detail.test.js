@@ -1,11 +1,10 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-// import axios from 'axios';
+import { screen } from '@testing-library/react';
 
 import { renderWithRedux } from '../../../setupTests';
-import { mockDetailData } from '../../../__mocks__/mockData';
+import { mockDetailData } from '../../../mockData';
 
-import * as hookCollections from '../../../utils/customHooks';
 import instance from '../../../api/IEXCloud';
 import App from '../../App';
 
@@ -22,21 +21,23 @@ afterEach(() => {
 });
 
 it('render default Detail page normally', async () => {
-  const { findByText } = renderWithRedux(
+  renderWithRedux(
     <MemoryRouter initialEntries={[`/detail/${mockSymbol}`]}>
       <App />
     </MemoryRouter>
   );
 
   expect(
-    await findByText(mockDetailData.quote.primaryExchange)
+    await screen.findByText(mockDetailData.quote.primaryExchange)
   ).toBeInTheDocument();
   expect(
-    await findByText(`${mockDetailData.company.symbol} Stock Chart`)
+    await screen.findByText(`${mockDetailData.company.symbol} Stock Chart`)
   ).toBeInTheDocument();
-  expect(await findByText(mockDetailData.news[0].headline)).toBeInTheDocument();
   expect(
-    await findByText(mockDetailData.company.description)
+    await screen.findByText(mockDetailData.news[0].headline)
+  ).toBeInTheDocument();
+  expect(
+    await screen.findByText(mockDetailData.company.description)
   ).toBeInTheDocument();
 });
 
@@ -45,11 +46,11 @@ it('render error message when fetching encounter a problem', async () => {
 
   mockedAxios.mockRejectedValueOnce(new Error(errorMessage));
 
-  const { findByText } = renderWithRedux(
+  renderWithRedux(
     <MemoryRouter initialEntries={[`/detail/${mockSymbol}`]}>
       <App />
     </MemoryRouter>
   );
 
-  expect(await findByText(`Error: ${errorMessage}`)).toBeInTheDocument();
+  expect(await screen.findByText(`Error: ${errorMessage}`)).toBeInTheDocument();
 });

@@ -1,5 +1,6 @@
+/* eslint-disable */
 import { urlToRequest } from '../../src/api/IEXCloud';
-import { mockDetailData } from '../../src/__mocks__/mockData';
+import { mockDetailData } from '../../src/mockData';
 
 describe('detail page', () => {
   const targetURL = '/detail/AAL';
@@ -37,7 +38,7 @@ describe('detail page', () => {
     it('navigate to news source website when clicking on one of the photo shown on "News" section', () => {
       cy.findByText(mockDetailData.news[0].headline)
         .parent()
-        .then($a => {
+        .then(($a) => {
           // extract the fully qualified href property
           const href = $a.prop('href');
 

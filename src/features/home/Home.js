@@ -20,8 +20,8 @@ const Home = () => {
       <div className="section-about__explaination heading-margin">
         <h3 className="heading-primary">Stock Scout - About</h3>
         <p>
-          Stock Scout offers an easy way to peek the market price and news. It's
-          also a place to implement my knowledge on frond-end.
+          Stock Scout offers an easy way to peek the market price and news.
+          It&apos;s also a place to implement my knowledge on frond-end.
         </p>
       </div>
       <section className="section-sectors">

@@ -29,11 +29,11 @@ const DetailNews = ({ news }) => {
 };
 
 DetailNews.defaultProps = {
-  news: []
+  news: [],
 };
 
 DetailNews.propTypes = {
-  news: PropTypes.array.isRequired
+  news: PropTypes.array.isRequired,
 };
 
 export default DetailNews;

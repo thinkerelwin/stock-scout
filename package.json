@@ -22,6 +22,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint:js": "eslint **/*.{js,jsx,ts,tsx} --fix",
+    "lint:format": "prettier **/*.{js,jsx,ts,tsx,json,css,scss,md,html} --write --ignore-unknown",
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
     "cypress": "npx cypress open",
@@ -35,7 +37,10 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md,html}": [
       "prettier --single-quote --write",
       "git add"
     ]
@@ -97,5 +102,8 @@
     "react-scripts": "^5.0.1",
     "react-test-renderer": "^16.14.0",
     "source-map-explorer": "^2.3.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }

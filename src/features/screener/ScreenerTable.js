@@ -3,6 +3,7 @@ import { Column, Table, AutoSizer } from 'react-virtualized';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
@@ -17,7 +18,7 @@ function urlChecker(category) {
   const categoriesDictionary = {
     'Top Gainers': 'gainers',
     'Top Losers': 'losers',
-    'Most Active': 'mostactive'
+    'Most Active': 'mostactive',
   };
 
   return categoriesDictionary[category]
@@ -34,7 +35,7 @@ const ScreenerTable = ({ topList }) => {
   const prevCategory = usePrevious(category);
 
   const { screenerList, isFetchingList, listError } = useSelector(
-    state => state.screenerTable
+    (state) => state.screenerTable
   );
 
   const [sortBy, setSortBy] = useState(undefined);
@@ -143,7 +144,7 @@ const ScreenerTable = ({ topList }) => {
   );
 
   function findCollectionType(type, listOfCategories) {
-    return listOfCategories.find(item => item === type) ? 'list' : 'sector';
+    return listOfCategories.find((item) => item === type) ? 'list' : 'sector';
   }
 
   function handleSort({ sortBy }) {
@@ -157,7 +158,7 @@ const ScreenerTable = ({ topList }) => {
   }
 
   function descriptionCellRender({ cellData }) {
-    return cellRender(cellData, cellData => (
+    return cellRender(cellData, (cellData) => (
       <Link to={`/detail/${cellData}`} data-testid="sortOnCharacter">
         {cellData}
       </Link>
@@ -165,22 +166,22 @@ const ScreenerTable = ({ topList }) => {
   }
 
   function changePercentCellRender({ cellData }) {
-    return cellRender(cellData, cellData => (
+    return cellRender(cellData, (cellData) => (
       <p
         className={classNames('table-cell__change-percent', {
           'table-cell__change-percent--rising': cellData > 0,
-          'table-cell__change-percent--falling': cellData < 0
+          'table-cell__change-percent--falling': cellData < 0,
         })}
       >{`${displayAsPercent(cellData)}%`}</p>
     ));
   }
 
   function changeCellRender({ cellData }) {
-    return cellRender(cellData, cellData => (
+    return cellRender(cellData, (cellData) => (
       <p
         className={classNames('table-cell__change', {
           'table-cell__change--rising': cellData > 0,
-          'table-cell__change--falling': cellData < 0
+          'table-cell__change--falling': cellData < 0,
         })}
         data-testid="sortOnNumber"
       >
@@ -219,5 +220,9 @@ function sortByCharacter(list, sortBy, direction) {
     return 0;
   });
 }
+
+ScreenerTable.propTypes = {
+  topList: PropTypes.object,
+};
 
 export default ScreenerTable;

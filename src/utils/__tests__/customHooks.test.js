@@ -3,7 +3,7 @@ import { useLocalStateFetching } from '../customHooks';
 import instance from '../../api/IEXCloud';
 
 import { featuresAPIspec } from '../../features/news/NewsFeatures';
-import { mockNewsFeaturesData } from '../../__mocks__/mockData';
+import { mockNewsFeaturesData } from '../../mockData';
 
 // switch to open for real http request on jsdom environment
 // beforeAll(() => {

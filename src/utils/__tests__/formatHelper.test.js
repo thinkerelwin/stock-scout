@@ -7,7 +7,7 @@ import {
   smartDate,
   formatIntradayDate,
   displayAsPercent,
-  bigNumberFormat
+  bigNumberFormat,
 } from '../formatHelper';
 
 const timeForTest = 1584190397000;

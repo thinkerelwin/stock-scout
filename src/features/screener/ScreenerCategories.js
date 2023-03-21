@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { useLocation, Link, matchRoutes, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
@@ -14,7 +15,7 @@ const ScreenerCategories = ({ topList }) => {
   const dispatch = useDispatch();
 
   const { categories, error, isFetching } = useSelector(
-    state => state.screenerCategories
+    (state) => state.screenerCategories
   );
 
   useEffect(() => {
@@ -47,7 +48,7 @@ const ScreenerCategories = ({ topList }) => {
     <nav className="categories-box">
       <ul className="categories">
         {categories.length > 0 && [
-          topList.map(item => (
+          topList.map((item) => (
             <LinkTemplate
               key={item}
               destinationUrl={item}
@@ -55,26 +56,32 @@ const ScreenerCategories = ({ topList }) => {
               currentCategory={currentCategory}
             />
           )),
-          categories.map(category => (
+          categories.map((category) => (
             <LinkTemplate
               key={category}
               destinationUrl={category}
               name={category}
               currentCategory={currentCategory}
             />
-          ))
+          )),
         ]}
       </ul>
     </nav>
   );
 };
 
+ScreenerCategories.propTypes = {
+  topList: PropTypes.object,
+};
+
 const LinkTemplate = ({ destinationUrl, name, currentCategory }) => {
+  const isActive = destinationUrl === currentCategory;
   return (
     <li
       className={classNames('category', {
-        'category--active': destinationUrl === currentCategory
+        'category--active': isActive,
       })}
+      data-testid={isActive ? `category-${name}--selected` : ''}
     >
       <Link
         className="category__link heading-secondary"
@@ -84,6 +91,12 @@ const LinkTemplate = ({ destinationUrl, name, currentCategory }) => {
       </Link>
     </li>
   );
+};
+
+LinkTemplate.propTypes = {
+  destinationUrl: PropTypes.string,
+  name: PropTypes.string,
+  currentCategory: PropTypes.string,
 };
 
 export default ScreenerCategories;

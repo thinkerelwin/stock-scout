@@ -7,7 +7,7 @@ import screenerTableReducer from '../features/screener/screenerTableSlice';
 const rootReducer = combineReducers({
   sizeDetection: sizeDetectionReducer,
   screenerCategories: screenerCategoriesReducer,
-  screenerTable: screenerTableReducer
+  screenerTable: screenerTableReducer,
 });
 
 export default rootReducer;

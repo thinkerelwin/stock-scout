@@ -45,8 +45,8 @@ DetailProfile.defaultProps = {
     industry: '',
     employees: 0,
     country: '',
-    description: ''
-  }
+    description: '',
+  },
 };
 
 DetailProfile.propTypes = {
@@ -57,8 +57,8 @@ DetailProfile.propTypes = {
     industry: PropTypes.string.isRequired,
     employees: PropTypes.number.isRequired,
     country: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
-  })
+    description: PropTypes.string.isRequired,
+  }),
 };
 
 export default DetailProfile;

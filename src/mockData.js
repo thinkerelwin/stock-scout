@@ -4,44 +4,41 @@ export const mockRecentNewsData = [
     headline:
       'The Week In Cannabis: Coronavirus Drop, Major Financing Agreements, Psychedelics Getting Hot',
     source: 'Benzinga Feeds',
-    url:
-      'https://cloud.iexapis.com/v1/news/article/48947dd3-05f3-4fb6-92ab-34fde48257c1',
+    url: 'https://cloud.iexapis.com/v1/news/article/48947dd3-05f3-4fb6-92ab-34fde48257c1',
     summary:
       "This was another brutal week for cannabis stocks, with all major ETFs posting double-digits losses. Over the last five trading days: The ETFMG Alternative Harvest ETF (NYSE: MJ ) lost 13.7%. The AdvisorShares Pure Cannabis ETF (NYSE: YOLO ) tumbled 17.4%. The Cannabis ETF (NYSE: THCX ) dropped 16.4%. The Amplify Seymour Cannabis ETF (NYSE: CNBS ) shed 17.8%. The SPDR S&P 500 ETF Trust (NYSE: SPY ) closed the period down 2.2%. “Certainly the Covid19 virus is affecting some cannabis companies, especially the vape producers who experienced supply chain interruptions from China,” said Debra Borchardt, CEO of Green Market Report. “However, if sales remain strong at dispensaries, this could be a big test for the claim that the cannabis industry is recession-proof. If that's the case, this becomes a strong argument to get back into select stocks.” If you want to get this news recap in your email inbox every week, please subscribe to https://tinyletter.com/javierhasse A long list of cannabis events have also been cancelled, postponed, or transitioned to a digital or online format.",
     related: 'SPY',
     image:
       'https://cloud.iexapis.com/v1/news/image/48947dd3-05f3-4fb6-92ab-34fde48257c1',
     lang: 'en',
-    hasPaywall: false
+    hasPaywall: false,
   },
   {
     datetime: 1584122073000,
     headline: 'U.S. Stock ETFs Bounce After a Dismal Week',
     source: 'ETF Trends',
-    url:
-      'https://cloud.iexapis.com/v1/news/article/1096f1b5-63aa-4eab-841a-5fe9cf6e7d45',
+    url: 'https://cloud.iexapis.com/v1/news/article/1096f1b5-63aa-4eab-841a-5fe9cf6e7d45',
     summary:
       'U.S. markets and stock ETFs jumped Friday, regaining some of the lost ground after a tumultuous week that marked one of the major indices’ worst experienced in history. On Friday, the Invesco QQQ Trust (NASDAQ: QQQ) increased 3.5%, SPDR Dow Jones Industrial Average ETF (NYSEArca: DIA) rose 3.9%, and SPDR S&P 500 ETF (NYSEArca: SPY) gained […] The post U.S. Stock ETFs Bounce After a Dismal Week appeared first on ETF Trends .',
     related: 'SPY',
     image:
       'https://cloud.iexapis.com/v1/news/image/1096f1b5-63aa-4eab-841a-5fe9cf6e7d45',
     lang: 'en',
-    hasPaywall: false
+    hasPaywall: false,
   },
   {
     datetime: 1584113407000,
     headline: "After Worst Week Since 2008, What's Next For The Stock Market?",
     source: 'Benzinga',
-    url:
-      'https://cloud.iexapis.com/v1/news/article/b0572d77-5ac7-4ca4-b1b7-e1e0ba94c864',
+    url: 'https://cloud.iexapis.com/v1/news/article/b0572d77-5ac7-4ca4-b1b7-e1e0ba94c864',
     summary:
       "After one of its worst days in market history on Thursday, the SPDR S&P 500 ETF Trust (NYSE: SPY ) and the SPDR Dow Jones Industrial Average ETF (NYSE: DIA ) each opened higher by more than 6% on Friday, continuing the streak of extreme volatility in the stock market this week. Even with Friday's recovery, the Dow and S&P 500 are having their worst week since 2008. Periods of extreme volatility like these can be extremely difficult to predict and trade in the near-term, but they are not unprecedented in the market’s history. History Of Volatility Loup Ventures analyst Doug Clinton took a look at other periods of major market volatility over the years. Clinton noted the S&P 500 has closed up or down more than 3% on seven of the past 10 days, a phenomenon that has occurred only six other times. The past two times it happened coincided with the 2011 U.S. credit downgrade and the 2008 financial crisis. Clinton compiled the six previous … Full story available on Benzinga.com",
     related: 'SPY',
     image:
       'https://cloud.iexapis.com/v1/news/image/b0572d77-5ac7-4ca4-b1b7-e1e0ba94c864',
     lang: 'en',
-    hasPaywall: false
-  }
+    hasPaywall: false,
+  },
 ];
 
 export const mockNewsFeaturesData = {
@@ -52,8 +49,7 @@ export const mockNewsFeaturesData = {
         headline:
           'YouTube switches to standard definition video. Will that make a difference?',
         source: 'USA Today',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/48374a83-501f-4563-a2d7-2d94bb268d0b',
+        url: 'https://cloud.iexapis.com/v1/news/article/48374a83-501f-4563-a2d7-2d94bb268d0b',
         summary:
           'With more strain than ever on bandwidth, Google says it\'s trying to "do our part to minimize stress on the system during this unprecedented situation."',
         related: 'GOOGL,GOOG',
@@ -61,9 +57,9 @@ export const mockNewsFeaturesData = {
           'https://cloud.iexapis.com/v1/news/image/48374a83-501f-4563-a2d7-2d94bb268d0b',
         lang: 'en',
         hasPaywall: false,
-        symbol: 'GOOGL'
-      }
-    ]
+        symbol: 'GOOGL',
+      },
+    ],
   },
   AMZN: {
     news: [
@@ -71,17 +67,16 @@ export const mockNewsFeaturesData = {
         datetime: 1585130322000,
         headline: 'COVID-19 at six U.S. Amazon warehouses',
         source: 'Seeking Alpha',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/bec5cf1c-1848-4eea-bc79-91f7bb40e758',
+        url: 'https://cloud.iexapis.com/v1/news/article/bec5cf1c-1848-4eea-bc79-91f7bb40e758',
         summary:
           'The U.S. coronavirus outbreak has spread to at least six Amazon (NASDAQ:AMZN) warehouses, according to the Jeff Bezos-owned Washington Post. In some cases,',
         related: 'AMZN',
         image:
           'https://cloud.iexapis.com/v1/news/image/bec5cf1c-1848-4eea-bc79-91f7bb40e758',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   FB: {
     news: [
@@ -90,19 +85,18 @@ export const mockNewsFeaturesData = {
         headline:
           'COAI urges subscribers to use data networks responsibly to free up infra for critical services',
         source: 'Economic Times India',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/330488bd-c2c6-4d23-9639-7c5f54f1e06c',
+        url: 'https://cloud.iexapis.com/v1/news/article/330488bd-c2c6-4d23-9639-7c5f54f1e06c',
         summary:
           'NEW DELHI: With the government imposing 21-day lockdown to tackle coronavirus spread, industry body COAI on Wednesday urged mobile consumers to use data networks responsibly, so that critical services can run smoothly on communications infrastructure.COAI\'s appeal to public comes at a time when data usage has surged nearly 30 per cent over the last few days in the wake of lockdowns, work-from-home and social distancing measures adopted to contain the spread of coronavirus.Prime Minister Narendra Modi on Tuesday announced a complete lockdown for 21 days in an unprecedented move to halt the spread of the pandemic.Soon after the announcement, the Centre said all road, rail and air services will remain suspended during this period.COVID-19 has claimed 9 lives in the country and over 550 persons being affected by the viral infection. Fears are also mounting that more could be hit as the global coronavirus toll inches towards 17,000."We are asking people for responsible usage of network…to avoid any trivial use of internet and networks.',
         related: 'FB',
         image:
           'https://cloud.iexapis.com/v1/news/image/330488bd-c2c6-4d23-9639-7c5f54f1e06c',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
-  idList: ['GOOG', 'AMZN', 'FB']
+  idList: ['GOOG', 'AMZN', 'FB'],
 };
 
 export const mockNewsSectorsData = {
@@ -113,17 +107,16 @@ export const mockNewsSectorsData = {
         headline:
           'Islamic State claims Mozambique attack close to gas projects - CNBC Africa',
         source: 'CNBC Africa',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/8b7ffb25-8374-442b-a346-d10785f0e9b2',
+        url: 'https://cloud.iexapis.com/v1/news/article/8b7ffb25-8374-442b-a346-d10785f0e9b2',
         summary:
           'Militant group Islamic State has claimed responsibility for an attack in northern Mozambique just south of the site of gas projects worth $60 billion being developed by the likes of Exxon Mobil and Total.',
         related: 'XOM',
         image:
           'https://cloud.iexapis.com/v1/news/image/8b7ffb25-8374-442b-a346-d10785f0e9b2',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   CVX: {
     news: [
@@ -132,17 +125,16 @@ export const mockNewsSectorsData = {
         headline:
           'WTI Erases Overnight Gains On Demand Fears, Crude Inventory Build',
         source: 'Zero Hedge',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/30d1f8d3-7282-4dbd-a379-5b947d47202c',
+        url: 'https://cloud.iexapis.com/v1/news/article/30d1f8d3-7282-4dbd-a379-5b947d47202c',
         summary:
           "WTI Erases Overnight Gains On Demand Fears, Crude Inventory Build Oil prices extended gains overnight, along with the rest of the markets, on hope The Fed's buying will work and optimism that US Congress will agree a bigly Stimulus Bill and helped by a surprise crude draw reported by API . But early on this morning that all started to fall apart and WTI plunged back to a $23 handle after the boss of Vitol Group said demand is down about 15 million to 20 million barrels a day and will shrink further with India’s decision to go into lockdown. “The hope for more stimulus is giving a short-term boost,” said Josh Graves, market strategist at RJ O’Brien & Associates LLC. “From a fundamentals standpoint, we’re still looking at two cataclysmic supply and demand shocks. Those need to be addressed before we see any sustained rally.” So once again, all eyes are on the official inventory data…as road and airline traffic has collapsed. Bloomberg Intelligence's senior energy analyst Vince Piazza warns: \" Near-term crude builds are likely with refining runs cut back as demand downstream demand weakens.",
         related: 'CVX',
         image:
           'https://cloud.iexapis.com/v1/news/image/30d1f8d3-7282-4dbd-a379-5b947d47202c',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   TOT: {
     news: [
@@ -151,17 +143,16 @@ export const mockNewsSectorsData = {
         headline:
           'Oil & Gas Stock Roundup: More E&P Companies Cut Capital Spending',
         source: 'Zacks Investment Research',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/cfaad645-8aad-4aa2-a55d-27f19e336b1c',
+        url: 'https://cloud.iexapis.com/v1/news/article/cfaad645-8aad-4aa2-a55d-27f19e336b1c',
         summary:
           "Even the 'Big Oil' companies don's seem to be immune to this price crash as evidenced by spending cuts by supermajors Royal Dutch Shell (RDS.A) and TOTAL S.A. (TOT).",
         related: 'TOT',
         image:
           'https://cloud.iexapis.com/v1/news/image/cfaad645-8aad-4aa2-a55d-27f19e336b1c',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   BP: {
     news: [
@@ -170,17 +161,16 @@ export const mockNewsSectorsData = {
         headline:
           'BP Bunge Bioenergia Turns Sugarcane Into Alcohol for Disinfectant | MarketScreener',
         source: 'MarketScreener',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/65551987-67d6-44d9-a910-845bdb2ac665',
+        url: 'https://cloud.iexapis.com/v1/news/article/65551987-67d6-44d9-a910-845bdb2ac665',
         summary:
           'By Dieter Holger BP Bunge Bioenergia, a joint venture between BP PLC and Bunge Ltd., said Wednesday that it would turn sugarcane-based ethanol into disinfectant for the Brazilian health-care… | March 25, 2020',
         related: 'BP',
         image:
           'https://cloud.iexapis.com/v1/news/image/65551987-67d6-44d9-a910-845bdb2ac665',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   MSFT: {
     news: [
@@ -189,17 +179,16 @@ export const mockNewsSectorsData = {
         headline:
           'Neo Releases $11 Million From Cold Wallet to Fund Itself Through 2020',
         source: 'Cointelegraph',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/ed936e36-f8c3-44fd-a354-b045330c47c7',
+        url: 'https://cloud.iexapis.com/v1/news/article/ed936e36-f8c3-44fd-a354-b045330c47c7',
         summary:
           "The Neo Foundation released more than $11 million in NEO from locked accounts to cover costs for 2020. The Neo Foundation announced on March 25 that they have released the necessary funds to continue operating for the 2020 Fiscal Year (FY). A total of 1,660,865 NEO worth approximately $11 million was released, with 27,800,303 NEO ($190 million) still remaining. According to its blog post , the Neo whitepaper allows the Foundation to sell its stake of NEO to “support Neo's technological development, ecosystem growth, community expansion.” The transaction ID published by the foundation reveals that the tokens were sent to an address that contains over 14.6 million NEO, worth $100 million. The announcement reads that the tokens were transferred from the “locked account to the current account,” which would imply that the foundation has an even deeper funding pool than the one contained in the first wallet. While the sparse transaction history seems to exclude the possibility that it is an exchange address, it could also be the exchange’s cold wallet.",
         related: 'MSFT',
         image:
           'https://cloud.iexapis.com/v1/news/image/ed936e36-f8c3-44fd-a354-b045330c47c7',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   INTC: {
     news: [
@@ -207,17 +196,16 @@ export const mockNewsSectorsData = {
         datetime: 1585174987000,
         headline: 'Intel : Response to COVID-19 Crisis | MarketScreener',
         source: 'MarketScreener',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/425cf44a-9692-4d56-bd99-31bc998ab95f',
+        url: 'https://cloud.iexapis.com/v1/news/article/425cf44a-9692-4d56-bd99-31bc998ab95f',
         summary:
           "This is a time of unprecedented change and uncertainty. Intel's top priority is protecting the health and well-being of employees while keeping the business running for our customers and… | March 25, 2020",
         related: 'INTC,INCO',
         image:
           'https://cloud.iexapis.com/v1/news/image/425cf44a-9692-4d56-bd99-31bc998ab95f',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   TSM: {
     news: [
@@ -225,17 +213,16 @@ export const mockNewsSectorsData = {
         datetime: 1585172720000,
         headline: 'TSMC (TSM) Gains But Lags Market: What You Should Know',
         source: 'Zacks Investment Research',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/74728d84-9923-4233-a80d-708498a67918',
+        url: 'https://cloud.iexapis.com/v1/news/article/74728d84-9923-4233-a80d-708498a67918',
         summary:
           'In the latest trading session, TSMC (TSM) closed at $49, marking a +0.27% move from the previous day.',
         related: 'TSM',
         image:
           'https://cloud.iexapis.com/v1/news/image/74728d84-9923-4233-a80d-708498a67918',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   CSCO: {
     news: [
@@ -244,17 +231,16 @@ export const mockNewsSectorsData = {
         headline:
           'Nachfolgerin von David Mead: Elisabeth De Dobbeleer leitet Cisco-Channel in EMEAR',
         source: 'Channel Partner',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/d31dde7c-7300-462c-ba5c-89a9d2ed6ee4',
+        url: 'https://cloud.iexapis.com/v1/news/article/d31dde7c-7300-462c-ba5c-89a9d2ed6ee4',
         summary:
           'Der US-Netzwerkhersteller Cisco Systems gibt einen Führungswechsel für seine Partnerorganisationen in Europa, dem Nahen Osten, Afrika und Russland bekannt.',
         related: 'CSCO',
         image:
           'https://cloud.iexapis.com/v1/news/image/d31dde7c-7300-462c-ba5c-89a9d2ed6ee4',
         lang: 'de',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   JNJ: {
     news: [
@@ -262,17 +248,16 @@ export const mockNewsSectorsData = {
         datetime: 1585160610000,
         headline: "Xarelto plaintiffs' lawyers win $114 million in fees, costs",
         source: 'Reuters',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/01f3a653-f4b9-4631-9808-bb95cb4fdbae',
+        url: 'https://cloud.iexapis.com/v1/news/article/01f3a653-f4b9-4631-9808-bb95cb4fdbae',
         summary:
           'A federal judge has awarded $114.3 million in fees and costs to plaintiffs’ lawyers in the multidistrict litigation, led by counsel from Beasley Allen and Levin Papantonio, over claims that Bayer AG and Johnson & Johnson failed to warn of the bleeding risks associated with the blood thinner Xarelto.',
         related: 'JNJ',
         image:
           'https://cloud.iexapis.com/v1/news/image/01f3a653-f4b9-4631-9808-bb95cb4fdbae',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   UNH: {
     news: [
@@ -280,17 +265,16 @@ export const mockNewsSectorsData = {
         datetime: 1585182006000,
         headline: 'UnitedHealth Group pushes self-collected COVID-19 test',
         source: 'Star Tribune',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/11e562d3-26be-4783-b3b8-0a614ec8b255',
+        url: 'https://cloud.iexapis.com/v1/news/article/11e562d3-26be-4783-b3b8-0a614ec8b255',
         summary:
           'Follow the StarTribune for the news, photos and videos from the Twin Cities and beyond.',
         related: 'UNH',
         image:
           'https://cloud.iexapis.com/v1/news/image/11e562d3-26be-4783-b3b8-0a614ec8b255',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   NVS: {
     news: [
@@ -299,17 +283,16 @@ export const mockNewsSectorsData = {
         headline:
           'Laekna Acquires Exclusive Global Rights to Clinical-Stage Cancer Asset',
         source: 'Business Wire',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/b62de9fe-ae1f-428c-b394-b360a83419ff',
+        url: 'https://cloud.iexapis.com/v1/news/article/b62de9fe-ae1f-428c-b394-b360a83419ff',
         summary:
           'SHANGHAI--(BUSINESS WIRE)-- #AdvancedCancer--Laekna announced a new agreement with Novartis giving the China-based biotech company exclusive global rights to Novartis’ anti-PD-L1 Antibody.',
         related: 'NVS',
         image:
           'https://cloud.iexapis.com/v1/news/image/b62de9fe-ae1f-428c-b394-b360a83419ff',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   MRK: {
     news: [
@@ -318,17 +301,16 @@ export const mockNewsSectorsData = {
         headline:
           'Merck to Donate 300,000 Masks to New Jersey for COVID-19 Emergency Response',
         source: 'Business Wire',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/ee7dcf73-79c0-4bf6-a54b-48416fc1bc72',
+        url: 'https://cloud.iexapis.com/v1/news/article/ee7dcf73-79c0-4bf6-a54b-48416fc1bc72',
         summary:
           'KENILWORTH, N.J.--(BUSINESS WIRE)---- $MRK #COVID19--Merck to Donate 300,000 Masks to New Jersey for COVID-19 Emergency Response',
         related: 'MRK',
         image:
           'https://cloud.iexapis.com/v1/news/image/ee7dcf73-79c0-4bf6-a54b-48416fc1bc72',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   'BRK.B': {
     news: [
@@ -337,8 +319,7 @@ export const mockNewsSectorsData = {
         headline:
           'Berkshire Hathaway Inc. (BRK.B) Down 25.5% Since Last Earnings Report: Can It Rebound?',
         source: 'Zacks Investment Research',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/f0545b6e-2c20-4324-afba-12ceb579da5b',
+        url: 'https://cloud.iexapis.com/v1/news/article/f0545b6e-2c20-4324-afba-12ceb579da5b',
         summary:
           "Berkshire Hathaway Inc. (BRK.B) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.",
         related: 'BRK.A,BRK.B',
@@ -346,9 +327,9 @@ export const mockNewsSectorsData = {
           'https://cloud.iexapis.com/v1/news/image/f0545b6e-2c20-4324-afba-12ceb579da5b',
         lang: 'en',
         hasPaywall: false,
-        symbol: 'BRK.A'
-      }
-    ]
+        symbol: 'BRK.A',
+      },
+    ],
   },
   V: {
     news: [
@@ -357,17 +338,16 @@ export const mockNewsSectorsData = {
         headline:
           'Verschwörungstheorie: Coronavirus wurde nicht im Labor gezüchtet',
         source: 'Kurier.at',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/0b347b1d-57c8-4b51-93cf-a66344fd11d8',
+        url: 'https://cloud.iexapis.com/v1/news/article/0b347b1d-57c8-4b51-93cf-a66344fd11d8',
         summary:
           'US-Forscher räumen mit der hartnäckigen verschwörerischen Annahme auf, das neuartige Virus sei menschengemacht. Unsichere Zeiten sind ein idealer Nährboden für Verschwörungstheorien . Angesichts der weltweiten Coronavirus-Pandemie ist es also kaum verwunderlich, dass verschwörerische Annahmen in ähnlicher Weise grassieren wie das neuartige Virus selbst. Im Zentrum der Verschwörungstirade , die sich seit dem Ausbruch der Lungenkrankheit Covid-19 in China Ende des vergangenen Jahres entwickelt hat, steht die Überzeugung, das Virus sei im Labor gezüchtet worden – und damit menschengemacht. Wissenschaft räumt mit Fake News auf Forscher fanden in entsprechenden Tests keinerlei Hinweise darauf. Neue Analysen bestimmter Genabschnitte von SARS-CoV-2, wie das neuartige Coronavirus abgekürzt wird, würden eindeutig belegen, dass der Erreger natürlichen Ursprungs sei, heißt es in einer Erhebung der US-amerikanischen Forschungseinrichtung Scripps Research . "Durch den Vergleich der verfügbaren Genomsequenzdaten bekannter Coronavirus-Stämme konnten wir klar feststellen, dass SARS-CoV-2 durch natürliche Prozesse entstanden ist", sagt Kristian Andersen , Experte für Immunologie und Mikrobiologie bei Scripps Research und Mitautor der Studie.',
         related: 'V',
         image:
           'https://cloud.iexapis.com/v1/news/image/0b347b1d-57c8-4b51-93cf-a66344fd11d8',
         lang: 'de',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   JPM: {
     news: [
@@ -376,17 +356,16 @@ export const mockNewsSectorsData = {
         headline:
           "Sharp recession should give way to a second half snap back, J.P. Morgan's Anastasia Amoroso predicts",
         source: 'CNBC',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/873c7d36-c2aa-407b-b6cf-ab004ce94e0a',
+        url: 'https://cloud.iexapis.com/v1/news/article/873c7d36-c2aa-407b-b6cf-ab004ce94e0a',
         summary:
           "J.P. Morgan Private Bank's Anastasia Amoroso expects government stimulus measures and a drop in coronavirus cases to help the economy.",
         related: 'JPM',
         image:
           'https://cloud.iexapis.com/v1/news/image/873c7d36-c2aa-407b-b6cf-ab004ce94e0a',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   BAC: {
     news: [
@@ -395,17 +374,16 @@ export const mockNewsSectorsData = {
         headline:
           'California governor announces deal with most major banks to waive residential mortgage payments for 90 days (JPM, WF, USB, C)',
         source: 'Business Insider',
-        url:
-          'https://cloud.iexapis.com/v1/news/article/d13b3b5d-8a65-4966-9095-4cf68f9efecd',
+        url: 'https://cloud.iexapis.com/v1/news/article/d13b3b5d-8a65-4966-9095-4cf68f9efecd',
         summary:
           'JPMorgan Chase, Wells Fargo, Citi, and US Bank will issue a 90-day waiver on residential mortgage payments in California, Governor Gavin Newsom announced on Wednesday. Around 200 state charter banks and credit unions will also issue the waivers. Bank of America will do so for 30 days, the governor said. Newsom said he is currently working with the banks on accounting for ATM fees and overdraft charges and hopes to announce a solution soon. Visit Business Insider\'s homepage for more stories . Homeowners in California paying a mortgage to JPMorgan Chase, Wells Fargo, Citi, or US Bank will receive a 90-day waiver on mortgage payments, California Gov. Gavin Newsom said. Around 200 of the state\'s charter banks and credit unions will also issue waivers for 90 days, Newsom announced during a Wednesday press conference. Newsom said that "unfortunately Bank of America did not publicly commit" to 90 days, but will give a 30-day waiver. "I hope they will reconsider and join those other banks that are willing to do the right thing," Newsom said.',
         related: 'BAC',
         image:
           'https://cloud.iexapis.com/v1/news/image/d13b3b5d-8a65-4966-9095-4cf68f9efecd',
         lang: 'en',
-        hasPaywall: false
-      }
-    ]
+        hasPaywall: false,
+      },
+    ],
   },
   idList: [
     'XOM',
@@ -423,8 +401,8 @@ export const mockNewsSectorsData = {
     'BRK.B',
     'V',
     'JPM',
-    'BAC'
-  ]
+    'BAC',
+  ],
 };
 
 export const mockCategories = [
@@ -448,7 +426,7 @@ export const mockCategories = [
   { name: 'Consumer Non-Durables' },
   { name: 'Communications' },
   { name: 'Energy Minerals' },
-  { name: 'Government' }
+  { name: 'Government' },
 ];
 
 export const mockScreenerList = [
@@ -507,7 +485,7 @@ export const mockScreenerList = [
     week52Low: 0.33,
     ytdChange: -0.372693,
     lastTradeTime: 1660750875434,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'F',
@@ -564,7 +542,7 @@ export const mockScreenerList = [
     week52Low: 4.01,
     ytdChange: -0.469775,
     lastTradeTime: 1641971381406,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'GE',
@@ -621,7 +599,7 @@ export const mockScreenerList = [
     week52Low: 5.9,
     ytdChange: -0.3001609277395671,
     lastTradeTime: 1649662459591,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'BAC',
@@ -678,7 +656,7 @@ export const mockScreenerList = [
     week52Low: 18.22,
     ytdChange: -0.331831,
     lastTradeTime: 1645060735383,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'CCL',
@@ -735,7 +713,7 @@ export const mockScreenerList = [
     week52Low: 8,
     ytdChange: -0.55908,
     lastTradeTime: 1629451958822,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'AAL',
@@ -792,7 +770,7 @@ export const mockScreenerList = [
     week52Low: 10.02,
     ytdChange: -0.456856,
     lastTradeTime: 1588541025243,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'AMD',
@@ -849,7 +827,7 @@ export const mockScreenerList = [
     week52Low: 24.75,
     ytdChange: -0.02692045699010269,
     lastTradeTime: 1658395173223,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'OXY',
@@ -906,7 +884,7 @@ export const mockScreenerList = [
     week52Low: 9,
     ytdChange: -0.678269,
     lastTradeTime: 1660564391523,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'TLRY',
@@ -963,7 +941,7 @@ export const mockScreenerList = [
     week52Low: 2.52,
     ytdChange: -0.12767628944539935,
     lastTradeTime: 1648055724547,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'MSFT',
@@ -1020,8 +998,8 @@ export const mockScreenerList = [
     week52Low: 119.98,
     ytdChange: -0.02327,
     lastTradeTime: 1601841864596,
-    isUSMarketOpen: false
-  }
+    isUSMarketOpen: false,
+  },
 ];
 
 export const mockTopLosersScreenerList = [
@@ -1080,7 +1058,7 @@ export const mockTopLosersScreenerList = [
     week52Low: 6.34,
     ytdChange: -0.76301,
     lastTradeTime: 1617288875169,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'HBNC',
@@ -1137,7 +1115,7 @@ export const mockTopLosersScreenerList = [
     week52Low: 7.65,
     ytdChange: -0.68828,
     lastTradeTime: 1640190471733,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'NH',
@@ -1194,7 +1172,7 @@ export const mockTopLosersScreenerList = [
     week52Low: 0.46,
     ytdChange: 1.3872,
     lastTradeTime: 1591191241749,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'CLDT',
@@ -1251,7 +1229,7 @@ export const mockTopLosersScreenerList = [
     week52Low: 3.5,
     ytdChange: -0.81679,
     lastTradeTime: 1610648592061,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'DXPE',
@@ -1308,7 +1286,7 @@ export const mockTopLosersScreenerList = [
     week52Low: 10.59,
     ytdChange: -0.81542,
     lastTradeTime: 1628708873245,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'SXC',
@@ -1365,7 +1343,7 @@ export const mockTopLosersScreenerList = [
     week52Low: 2.46,
     ytdChange: -0.5621,
     lastTradeTime: 1643413798888,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'RVI',
@@ -1422,7 +1400,7 @@ export const mockTopLosersScreenerList = [
     week52Low: 8.32,
     ytdChange: -0.7586,
     lastTradeTime: 1591897187547,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'HEBT',
@@ -1479,7 +1457,7 @@ export const mockTopLosersScreenerList = [
     week52Low: 0.6,
     ytdChange: 0.75687,
     lastTradeTime: 1598149030003,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'ACEL',
@@ -1536,7 +1514,7 @@ export const mockTopLosersScreenerList = [
     week52Low: 5.4,
     ytdChange: -0.4855945270869807,
     lastTradeTime: 1664746583946,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'VVI',
@@ -1593,8 +1571,8 @@ export const mockTopLosersScreenerList = [
     week52Low: 11.78,
     ytdChange: -0.8177739021391168,
     lastTradeTime: 1628094859990,
-    isUSMarketOpen: false
-  }
+    isUSMarketOpen: false,
+  },
 ];
 
 export const mockDetailData = {
@@ -1653,10 +1631,10 @@ export const mockDetailData = {
     week52Low: 0.32,
     ytdChange: -0.359555,
     lastTradeTime: 1585252796247,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   logo: {
-    url: 'https://storage.googleapis.com/iexcloud-hl37opg/api/logos/MFA.png'
+    url: 'https://storage.googleapis.com/iexcloud-hl37opg/api/logos/MFA.png',
   },
   chart: {
     range: '1m',
@@ -1668,7 +1646,7 @@ export const mockDetailData = {
         low: 7.51,
         open: 7.58,
         close: 7.52,
-        volume: 7573826
+        volume: 7573826,
       },
       {
         date: '2020-02-27',
@@ -1677,7 +1655,7 @@ export const mockDetailData = {
         low: 7.21,
         open: 7.47,
         close: 7.3,
-        volume: 10238826
+        volume: 10238826,
       },
       {
         date: '2020-02-28',
@@ -1686,7 +1664,7 @@ export const mockDetailData = {
         low: 6.97,
         open: 7.15,
         close: 7.23,
-        volume: 13259902
+        volume: 13259902,
       },
       {
         date: '2020-03-02',
@@ -1695,7 +1673,7 @@ export const mockDetailData = {
         low: 7.25,
         open: 7.27,
         close: 7.6,
-        volume: 6305805
+        volume: 6305805,
       },
       {
         date: '2020-03-03',
@@ -1704,7 +1682,7 @@ export const mockDetailData = {
         low: 7.35,
         open: 7.62,
         close: 7.44,
-        volume: 8308504
+        volume: 8308504,
       },
       {
         date: '2020-03-04',
@@ -1713,7 +1691,7 @@ export const mockDetailData = {
         low: 7.45,
         open: 7.52,
         close: 7.58,
-        volume: 5882025
+        volume: 5882025,
       },
       {
         date: '2020-03-05',
@@ -1722,7 +1700,7 @@ export const mockDetailData = {
         low: 7.4,
         open: 7.47,
         close: 7.5,
-        volume: 2923780
+        volume: 2923780,
       },
       {
         date: '2020-03-06',
@@ -1731,7 +1709,7 @@ export const mockDetailData = {
         low: 7.2,
         open: 7.32,
         close: 7.4,
-        volume: 7009556
+        volume: 7009556,
       },
       {
         date: '2020-03-09',
@@ -1740,7 +1718,7 @@ export const mockDetailData = {
         low: 7.01,
         open: 7.13,
         close: 7.1,
-        volume: 11503064
+        volume: 11503064,
       },
       {
         date: '2020-03-10',
@@ -1749,7 +1727,7 @@ export const mockDetailData = {
         low: 7.01,
         open: 7.22,
         close: 7.17,
-        volume: 10224336
+        volume: 10224336,
       },
       {
         date: '2020-03-11',
@@ -1758,7 +1736,7 @@ export const mockDetailData = {
         low: 6.82,
         open: 7.04,
         close: 6.9,
-        volume: 8653772
+        volume: 8653772,
       },
       {
         date: '2020-03-12',
@@ -1767,7 +1745,7 @@ export const mockDetailData = {
         low: 6,
         open: 6.27,
         close: 6.02,
-        volume: 9605098
+        volume: 9605098,
       },
       {
         date: '2020-03-13',
@@ -1776,7 +1754,7 @@ export const mockDetailData = {
         low: 5.83,
         open: 6.37,
         close: 6.07,
-        volume: 8386082
+        volume: 8386082,
       },
       {
         date: '2020-03-16',
@@ -1785,7 +1763,7 @@ export const mockDetailData = {
         low: 5.1,
         open: 5.4,
         close: 5.1,
-        volume: 7346004
+        volume: 7346004,
       },
       {
         date: '2020-03-17',
@@ -1794,7 +1772,7 @@ export const mockDetailData = {
         low: 4.22,
         open: 5.27,
         close: 4.25,
-        volume: 12858691
+        volume: 12858691,
       },
       {
         date: '2020-03-18',
@@ -1803,7 +1781,7 @@ export const mockDetailData = {
         low: 1.5,
         open: 3.97,
         close: 3.65,
-        volume: 22942294
+        volume: 22942294,
       },
       {
         date: '2020-03-19',
@@ -1812,7 +1790,7 @@ export const mockDetailData = {
         low: 3,
         open: 3.37,
         close: 3.65,
-        volume: 13267391
+        volume: 13267391,
       },
       {
         date: '2020-03-20',
@@ -1821,7 +1799,7 @@ export const mockDetailData = {
         low: 3.55,
         open: 3.86,
         close: 3.6,
-        volume: 14022823
+        volume: 14022823,
       },
       {
         date: '2020-03-23',
@@ -1830,7 +1808,7 @@ export const mockDetailData = {
         low: 2.57,
         open: 3.5,
         close: 2.7,
-        volume: 11524029
+        volume: 11524029,
       },
       {
         date: '2020-03-24',
@@ -1839,7 +1817,7 @@ export const mockDetailData = {
         low: 0.32,
         open: 2.9,
         close: 0.36,
-        volume: 55081850
+        volume: 55081850,
       },
       {
         date: '2020-03-25',
@@ -1848,9 +1826,9 @@ export const mockDetailData = {
         low: 0.64,
         open: 0.72,
         close: 1.14,
-        volume: 227398893
-      }
-    ]
+        volume: 227398893,
+      },
+    ],
   },
   company: {
     symbol: 'MFA',
@@ -1873,53 +1851,50 @@ export const mockDetailData = {
     city: 'New York',
     zip: '10022',
     country: 'US',
-    phone: '1.212.207.6400'
+    phone: '1.212.207.6400',
   },
   news: [
     {
       datetime: 1585236600000,
       headline: 'Iran backs UN plan for a ceasefire in Afghanistan: MFA',
       source: 'Mehr News Agency',
-      url:
-        'https://cloud.iexapis.com/v1/news/article/32bcde65-6287-40e0-ab2f-32d19b08d3a1',
+      url: 'https://cloud.iexapis.com/v1/news/article/32bcde65-6287-40e0-ab2f-32d19b08d3a1',
       summary:
         'TEHRAN, Mar. 26 (MNA) – Ministry of Foreign Affairs (MFA) of the Islamic Republic of Iran supported UN-sponsored plan for a ceasefire in Afghanistan.',
       related: 'MFA',
       image:
         'https://cloud.iexapis.com/v1/news/image/32bcde65-6287-40e0-ab2f-32d19b08d3a1',
       lang: 'en',
-      hasPaywall: false
+      hasPaywall: false,
     },
     {
       datetime: 1585196216000,
       headline: 'MFA Financial revokes dividends, Shares up 23%',
       source: 'Seeking Alpha',
-      url:
-        'https://cloud.iexapis.com/v1/news/article/3fe9528a-61f8-471a-aed8-8ffe0bfc3888',
+      url: 'https://cloud.iexapis.com/v1/news/article/3fe9528a-61f8-471a-aed8-8ffe0bfc3888',
       summary:
         'MFA Financial (NYSE:MFA) revokes its 1Q20 quarterly dividends on common stock and 7.50% Series B cumulative redeemable preferred stock. The quarterly cash',
       related: 'MFA',
       image:
         'https://cloud.iexapis.com/v1/news/image/3fe9528a-61f8-471a-aed8-8ffe0bfc3888',
       lang: 'en',
-      hasPaywall: false
+      hasPaywall: false,
     },
     {
       datetime: 1585078597000,
       headline:
         "Mortgage Massacre Latest Casualty: $10 Billion m-REIT MFA Can't Meet Margin Calls",
       source: 'Zero Hedge',
-      url:
-        'https://cloud.iexapis.com/v1/news/article/c4232fe8-02e6-4349-bb74-e18993e16a3c',
+      url: 'https://cloud.iexapis.com/v1/news/article/c4232fe8-02e6-4349-bb74-e18993e16a3c',
       summary:
         'Mortgage Massacre Latest Casualty: $10 Billion m-REIT MFA Can\'t Meet Margin Calls First, its was Invesco , then ED&F Man Capital and now the mortgage mayhem that erupted as a daisy-chain of mortgage REITs suddenly imploded, has taken down MFA Financial, whose crashing stock was halted after the company reported that "due to the turmoil in the financial markets resulting from the global pandemic of the COVID-19 virus, the Company and its subsidiaries have received an unusually high number of margin calls from financing counterparties, and have also experienced higher funding costs in respect of its repurchase agreements." As a result of this liquidity run, at the close of business on March 23, 2020, "the Company did not meet its margin calls." Further, on March 23, 2020, the Company notified its financing counterparties that it does not expect to be in a position to fund the anticipated volume of future margin calls under its financing arrangements in the near term as a result of market disruptions created by the COVID-19 pandemic.',
       related: 'MFA',
       image:
         'https://cloud.iexapis.com/v1/news/image/c4232fe8-02e6-4349-bb74-e18993e16a3c',
       lang: 'en',
-      hasPaywall: false
-    }
-  ]
+      hasPaywall: false,
+    },
+  ],
 };
 
 export const mockSortedScreenerList = [
@@ -1978,7 +1953,7 @@ export const mockSortedScreenerList = [
     week52Low: 119.98,
     ytdChange: -0.02327,
     lastTradeTime: 1601841864596,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'AMD',
@@ -2035,7 +2010,7 @@ export const mockSortedScreenerList = [
     week52Low: 24.75,
     ytdChange: -0.02692045699010269,
     lastTradeTime: 1658395173223,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'TLRY',
@@ -2092,7 +2067,7 @@ export const mockSortedScreenerList = [
     week52Low: 2.52,
     ytdChange: -0.12767628944539935,
     lastTradeTime: 1648055724547,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'CCL',
@@ -2149,7 +2124,7 @@ export const mockSortedScreenerList = [
     week52Low: 8,
     ytdChange: -0.55908,
     lastTradeTime: 1629451958822,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'BAC',
@@ -2206,7 +2181,7 @@ export const mockSortedScreenerList = [
     week52Low: 18.22,
     ytdChange: -0.331831,
     lastTradeTime: 1645060735383,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'OXY',
@@ -2263,7 +2238,7 @@ export const mockSortedScreenerList = [
     week52Low: 9,
     ytdChange: -0.678269,
     lastTradeTime: 1660564391523,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'GE',
@@ -2320,7 +2295,7 @@ export const mockSortedScreenerList = [
     week52Low: 5.9,
     ytdChange: -0.3001609277395671,
     lastTradeTime: 1649662459591,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'MFA',
@@ -2377,7 +2352,7 @@ export const mockSortedScreenerList = [
     week52Low: 0.33,
     ytdChange: -0.372693,
     lastTradeTime: 1660750875434,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'AAL',
@@ -2434,7 +2409,7 @@ export const mockSortedScreenerList = [
     week52Low: 10.02,
     ytdChange: -0.456856,
     lastTradeTime: 1588541025243,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'F',
@@ -2491,8 +2466,8 @@ export const mockSortedScreenerList = [
     week52Low: 4.01,
     ytdChange: -0.469775,
     lastTradeTime: 1641971381406,
-    isUSMarketOpen: false
-  }
+    isUSMarketOpen: false,
+  },
 ];
 
 export const mockSortedScreenerListWithCharacter = [
@@ -2551,7 +2526,7 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 2.44,
     ytdChange: -0.12671486874847313,
     lastTradeTime: 1595544678873,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'OXY',
@@ -2608,7 +2583,7 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 9,
     ytdChange: -0.653533,
     lastTradeTime: 1635592531273,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'MSFT',
@@ -2665,7 +2640,7 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 118.43,
     ytdChange: -0.023252,
     lastTradeTime: 1595269913948,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'MFA',
@@ -2722,7 +2697,7 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 0.32,
     ytdChange: -0.370283,
     lastTradeTime: 1616673251306,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'GE',
@@ -2779,7 +2754,7 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 6,
     ytdChange: -0.30591861818670024,
     lastTradeTime: 1627544583308,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'F',
@@ -2836,7 +2811,7 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 4.01,
     ytdChange: -0.46348,
     lastTradeTime: 1617837162292,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'CCL',
@@ -2893,7 +2868,7 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 8.3,
     ytdChange: -0.5528,
     lastTradeTime: 1592546864016,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'BAC',
@@ -2950,7 +2925,7 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 18.49,
     ytdChange: -0.294,
     lastTradeTime: 1645632112487,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'AMD',
@@ -3007,7 +2982,7 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 25.16,
     ytdChange: 0.08034862626732354,
     lastTradeTime: 1634272154708,
-    isUSMarketOpen: false
+    isUSMarketOpen: false,
   },
   {
     symbol: 'AAL',
@@ -3064,6 +3039,6 @@ export const mockSortedScreenerListWithCharacter = [
     week52Low: 10.31,
     ytdChange: -0.45886,
     lastTradeTime: 1607231460314,
-    isUSMarketOpen: false
-  }
+    isUSMarketOpen: false,
+  },
 ];

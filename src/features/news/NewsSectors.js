@@ -13,7 +13,7 @@ const symbolsOfSectors = {
   energy: ['XOM', 'CVX', 'TOT', 'BP'],
   technology: ['MSFT', 'INTC', 'TSM', 'CSCO'],
   healthcare: ['JNJ', 'UNH', 'NVS', 'MRK'],
-  finance: ['BRK.B', 'V', 'JPM', 'BAC']
+  finance: ['BRK.B', 'V', 'JPM', 'BAC'],
 };
 
 const sectorsAPIspec = {
@@ -21,18 +21,15 @@ const sectorsAPIspec = {
   params: {
     symbols: Object.values(symbolsOfSectors).join(),
     types: 'news',
-    last: '1'
+    last: '1',
   },
   process: normalizeBatchNews,
-  naming: 'sectorNews'
+  naming: 'sectorNews',
 };
 
 const NewsSectors = () => {
-  const {
-    isFetchingSectorNews,
-    errorOnSectorNews,
-    sectorNews
-  } = useLocalStateFetching(sectorsAPIspec);
+  const { isFetchingSectorNews, errorOnSectorNews, sectorNews } =
+    useLocalStateFetching(sectorsAPIspec);
 
   if (isFetchingSectorNews) {
     return (
@@ -52,12 +49,12 @@ const NewsSectors = () => {
 
   return (
     <section className="news-sectors">
-      {Object.keys(symbolsOfSectors).map(sector => (
+      {Object.keys(symbolsOfSectors).map((sector) => (
         <div className="news-sector" key={sector}>
           <h3 className="news-sector__title heading-secondary">{sector}</h3>
           <div className="news-cards">
             {sectorNews.idList &&
-              symbolsOfSectors[sector].map(symbol => {
+              symbolsOfSectors[sector].map((symbol) => {
                 return (
                   sectorNews[symbol] && (
                     <a

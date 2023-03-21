@@ -1,11 +1,9 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 
 import { renderWithRedux } from '../../../setupTests';
-import {
-  mockNewsFeaturesData,
-  mockNewsSectorsData
-} from '../../../__mocks__/mockData';
+import { mockNewsFeaturesData, mockNewsSectorsData } from '../../../mockData';
 
 import * as hookCollections from '../../../utils/customHooks';
 import App from '../../App';
@@ -13,13 +11,13 @@ import App from '../../App';
 const fakeNewsFeaturesData = {
   isFetchingFeatureNews: false,
   errorOnFeatureNews: '',
-  featureNews: mockNewsFeaturesData
+  featureNews: mockNewsFeaturesData,
 };
 
 const fakeNewsSectorsData = {
   isFetchingSectorNews: false,
   errorOnSectorNews: '',
-  sectorNews: mockNewsSectorsData
+  sectorNews: mockNewsSectorsData,
 };
 
 jest
@@ -36,14 +34,14 @@ jest
   });
 
 it('render NewsFeatures normally', async () => {
-  const { findByTitle } = renderWithRedux(
+  renderWithRedux(
     <MemoryRouter initialEntries={['/news']}>
       <App />
     </MemoryRouter>
   );
 
   expect(
-    await findByTitle(mockNewsFeaturesData.GOOG.news[0].headline)
+    await screen.findByTitle(mockNewsFeaturesData.GOOG.news[0].headline)
   ).toBeInTheDocument();
 });
 
@@ -51,16 +49,16 @@ it('render loading icon when fetching featureNews', async () => {
   jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValueOnce({
     isFetchingFeatureNews: true,
     errorOnFeatureNews: '',
-    featureNews: ''
+    featureNews: '',
   });
 
-  const { findByAltText } = renderWithRedux(
+  renderWithRedux(
     <MemoryRouter initialEntries={['/news']}>
       <App />
     </MemoryRouter>
   );
 
-  expect(await findByAltText('loading icon')).toBeInTheDocument();
+  expect(await screen.findByAltText('loading icon')).toBeInTheDocument();
 });
 
 it('render error message when fetching featureNews failed', async () => {
@@ -68,14 +66,14 @@ it('render error message when fetching featureNews failed', async () => {
   jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValueOnce({
     isFetchingFeatureNews: false,
     errorOnFeatureNews: errorMessage,
-    featureNews: ''
+    featureNews: '',
   });
 
-  const { findByText } = renderWithRedux(
+  renderWithRedux(
     <MemoryRouter initialEntries={['/news']}>
       <App />
     </MemoryRouter>
   );
 
-  expect(await findByText(errorMessage)).toBeInTheDocument();
+  expect(await screen.findByText(errorMessage)).toBeInTheDocument();
 });
