@@ -2,7 +2,10 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useLocalStateFetching } from '../customHooks';
 import instance from '../../api/IEXCloud';
 
-import { featuresAPIspec } from '../../features/news/NewsFeatures';
+import {
+  featuresAPIspec,
+  normalizeBatchNews,
+} from '../../features/news/NewsFeatures';
 import { mockNewsFeaturesData } from '../../mockData';
 
 // switch to open for real http request on jsdom environment
@@ -25,7 +28,9 @@ describe('useLocalStateFetching', () => {
 
     expect(result.current.isFetchingFeatureNews).toBe(false);
     expect(result.current.errorOnFeatureNews).toBe('');
-    expect(result.current.featureNews).toEqual(mockNewsFeaturesData);
+    expect(result.current.featureNews).toEqual(
+      normalizeBatchNews(mockNewsFeaturesData)
+    );
   });
 
   it('should reply with error message if network request failed', async () => {

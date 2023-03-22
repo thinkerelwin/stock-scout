@@ -3,34 +3,15 @@ import { fireEvent, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { renderWithRedux } from '../../../setupTests';
+import instance from '../../../api/IEXCloud';
 import { mockRecentNewsData } from '../../../mockData';
 
-import * as reduxHooks from 'react-redux';
-import * as hookCollections from '../../../utils/customHooks';
 import App from '../../App';
 
-// default state
-const fakeRecentNewsData = {
-  isFetchingRecentNewsList: false,
-  errorOnRecentNewsList: '',
-  recentNewsList: mockRecentNewsData,
-};
-
 beforeEach(() => {
-  jest
-    .spyOn(hookCollections, 'useLocalStateFetching')
-    .mockImplementation(({ naming }) => {
-      switch (naming) {
-        case 'recentNewsList':
-          return fakeRecentNewsData;
-        default:
-          throw Error('fake data not found');
-      }
-    });
-
-  jest
-    .spyOn(reduxHooks, 'useSelector')
-    .mockReturnValue({ isMediumSize: false });
+  jest.spyOn(instance, 'get').mockImplementation((route, { params }) => {
+    return Promise.resolve({ data: mockRecentNewsData });
+  });
 });
 
 it('render slider correctly on small screen', async () => {
@@ -47,30 +28,13 @@ it('render slider correctly on small screen', async () => {
   expect(headlineText.length).toBeGreaterThan(1);
 });
 
-it('render news normally on large screen', async () => {
-  // isMediumSize will be called twice
-  jest
-    .spyOn(reduxHooks, 'useSelector')
-    .mockReturnValueOnce({ isMediumSize: true })
-    .mockReturnValueOnce({ isMediumSize: true });
-
-  renderWithRedux(
-    <MemoryRouter>
-      <App />
-    </MemoryRouter>
-  );
-
-  const headlineText = await screen.findAllByText(
-    mockRecentNewsData[0].headline
-  );
-  expect(headlineText.length).toBe(1);
-});
-
 it('render loading icon when fetching news', async () => {
-  jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValueOnce({
-    isFetchingRecentNewsList: true,
-    errorOnRecentNewsList: '',
-    recentNewsList: '',
+  jest.spyOn(instance, 'get').mockImplementation((route, { params }) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ data: mockRecentNewsData });
+      }, 500);
+    });
   });
 
   renderWithRedux(
@@ -83,12 +47,8 @@ it('render loading icon when fetching news', async () => {
 });
 
 it('render error message when fetching news failed', async () => {
-  const errorMessage = 'Error: timeout of 1ms exceeded';
-  jest.spyOn(hookCollections, 'useLocalStateFetching').mockReturnValueOnce({
-    isFetchingRecentNewsList: false,
-    errorOnRecentNewsList: errorMessage,
-    recentNewsList: '',
-  });
+  const errorMessage = 'timeout of 1ms exceeded';
+  jest.spyOn(instance, 'get').mockRejectedValue(new Error(errorMessage));
 
   renderWithRedux(
     <MemoryRouter>
@@ -96,7 +56,7 @@ it('render error message when fetching news failed', async () => {
     </MemoryRouter>
   );
 
-  expect(await screen.findByText(errorMessage)).toBeInTheDocument();
+  expect(await screen.findByText(`Error: ${errorMessage}`)).toBeInTheDocument();
 });
 
 it('shows the second slide when navigation button is clicked', async () => {
@@ -111,4 +71,26 @@ it('shows the second slide when navigation button is clicked', async () => {
 
   // eslint-disable-next-line testing-library/no-node-access
   expect(document.querySelector('.slick-current').dataset.index).toBe('1');
+});
+
+it('render news normally on large screen', async () => {
+  await import('../../../__mocks__/matchMediaThatMatches.mock');
+  renderWithRedux(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>,
+    {
+      preloadedState: {
+        sizeDetection: {
+          isMediumSize: true,
+        },
+      },
+    }
+  );
+
+  const headlineText = await screen.findAllByText(
+    mockRecentNewsData[0].headline
+  );
+
+  expect(headlineText.length).toBe(1);
 });

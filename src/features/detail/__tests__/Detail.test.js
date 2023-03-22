@@ -16,10 +16,6 @@ beforeEach(() => {
     .mockResolvedValue({ data: mockDetailData });
 });
 
-afterEach(() => {
-  jest.restoreAllMocks();
-});
-
 it('render default Detail page normally', async () => {
   renderWithRedux(
     <MemoryRouter initialEntries={[`/detail/${mockSymbol}`]}>

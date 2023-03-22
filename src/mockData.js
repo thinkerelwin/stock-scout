@@ -96,7 +96,6 @@ export const mockNewsFeaturesData = {
       },
     ],
   },
-  idList: ['GOOG', 'AMZN', 'FB'],
 };
 
 export const mockNewsSectorsData = {
@@ -385,24 +384,6 @@ export const mockNewsSectorsData = {
       },
     ],
   },
-  idList: [
-    'XOM',
-    'CVX',
-    'TOT',
-    'BP',
-    'MSFT',
-    'INTC',
-    'TSM',
-    'CSCO',
-    'JNJ',
-    'UNH',
-    'NVS',
-    'MRK',
-    'BRK.B',
-    'V',
-    'JPM',
-    'BAC',
-  ],
 };
 
 export const mockCategories = [

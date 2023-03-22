@@ -3,15 +3,8 @@ import { fireEvent, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { renderWithRedux } from '../../../setupTests';
-import {
-  mockRecentNewsData,
-  mockNewsFeaturesData,
-  mockNewsSectorsData,
-  mockCategories,
-  mockScreenerList,
-} from '../../../mockData';
+import { mockCategories, mockScreenerList } from '../../../mockData';
 
-import * as hookCollections from '../../../utils/customHooks';
 import instance from '../../../api/IEXCloud';
 import menuLink from '../../../utils/constant/menuLink.json';
 import App from '../../App';
@@ -58,43 +51,13 @@ it('close menus when navbar button is clicked on open state', async () => {
 });
 
 describe('route navigation', () => {
-  const fakeNewsFeaturesData = {
-    isFetchingFeatureNews: false,
-    errorOnFeatureNews: '',
-    featureNews: mockNewsFeaturesData,
-  };
-
-  const fakeNewsSectorsData = {
-    isFetchingSectorNews: false,
-    errorOnSectorNews: '',
-    sectorNews: mockNewsSectorsData,
-  };
-
-  const fakeRecentNewsData = {
-    isFetchingRecentNewsList: false,
-    errorOnRecentNewsList: '',
-    recentNewsList: mockRecentNewsData,
-  };
-
-  jest
-    .spyOn(hookCollections, 'useLocalStateFetching')
-    .mockImplementation(({ naming }) => {
-      switch (naming) {
-        case 'featureNews':
-          return fakeNewsFeaturesData;
-        case 'sectorNews':
-          return fakeNewsSectorsData;
-        case 'recentNewsList':
-          return fakeRecentNewsData;
-        default:
-          throw Error('fake data not found');
-      }
-    });
-
   jest.spyOn(instance, 'get').mockImplementation((route, params) => {
-    return route === categoryRoute
-      ? { data: mockCategories }
-      : { data: mockScreenerList };
+    console.log('mocked', route, params);
+    if (route === categoryRoute) {
+      return Promise.resolve({ data: mockCategories });
+    } else {
+      return Promise.resolve({ data: mockScreenerList });
+    }
   });
   const categoryRoute = '/ref-data/sectors';
 

@@ -3,37 +3,20 @@ import { MemoryRouter } from 'react-router-dom';
 import { screen } from '@testing-library/react';
 
 import { renderWithRedux } from '../../../setupTests';
+import instance from '../../../api/IEXCloud';
 import { mockNewsFeaturesData, mockNewsSectorsData } from '../../../mockData';
 
-import * as hookCollections from '../../../utils/customHooks';
 import App from '../../App';
 
-const fakeNewsFeaturesData = {
-  isFetchingFeatureNews: false,
-  errorOnFeatureNews: '',
-  featureNews: mockNewsFeaturesData,
-};
-
-const fakeNewsSectorsData = {
-  isFetchingSectorNews: false,
-  errorOnSectorNews: '',
-  sectorNews: mockNewsSectorsData,
-};
-
-jest
-  .spyOn(hookCollections, 'useLocalStateFetching')
-  .mockImplementation(({ naming }) => {
-    switch (naming) {
-      case 'featureNews':
-        return fakeNewsFeaturesData;
-      case 'sectorNews':
-        return fakeNewsSectorsData;
-      default:
-        throw Error('fake data not found');
+it('render NewsSectors normally', async () => {
+  jest.spyOn(instance, 'get').mockImplementation((route, { params }) => {
+    if (params.symbols === 'goog,amzn,fb') {
+      return Promise.resolve({ data: mockNewsFeaturesData });
+    } else {
+      return Promise.resolve({ data: mockNewsSectorsData });
     }
   });
 
-it('render NewsSectors normally', async () => {
   renderWithRedux(
     <MemoryRouter initialEntries={['/news']}>
       <App />
@@ -46,14 +29,17 @@ it('render NewsSectors normally', async () => {
 });
 
 it('render loading icon when fetching sectorNews', async () => {
-  jest
-    .spyOn(hookCollections, 'useLocalStateFetching')
-    .mockReturnValueOnce(fakeNewsFeaturesData)
-    .mockReturnValueOnce({
-      isFetchingSectorNews: true,
-      errorOnSectorNews: '',
-      sectorNews: '',
-    });
+  jest.spyOn(instance, 'get').mockImplementation((route, { params }) => {
+    if (params.symbols === 'goog,amzn,fb') {
+      return Promise.resolve({ data: mockNewsFeaturesData });
+    } else {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({ data: mockNewsSectorsData });
+        }, 500);
+      });
+    }
+  });
 
   renderWithRedux(
     <MemoryRouter initialEntries={['/news']}>
@@ -65,15 +51,14 @@ it('render loading icon when fetching sectorNews', async () => {
 });
 
 it('render error message when fetching sectorNews failed', async () => {
-  const errorMessage = 'Error: timeout of 1ms exceeded';
-  jest
-    .spyOn(hookCollections, 'useLocalStateFetching')
-    .mockReturnValueOnce(fakeNewsFeaturesData)
-    .mockReturnValueOnce({
-      isFetchingSectorNews: false,
-      errorOnSectorNews: errorMessage,
-      sectorNews: '',
-    });
+  const errorMessage = 'timeout of 1ms exceeded';
+  jest.spyOn(instance, 'get').mockImplementation((route, { params }) => {
+    if (params.symbols === 'goog,amzn,fb') {
+      return Promise.resolve({ data: mockNewsFeaturesData });
+    } else {
+      return Promise.reject(new Error(errorMessage));
+    }
+  });
 
   renderWithRedux(
     <MemoryRouter initialEntries={['/news']}>
@@ -81,5 +66,5 @@ it('render error message when fetching sectorNews failed', async () => {
     </MemoryRouter>
   );
 
-  expect(await screen.findByText(errorMessage)).toBeInTheDocument();
+  expect(await screen.findByText(`Error: ${errorMessage}`)).toBeInTheDocument();
 });
