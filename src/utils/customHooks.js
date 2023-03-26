@@ -8,7 +8,7 @@ import { setIsMediumSize } from '../features/sizeDetection/sizeDetectionSlice';
 const defaultWidth = '64rem';
 
 export const useSizeDetection = (width = defaultWidth) => {
-  const { isMediumSize } = useSelector(state => state.sizeDetection);
+  const { isMediumSize } = useSelector((state) => state.sizeDetection);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,6 +31,7 @@ export const useSizeDetection = (width = defaultWidth) => {
       sizeDetector.removeListener(carouselSwitch);
     };
   }, [dispatch, width]);
+  console.log('isMediumSize Check', isMediumSize);
 
   return { isMediumSize };
 };
@@ -47,8 +48,8 @@ export const useLocalStateFetching = ({ route, params, process, naming }) => {
     async function fetchRecentNews() {
       setIsFetchingIEXdata(true);
       try {
-        const { data } = await instance.get(route, { params });
-        isMounted && setIEXdata(process(data));
+        const response = await instance.get(route, { params });
+        isMounted && setIEXdata(process(response.data));
       } catch (err) {
         setErrorMessage(err.toString());
       }
@@ -64,11 +65,11 @@ export const useLocalStateFetching = ({ route, params, process, naming }) => {
   return {
     [`isFetching${capitalizeFirstChar(naming)}`]: isFetchingIEXdata,
     [`errorOn${capitalizeFirstChar(naming)}`]: errorMessage,
-    [naming]: IEXdata
+    [naming]: IEXdata,
   };
 };
 
-export const usePrevious = value => {
+export const usePrevious = (value) => {
   const ref = useRef();
   useEffect(() => {
     ref.current = value;

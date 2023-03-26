@@ -1,16 +1,27 @@
 {
   "extends": [
     "react-app",
-    "prettier",
-    "prettier/react",
+    "react-app/jest",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
     "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "plugin:prettier/recommended",
     "plugin:cypress/recommended"
   ],
-  "plugins": ["prettier", "testing-library"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["testing-library", "jest-dom", "prettier"],
   "rules": {
     "prettier/prettier": "error",
     "testing-library/await-async-query": "error",
-    "testing-library/no-await-sync-query": "error",
-    "testing-library/no-debug": "warn"
+    "testing-library/no-await-sync-query": "error"
   }
 }

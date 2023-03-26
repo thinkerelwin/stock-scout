@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { useRouteMatch, useLocation, Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
@@ -10,15 +11,12 @@ import { fetchCategories } from './screenerCategoriesSlice';
 import './ScreenerCategories.scss';
 
 const ScreenerCategories = ({ topList }) => {
-  const { url } = useRouteMatch();
-  const { pathname } = useLocation();
+  const { '*': currentCategory } = useParams();
   const dispatch = useDispatch();
 
   const { categories, error, isFetching } = useSelector(
-    state => state.screenerCategories
+    (state) => state.screenerCategories
   );
-
-  const currentCategory = pathname.slice(url.length + 1);
 
   useEffect(() => {
     !categories.length && dispatch(fetchCategories());
@@ -50,45 +48,55 @@ const ScreenerCategories = ({ topList }) => {
     <nav className="categories-box">
       <ul className="categories">
         {categories.length > 0 && [
-          topList.map(item => (
+          topList.map((item) => (
             <LinkTemplate
               key={item}
-              routeUrl={url}
               destinationUrl={item}
               name={item}
               currentCategory={currentCategory}
             />
           )),
-          categories.map(category => (
+          categories.map((category) => (
             <LinkTemplate
               key={category}
-              routeUrl={url}
               destinationUrl={category}
               name={category}
               currentCategory={currentCategory}
             />
-          ))
+          )),
         ]}
       </ul>
     </nav>
   );
 };
 
-const LinkTemplate = ({ routeUrl, destinationUrl, name, currentCategory }) => {
+ScreenerCategories.propTypes = {
+  topList: PropTypes.array,
+};
+
+const LinkTemplate = ({ destinationUrl, name, currentCategory }) => {
+  const isActive = destinationUrl === currentCategory;
   return (
     <li
       className={classNames('category', {
-        'category--active': destinationUrl === currentCategory
+        'category--active': isActive,
       })}
+      data-testid={isActive ? `category-${name}--selected` : ''}
     >
       <Link
         className="category__link heading-secondary"
-        to={`${routeUrl}/${destinationUrl}`}
+        to={`${destinationUrl}`}
       >
         {name}
       </Link>
     </li>
   );
+};
+
+LinkTemplate.propTypes = {
+  destinationUrl: PropTypes.string,
+  name: PropTypes.string,
+  currentCategory: PropTypes.string,
 };
 
 export default ScreenerCategories;

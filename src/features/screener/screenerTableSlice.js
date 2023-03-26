@@ -5,7 +5,7 @@ import instance from '../../api/IEXCloud';
 let initialState = {
   screenerList: [],
   isFetchingList: false,
-  listError: null
+  listError: null,
 };
 
 const screenerTableSlice = createSlice({
@@ -21,28 +21,28 @@ const screenerTableSlice = createSlice({
     },
     setScreenerTableFailed(state, action) {
       state.listError = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const {
   setIsFetchingList,
   setScreenerTableSuccess,
-  setScreenerTableFailed
+  setScreenerTableFailed,
 } = screenerTableSlice.actions;
 
 export default screenerTableSlice.reducer;
 
 export function fetchscreenerTable(CollectionType, currentTab) {
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch(setIsFetchingList(true));
     try {
       const { data } = await instance.get(
         `/stock/market/collection/${CollectionType}`,
         {
           params: {
-            collectionName: currentTab
-          }
+            collectionName: currentTab,
+          },
         }
       );
 

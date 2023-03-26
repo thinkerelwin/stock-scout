@@ -21,19 +21,16 @@ const Detail = () => {
       params: {
         types: 'quote,logo,chart,company,news',
         last: '3',
-        range: 'dynamic'
+        range: 'dynamic',
       },
-      process: d => d,
-      naming: 'detailsOfSymbol'
+      process: (d) => d,
+      naming: 'detailsOfSymbol',
     }),
     [symbol]
   );
 
-  const {
-    isFetchingDetailsOfSymbol,
-    errorOnDetailsOfSymbol,
-    detailsOfSymbol
-  } = useLocalStateFetching(detailsOfSymbolAPIspec);
+  const { isFetchingDetailsOfSymbol, errorOnDetailsOfSymbol, detailsOfSymbol } =
+    useLocalStateFetching(detailsOfSymbolAPIspec);
 
   if (isFetchingDetailsOfSymbol) {
     return (

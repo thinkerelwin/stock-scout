@@ -41,17 +41,18 @@ const Menu = () => {
       <nav className="navbar">
         <ul className="navbar__list">
           {menuLink.map(({ name, route }) => (
-            <li className="navbar__item" onClick={handleMenuToggle} key={name}>
-              <NavLink
-                to={route}
-                exact
-                className="navbar__link"
-                activeClassName="navbar__link--active"
-                data-testid="menu-link"
-              >
-                {name}
-              </NavLink>
-            </li>
+            <NavLink
+              key={name}
+              to={route}
+              className={({ isActive }) =>
+                'navbar__link' + (isActive ? ' navbar__link--active' : '')
+              }
+              data-testid="menu-link"
+              onClick={handleMenuToggle}
+              end
+            >
+              {name}
+            </NavLink>
           ))}
         </ul>
       </nav>

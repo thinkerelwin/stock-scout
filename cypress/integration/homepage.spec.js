@@ -1,6 +1,7 @@
+/* eslint-disable */
 import menuLink from '../../src/utils/constant/menuLink.json';
 import { urlToRequest } from '../../src/api/IEXCloud';
-import { mockRecentNewsData } from '../../src/__mocks__/mockData';
+import { mockRecentNewsData } from '../../src/mockData';
 
 describe('homepage', () => {
   it('renders page correctly', () => {
@@ -30,7 +31,7 @@ describe('homepage', () => {
 
       cy.findByText(mockRecentNewsData[0].headline)
         .parent()
-        .then($a => {
+        .then(($a) => {
           // extract the fully qualified href property
           const href = $a.prop('href');
 

@@ -6,7 +6,7 @@ import {
   monthFirstDateTime,
   minimalDateTime,
   displayAsPercent,
-  bigNumberFormat
+  bigNumberFormat,
 } from '../../utils/formatHelper';
 import './DetailBoard.scss';
 
@@ -30,7 +30,7 @@ const DetailBoard = ({ quote, logo }) => {
           <p
             className={classNames('detail-board__change', {
               'detail-board__change--rising': quote.change > 0,
-              'detail-board__change--falling': quote.change < 0
+              'detail-board__change--falling': quote.change < 0,
             })}
           >
             {formatChangePrice(quote.change)} (
@@ -114,9 +114,9 @@ DetailBoard.defaultProps = {
     marketCap: 0,
     peRatio: 0,
     week52High: 0,
-    week52Low: 0
+    week52Low: 0,
   },
-  logo: { url: '' }
+  logo: { url: '' },
 };
 
 DetailBoard.propTypes = {
@@ -135,11 +135,11 @@ DetailBoard.propTypes = {
     marketCap: PropTypes.number.isRequired,
     peRatio: PropTypes.number.isRequired,
     week52High: PropTypes.number.isRequired,
-    week52Low: PropTypes.number.isRequired
+    week52Low: PropTypes.number.isRequired,
   }),
   logo: PropTypes.shape({
-    url: PropTypes.string.isRequired
-  })
+    url: PropTypes.string.isRequired,
+  }),
 };
 
 function validifyNullAndNumber(props, propName, componentName) {

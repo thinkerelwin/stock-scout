@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { urlToRequest } from '../../src/api/IEXCloud';
 import {
   mockCategories,
@@ -5,8 +6,8 @@ import {
   mockTopLosersScreenerList,
   mockDetailData,
   mockSortedScreenerList,
-  mockSortedScreenerListWithCharacter
-} from '../../src/__mocks__/mockData';
+  mockSortedScreenerListWithCharacter,
+} from '../../src/mockData';
 
 describe('screener page', () => {
   it('renders page correctly', () => {
@@ -76,8 +77,8 @@ describe('screener page', () => {
 
       cy.findByTitle('CHG').click();
 
-      cy.findAllByTestId('sortOnNumber').then(cell => {
-        const sortedList = [...cell.map(elment => cell[elment].textContent)];
+      cy.findAllByTestId('sortOnNumber').then((cell) => {
+        const sortedList = [...cell.map((elment) => cell[elment].textContent)];
 
         expect(sortedList, 'sortedList').to.deep.equal(
           resultSortedScreenerList
@@ -86,8 +87,8 @@ describe('screener page', () => {
 
       cy.findByTitle('CHG').click();
 
-      cy.findAllByTestId('sortOnNumber').then(cell => {
-        const sortedList = [...cell.map(elment => cell[elment].textContent)];
+      cy.findAllByTestId('sortOnNumber').then((cell) => {
+        const sortedList = [...cell.map((elment) => cell[elment].textContent)];
 
         expect(sortedList, 'sortedList').to.deep.equal(
           resultSortedScreenerList.reverse()
@@ -102,8 +103,8 @@ describe('screener page', () => {
 
       cy.findByTitle('Description').click();
 
-      cy.findAllByTestId('sortOnCharacter').then(cell => {
-        const sortedList = [...cell.map(elment => cell[elment].textContent)];
+      cy.findAllByTestId('sortOnCharacter').then((cell) => {
+        const sortedList = [...cell.map((elment) => cell[elment].textContent)];
 
         expect(sortedList, 'sortedList').to.deep.equal(
           resultSortedScreenerList
@@ -112,8 +113,8 @@ describe('screener page', () => {
 
       cy.findByTitle('Description').click();
 
-      cy.findAllByTestId('sortOnCharacter').then(cell => {
-        const sortedList = [...cell.map(elment => cell[elment].textContent)];
+      cy.findAllByTestId('sortOnCharacter').then((cell) => {
+        const sortedList = [...cell.map((elment) => cell[elment].textContent)];
 
         expect(sortedList, 'sortedList').to.deep.equal(
           resultSortedScreenerList.reverse()

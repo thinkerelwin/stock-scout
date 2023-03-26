@@ -2,30 +2,37 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import HighCharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
+import highchartsPivotPoints from 'highcharts/indicators/pivot-points';
+import highchartsMACD from 'highcharts/indicators/macd';
+import highchartsAccessibility from 'highcharts/modules/accessibility';
 
 import { formatIntradayDate } from '../../utils/formatHelper';
 
 import './DetailChart.scss';
 
-require('highcharts/indicators/pivot-points')(HighCharts);
-require('highcharts/indicators/macd')(HighCharts);
+if (typeof Highcharts === 'object') {
+  highchartsPivotPoints(HighCharts);
+  highchartsMACD(HighCharts);
+  highchartsAccessibility(HighCharts);
+}
 
 const DetailChart = ({
   chartData = { data: [] },
-  quote: { symbol } = { symbol: '' }
+  quote: { symbol } = { symbol: '' },
 }) => {
   const chartWidth = 430;
+
   var chartOptions = useMemo(
     () => ({
       chart: {
-        height: chartWidth
+        height: chartWidth,
       },
       title: {
-        text: `${symbol} Stock Chart`
+        text: `${symbol} Stock Chart`,
       },
       rangeSelector: {
         selected: 1,
-        inputEnabled: false
+        inputEnabled: false,
       },
       series: [
         {
@@ -33,27 +40,27 @@ const DetailChart = ({
           data: formatChartData(chartData.data, chartData.range),
           type: 'candlestick',
           tooltip: {
-            valueDecimals: 2
-          }
-        }
+            valueDecimals: 2,
+          },
+        },
       ],
       responsive: {
         rules: [
           {
             condition: {
-              maxWidth: 500
+              maxWidth: 500,
             },
             chartOptions: {
               chart: {
-                height: chartWidth
+                height: chartWidth,
               },
               navigator: {
-                enabled: false
-              }
-            }
-          }
-        ]
-      }
+                enabled: false,
+              },
+            },
+          },
+        ],
+      },
     }),
     [chartData.data, chartData.range, symbol]
   );
@@ -75,7 +82,7 @@ const DetailChart = ({
         high,
         low,
         open,
-        close
+        close,
       }));
     } else {
       return data.map(({ date, minute, high, low, open, close }) => ({
@@ -83,7 +90,7 @@ const DetailChart = ({
         high,
         low,
         open,
-        close
+        close,
       }));
     }
   }
@@ -92,11 +99,11 @@ const DetailChart = ({
 DetailChart.propTypes = {
   chartData: PropTypes.shape({
     data: PropTypes.array.isRequired,
-    range: PropTypes.string.isRequired
+    range: PropTypes.string.isRequired,
   }),
   quote: PropTypes.shape({
-    symbol: PropTypes.string.isRequired
-  })
+    symbol: PropTypes.string.isRequired,
+  }),
 };
 
 export default DetailChart;

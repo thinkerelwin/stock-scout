@@ -1,8 +1,6 @@
+/* eslint-disable */
 import { urlToRequest } from '../../src/api/IEXCloud';
-import {
-  mockNewsFeaturesData,
-  mockNewsSectorsData
-} from '../../src/__mocks__/mockData';
+import { mockNewsFeaturesData, mockNewsSectorsData } from '../../src/mockData';
 
 const headlineOfFirstArticleOnNewsFeature =
   mockNewsFeaturesData.GOOG.news[0].headline;
@@ -12,7 +10,7 @@ const headlineOfFirstArticleOnNewsSectors =
 
 const headlinesForTest = [
   headlineOfFirstArticleOnNewsFeature,
-  headlineOfFirstArticleOnNewsSectors
+  headlineOfFirstArticleOnNewsSectors,
 ];
 
 describe('news page', () => {
@@ -50,14 +48,14 @@ describe('news page', () => {
     });
 
     it('render news list correctly', () => {
-      headlinesForTest.forEach(headline => {
+      headlinesForTest.forEach((headline) => {
         cy.findByText(headline).should('be.visible');
       });
     });
 
     it('navigate to news source website when clicking on one of the photo shown on "Recent news" section', () => {
-      headlinesForTest.forEach(headline => {
-        cy.findByTitle(headline).then($a => {
+      headlinesForTest.forEach((headline) => {
+        cy.findByTitle(headline).then(($a) => {
           // extract the fully qualified href property
           const href = $a.prop('href');
           // make an http request for this resource

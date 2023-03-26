@@ -7,7 +7,7 @@ const urlToRequest =
 
 const instance = axios.create({
   baseURL: urlToRequest,
-  timeout: 5000
+  timeout: 5000,
 });
 
 export { instance as default, urlToRequest };

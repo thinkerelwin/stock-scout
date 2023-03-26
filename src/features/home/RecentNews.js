@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Slider from 'react-slick';
+import PropTypes from 'prop-types';
 
 import LoadingBox from '../../components/LoadingBox';
 import ErrorBox from '../../components/ErrorBox';
@@ -15,25 +16,22 @@ import './RecentNews.scss';
 const APIspec = {
   route: '/stock/spy/news/last/3',
   params: undefined,
-  process: d => d,
-  naming: 'recentNewsList'
+  process: (d) => d,
+  naming: 'recentNewsList',
 };
 
 const RecentNews = () => {
-  const { isMediumSize } = useSelector(state => state.sizeDetection);
+  const { isMediumSize } = useSelector((state) => state.sizeDetection);
 
-  const {
-    isFetchingRecentNewsList,
-    errorOnRecentNewsList,
-    recentNewsList
-  } = useLocalStateFetching(APIspec);
+  const { isFetchingRecentNewsList, errorOnRecentNewsList, recentNewsList } =
+    useLocalStateFetching(APIspec);
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
 
   const NewsBox = () =>
@@ -55,6 +53,13 @@ const RecentNews = () => {
       {children}
     </section>
   );
+
+  RecentNewsContainer.propTypes = {
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node,
+    ]).isRequired,
+  };
 
   if (isFetchingRecentNewsList) {
     return (
