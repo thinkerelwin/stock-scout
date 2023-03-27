@@ -8,7 +8,7 @@ describe('detail page', () => {
   it('renders page correctly', () => {
     cy.visit(targetURL);
 
-    cy.contains('American Airlines Group, Inc.').should('be.visible');
+    cy.findByText('AMERICAN AIRLINES GROUP INC').should('be.visible');
     cy.findByText('AAL Stock Chart').should('be.visible');
     cy.findByText('Employees:').should('be.visible');
   });
