@@ -1,41 +1,41 @@
 export const mockRecentNewsData = [
   {
-    datetime: 1584190397000,
+    datetime: 1680309000000,
     headline:
-      'The Week In Cannabis: Coronavirus Drop, Major Financing Agreements, Psychedelics Getting Hot',
-    source: 'Benzinga Feeds',
-    url: 'https://cloud.iexapis.com/v1/news/article/48947dd3-05f3-4fb6-92ab-34fde48257c1',
+      'S&P 500 rises more than 3% for its best weekly performance since Nov. 2022',
+    source: 'Seeking Alpha',
+    url: 'https://cloud.iexapis.com/v1/news/article/1ujGqpc6wUXI3BrvMFIKDnDLzomqYTdL9WpHN28YXCC7',
     summary:
-      "This was another brutal week for cannabis stocks, with all major ETFs posting double-digits losses. Over the last five trading days: The ETFMG Alternative Harvest ETF (NYSE: MJ ) lost 13.7%. The AdvisorShares Pure Cannabis ETF (NYSE: YOLO ) tumbled 17.4%. The Cannabis ETF (NYSE: THCX ) dropped 16.4%. The Amplify Seymour Cannabis ETF (NYSE: CNBS ) shed 17.8%. The SPDR S&P 500 ETF Trust (NYSE: SPY ) closed the period down 2.2%. “Certainly the Covid19 virus is affecting some cannabis companies, especially the vape producers who experienced supply chain interruptions from China,” said Debra Borchardt, CEO of Green Market Report. “However, if sales remain strong at dispensaries, this could be a big test for the claim that the cannabis industry is recession-proof. If that's the case, this becomes a strong argument to get back into select stocks.” If you want to get this news recap in your email inbox every week, please subscribe to https://tinyletter.com/javierhasse A long list of cannabis events have also been cancelled, postponed, or transitioned to a digital or online format.",
-    related: 'SPY',
+      'The S&P 500 (SP500) on Friday advanced 3.48% for the week to close at 4,109.31 points, posting gains in four out of five sessions',
+    related: 'SPY,IVV,VOO,SPLG,SSO,UPRO',
     image:
-      'https://cloud.iexapis.com/v1/news/image/48947dd3-05f3-4fb6-92ab-34fde48257c1',
+      'https://cloud.iexapis.com/v1/news/image/1ujGqpc6wUXI3BrvMFIKDnDLzomqYTdL9WpHN28YXCC7',
     lang: 'en',
     hasPaywall: false,
   },
   {
-    datetime: 1584122073000,
-    headline: 'U.S. Stock ETFs Bounce After a Dismal Week',
-    source: 'ETF Trends',
-    url: 'https://cloud.iexapis.com/v1/news/article/1096f1b5-63aa-4eab-841a-5fe9cf6e7d45',
+    datetime: 1680301127000,
+    headline: 'Goldman’s Kostin holds fast to S&P 500 ending year at 4000',
+    source: 'The Australian Financial Review',
+    url: 'https://cloud.iexapis.com/v1/news/article/3IkGtikWzuVeqjg9S8wMRENXQ1bWouVZvJe1TdDgJn6z',
     summary:
-      'U.S. markets and stock ETFs jumped Friday, regaining some of the lost ground after a tumultuous week that marked one of the major indices’ worst experienced in history. On Friday, the Invesco QQQ Trust (NASDAQ: QQQ) increased 3.5%, SPDR Dow Jones Industrial Average ETF (NYSEArca: DIA) rose 3.9%, and SPDR S&P 500 ETF (NYSEArca: SPY) gained […] The post U.S. Stock ETFs Bounce After a Dismal Week appeared first on ETF Trends .',
-    related: 'SPY',
+      'The S&P 500 has historically posted an average three-month return of 8pc, when the Fed stops lifting rates. David Kostin is sceptical that will happen this time.',
+    related: 'SPY,IVV,VOO,SPLG,SSO,UPRO',
     image:
-      'https://cloud.iexapis.com/v1/news/image/1096f1b5-63aa-4eab-841a-5fe9cf6e7d45',
+      'https://cloud.iexapis.com/v1/news/image/3IkGtikWzuVeqjg9S8wMRENXQ1bWouVZvJe1TdDgJn6z',
     lang: 'en',
     hasPaywall: false,
   },
   {
-    datetime: 1584113407000,
-    headline: "After Worst Week Since 2008, What's Next For The Stock Market?",
-    source: 'Benzinga',
-    url: 'https://cloud.iexapis.com/v1/news/article/b0572d77-5ac7-4ca4-b1b7-e1e0ba94c864',
+    datetime: 1680293836000,
+    headline: 'US stock indices close the day near session highs',
+    source: 'Forexlive',
+    url: 'https://cloud.iexapis.com/v1/news/article/mYjeoPZENRuxBWkzIKFJMJ3w7FVm13mrnQKWJCJW2xM',
     summary:
-      "After one of its worst days in market history on Thursday, the SPDR S&P 500 ETF Trust (NYSE: SPY ) and the SPDR Dow Jones Industrial Average ETF (NYSE: DIA ) each opened higher by more than 6% on Friday, continuing the streak of extreme volatility in the stock market this week. Even with Friday's recovery, the Dow and S&P 500 are having their worst week since 2008. Periods of extreme volatility like these can be extremely difficult to predict and trade in the near-term, but they are not unprecedented in the market’s history. History Of Volatility Loup Ventures analyst Doug Clinton took a look at other periods of major market volatility over the years. Clinton noted the S&P 500 has closed up or down more than 3% on seven of the past 10 days, a phenomenon that has occurred only six other times. The past two times it happened coincided with the 2011 U.S. credit downgrade and the 2008 financial crisis. Clinton compiled the six previous … Full story available on Benzinga.com",
-    related: 'SPY',
+      'The major US stock indices are closing the day near the highs for the day. The gains were led by the NASDAQ index which rose over 1.7%. A snapshot of the closing levels shows: Dow Industrial Average 415.12.41.26 percent at 33274.14 S&P index of 58.50 points or 1.44% at 4109.32 NASDAQ index up 208.43 points or 1.73% at 12221.90 For the calendar month, the NASDAQ index led the way with a gain of 6.69% Dow industrial average rose 1.89% S&P index rose 3.51% NASDAQ index rose 6.69% For the first quarter, the NASDAQ index led the way with an oversized gain of 16.77%. That was the largest percentage increase since the 2Q of 2020 when the index rose 30.63%. You have to go back to the 1Q of 2012 to have the next largest percentage gain for quarter. Dow Industrial Average squeaked out a small gain of 0.38% S&P index rose by 7.03% NASDAQ index rose by 16.77% This article was written by Greg Michalowski at www.forexlive.com.',
+    related: 'SPY,IVV,VOO,SPLG,SSO,UPRO',
     image:
-      'https://cloud.iexapis.com/v1/news/image/b0572d77-5ac7-4ca4-b1b7-e1e0ba94c864',
+      'https://cloud.iexapis.com/v1/news/image/mYjeoPZENRuxBWkzIKFJMJ3w7FVm13mrnQKWJCJW2xM',
     lang: 'en',
     hasPaywall: false,
   },
@@ -45,34 +45,33 @@ export const mockNewsFeaturesData = {
   GOOG: {
     news: [
       {
-        datetime: 1585130322000,
-        headline:
-          'YouTube switches to standard definition video. Will that make a difference?',
-        source: 'USA Today',
-        url: 'https://cloud.iexapis.com/v1/news/article/48374a83-501f-4563-a2d7-2d94bb268d0b',
+        datetime: 1680338502000,
+        headline: 'Sundar Pichai promises more capable Bard AI chatbot soon',
+        source: 'The Siasat Daily',
+        url: 'https://cloud.iexapis.com/v1/news/article/2pE8rHWwrgEzkBz1aEq6hyg0k9fMKMGhXf2f9D0IAKob',
         summary:
-          'With more strain than ever on bandwidth, Google says it\'s trying to "do our part to minimize stress on the system during this unprecedented situation."',
-        related: 'GOOGL,GOOG',
+          'San Francisco: After facing criticism about his ChatGPT rival called Bard, Alphabet and Google CEO Sundar Pichai has said that the company will soon release more capable AI models. Bard was released for the public on March 21 but failed to garner the attention won by OpenAI’s ChatGPT and Microsoft’s Bing chatbot. “We clearly have … Get the latest updates in Hyderabad City News , Technology , Entertainment , Sports , Politics and Top Stories on WhatsApp & Telegram by subscribing to our channels. You can also download our app for Android and iOS .',
+        related:
+          'MSFT,MSF-GD,MSF-GS,MSF-GH,MSF-GM,MSF-GF,MSF-GB,MSF-GY,MSF-GI,GOOG,GOOGL',
         image:
-          'https://cloud.iexapis.com/v1/news/image/48374a83-501f-4563-a2d7-2d94bb268d0b',
+          'https://cloud.iexapis.com/v1/news/image/2pE8rHWwrgEzkBz1aEq6hyg0k9fMKMGhXf2f9D0IAKob',
         lang: 'en',
         hasPaywall: false,
-        symbol: 'GOOGL',
       },
     ],
   },
   AMZN: {
     news: [
       {
-        datetime: 1585130322000,
-        headline: 'COVID-19 at six U.S. Amazon warehouses',
+        datetime: 1680344995000,
+        headline: "Why Amazon Should Follow Alibaba''s Example (NASDAQ:AMZN)",
         source: 'Seeking Alpha',
-        url: 'https://cloud.iexapis.com/v1/news/article/bec5cf1c-1848-4eea-bc79-91f7bb40e758',
+        url: 'https://cloud.iexapis.com/v1/news/article/3qLf284yG2A4QMbaoHf3B4ueE7CvcByZ5Kpgjec6NN5y',
         summary:
-          'The U.S. coronavirus outbreak has spread to at least six Amazon (NASDAQ:AMZN) warehouses, according to the Jeff Bezos-owned Washington Post. In some cases,',
-        related: 'AMZN',
+          'In this article, I express my opinion on why Amazon should follow the example of Alibaba and spin off its business into separate, independent segments. Read more about AMZN here.',
+        related: 'AMZN,BABA',
         image:
-          'https://cloud.iexapis.com/v1/news/image/bec5cf1c-1848-4eea-bc79-91f7bb40e758',
+          'https://cloud.iexapis.com/v1/news/image/3qLf284yG2A4QMbaoHf3B4ueE7CvcByZ5Kpgjec6NN5y',
         lang: 'en',
         hasPaywall: false,
       },
@@ -81,16 +80,15 @@ export const mockNewsFeaturesData = {
   FB: {
     news: [
       {
-        datetime: 1585031761000,
+        datetime: 1680283620000,
         headline:
-          'COAI urges subscribers to use data networks responsibly to free up infra for critical services',
-        source: 'Economic Times India',
-        url: 'https://cloud.iexapis.com/v1/news/article/330488bd-c2c6-4d23-9639-7c5f54f1e06c',
-        summary:
-          'NEW DELHI: With the government imposing 21-day lockdown to tackle coronavirus spread, industry body COAI on Wednesday urged mobile consumers to use data networks responsibly, so that critical services can run smoothly on communications infrastructure.COAI\'s appeal to public comes at a time when data usage has surged nearly 30 per cent over the last few days in the wake of lockdowns, work-from-home and social distancing measures adopted to contain the spread of coronavirus.Prime Minister Narendra Modi on Tuesday announced a complete lockdown for 21 days in an unprecedented move to halt the spread of the pandemic.Soon after the announcement, the Centre said all road, rail and air services will remain suspended during this period.COVID-19 has claimed 9 lives in the country and over 550 persons being affected by the viral infection. Fears are also mounting that more could be hit as the global coronavirus toll inches towards 17,000."We are asking people for responsible usage of network…to avoid any trivial use of internet and networks.',
+          'Junior Achievement to Break Ground on New JA Discovery Center',
+        source: 'Kwhen Finance',
+        url: 'https://cloud.iexapis.com/v1/news/article/1JFTNoSKJxKooe6YSzWoHKqDg9a9T30GT1ukTjnr1bnD',
+        summary: '',
         related: 'FB',
         image:
-          'https://cloud.iexapis.com/v1/news/image/330488bd-c2c6-4d23-9639-7c5f54f1e06c',
+          'https://cloud.iexapis.com/v1/news/image/1JFTNoSKJxKooe6YSzWoHKqDg9a9T30GT1ukTjnr1bnD',
         lang: 'en',
         hasPaywall: false,
       },
@@ -102,16 +100,16 @@ export const mockNewsSectorsData = {
   XOM: {
     news: [
       {
-        datetime: 1585139704000,
+        datetime: 1680270140000,
         headline:
-          'Islamic State claims Mozambique attack close to gas projects - CNBC Africa',
-        source: 'CNBC Africa',
-        url: 'https://cloud.iexapis.com/v1/news/article/8b7ffb25-8374-442b-a346-d10785f0e9b2',
+          'Chevron, ExxonMobil, BP and Shell among highest bidders in Gulf of Mexico oil & gas lease sale',
+        source: 'Offshore Energy',
+        url: 'https://cloud.iexapis.com/v1/news/article/2KD4sq66LWH6KMLVw54RpaHPnn08QitRQS0qPXjsZfNb',
         summary:
-          'Militant group Islamic State has claimed responsibility for an attack in northern Mozambique just south of the site of gas projects worth $60 billion being developed by the likes of Exxon Mobil and Total.',
-        related: 'XOM',
+          'The latest oil and gas lease sale for acreage in federal waters in the Gulf of Mexico gathered nearly $264 million in high bids. The post Chevron, ExxonMobil, BP and Shell among highest bidders in Gulf of Mexico oil & gas lease sale appeared first on Offshore Energy .',
+        related: 'CVX,XOM,SHEL,BP,BPAQF',
         image:
-          'https://cloud.iexapis.com/v1/news/image/8b7ffb25-8374-442b-a346-d10785f0e9b2',
+          'https://cloud.iexapis.com/v1/news/image/2KD4sq66LWH6KMLVw54RpaHPnn08QitRQS0qPXjsZfNb',
         lang: 'en',
         hasPaywall: false,
       },
@@ -120,34 +118,16 @@ export const mockNewsSectorsData = {
   CVX: {
     news: [
       {
-        datetime: 1585146927000,
+        datetime: 1680334363000,
         headline:
-          'WTI Erases Overnight Gains On Demand Fears, Crude Inventory Build',
-        source: 'Zero Hedge',
-        url: 'https://cloud.iexapis.com/v1/news/article/30d1f8d3-7282-4dbd-a379-5b947d47202c',
+          'Q4 2023 Earnings Estimate for Chevron Co. Issued By Zacks Research (NYSE:CVX)',
+        source: 'The AM Reporter',
+        url: 'https://cloud.iexapis.com/v1/news/article/3ez8wgRbg2WxjUuuhkp5o9wZADW8eV7XKzH5rGMkSRmw',
         summary:
-          "WTI Erases Overnight Gains On Demand Fears, Crude Inventory Build Oil prices extended gains overnight, along with the rest of the markets, on hope The Fed's buying will work and optimism that US Congress will agree a bigly Stimulus Bill and helped by a surprise crude draw reported by API . But early on this morning that all started to fall apart and WTI plunged back to a $23 handle after the boss of Vitol Group said demand is down about 15 million to 20 million barrels a day and will shrink further with India’s decision to go into lockdown. “The hope for more stimulus is giving a short-term boost,” said Josh Graves, market strategist at RJ O’Brien & Associates LLC. “From a fundamentals standpoint, we’re still looking at two cataclysmic supply and demand shocks. Those need to be addressed before we see any sustained rally.” So once again, all eyes are on the official inventory data…as road and airline traffic has collapsed. Bloomberg Intelligence's senior energy analyst Vince Piazza warns: \" Near-term crude builds are likely with refining runs cut back as demand downstream demand weakens.",
+          'Chevron Co. (NYSE:CVX – Get Rating) – Zacks Research upped their Q4 2023 EPS estimates for shares of Chevron in a research note issued to investors on Tuesday, March 28th. Zacks Research analyst N. Choudhury now expects that the oil and gas company will post earnings per share of $3.13 for the quarter, up from […]',
         related: 'CVX',
         image:
-          'https://cloud.iexapis.com/v1/news/image/30d1f8d3-7282-4dbd-a379-5b947d47202c',
-        lang: 'en',
-        hasPaywall: false,
-      },
-    ],
-  },
-  TOT: {
-    news: [
-      {
-        datetime: 1585146927000,
-        headline:
-          'Oil & Gas Stock Roundup: More E&P Companies Cut Capital Spending',
-        source: 'Zacks Investment Research',
-        url: 'https://cloud.iexapis.com/v1/news/article/cfaad645-8aad-4aa2-a55d-27f19e336b1c',
-        summary:
-          "Even the 'Big Oil' companies don's seem to be immune to this price crash as evidenced by spending cuts by supermajors Royal Dutch Shell (RDS.A) and TOTAL S.A. (TOT).",
-        related: 'TOT',
-        image:
-          'https://cloud.iexapis.com/v1/news/image/cfaad645-8aad-4aa2-a55d-27f19e336b1c',
+          'https://cloud.iexapis.com/v1/news/image/3ez8wgRbg2WxjUuuhkp5o9wZADW8eV7XKzH5rGMkSRmw',
         lang: 'en',
         hasPaywall: false,
       },
@@ -156,16 +136,17 @@ export const mockNewsSectorsData = {
   BP: {
     news: [
       {
-        datetime: 1585151461000,
+        datetime: 1680284702000,
         headline:
-          'BP Bunge Bioenergia Turns Sugarcane Into Alcohol for Disinfectant | MarketScreener',
-        source: 'MarketScreener',
-        url: 'https://cloud.iexapis.com/v1/news/article/65551987-67d6-44d9-a910-845bdb2ac665',
+          'Uber drivers to get incentives for charging electric cars with BP',
+        source: 'Seeking Alpha',
+        url: 'https://cloud.iexapis.com/v1/news/article/3ITvXD5XbpQuTPPNo9Fg0y3kmNV0o6rSXz1duhwx2yZ1',
         summary:
-          'By Dieter Holger BP Bunge Bioenergia, a joint venture between BP PLC and Bunge Ltd., said Wednesday that it would turn sugarcane-based ethanol into disinfectant for the Brazilian health-care… | March 25, 2020',
-        related: 'BP',
+          'Uber shares rose almost 2% Friday as the ride-hailing leader benefitted from a new partnership that will provide incentives to drivers who us BP hubs to charge their electric cars.',
+        related:
+          'UBER,UT8-GD,UT8-GS,UT8-GH,UT8-GM,UT8-GF,UT8-GB,UT8-GY,UT8-GI,BP,BPAQF',
         image:
-          'https://cloud.iexapis.com/v1/news/image/65551987-67d6-44d9-a910-845bdb2ac665',
+          'https://cloud.iexapis.com/v1/news/image/3ITvXD5XbpQuTPPNo9Fg0y3kmNV0o6rSXz1duhwx2yZ1',
         lang: 'en',
         hasPaywall: false,
       },
@@ -174,16 +155,16 @@ export const mockNewsSectorsData = {
   MSFT: {
     news: [
       {
-        datetime: 1585180800000,
-        headline:
-          'Neo Releases $11 Million From Cold Wallet to Fund Itself Through 2020',
-        source: 'Cointelegraph',
-        url: 'https://cloud.iexapis.com/v1/news/article/ed936e36-f8c3-44fd-a354-b045330c47c7',
+        datetime: 1680338502000,
+        headline: 'Sundar Pichai promises more capable Bard AI chatbot soon',
+        source: 'The Siasat Daily',
+        url: 'https://cloud.iexapis.com/v1/news/article/2pE8rHWwrgEzkBz1aEq6hyg0k9fMKMGhXf2f9D0IAKob',
         summary:
-          "The Neo Foundation released more than $11 million in NEO from locked accounts to cover costs for 2020. The Neo Foundation announced on March 25 that they have released the necessary funds to continue operating for the 2020 Fiscal Year (FY). A total of 1,660,865 NEO worth approximately $11 million was released, with 27,800,303 NEO ($190 million) still remaining. According to its blog post , the Neo whitepaper allows the Foundation to sell its stake of NEO to “support Neo's technological development, ecosystem growth, community expansion.” The transaction ID published by the foundation reveals that the tokens were sent to an address that contains over 14.6 million NEO, worth $100 million. The announcement reads that the tokens were transferred from the “locked account to the current account,” which would imply that the foundation has an even deeper funding pool than the one contained in the first wallet. While the sparse transaction history seems to exclude the possibility that it is an exchange address, it could also be the exchange’s cold wallet.",
-        related: 'MSFT',
+          'San Francisco: After facing criticism about his ChatGPT rival called Bard, Alphabet and Google CEO Sundar Pichai has said that the company will soon release more capable AI models. Bard was released for the public on March 21 but failed to garner the attention won by OpenAI’s ChatGPT and Microsoft’s Bing chatbot. “We clearly have … Get the latest updates in Hyderabad City News , Technology , Entertainment , Sports , Politics and Top Stories on WhatsApp & Telegram by subscribing to our channels. You can also download our app for Android and iOS .',
+        related:
+          'MSFT,MSF-GD,MSF-GS,MSF-GH,MSF-GM,MSF-GF,MSF-GB,MSF-GY,MSF-GI,GOOG,GOOGL',
         image:
-          'https://cloud.iexapis.com/v1/news/image/ed936e36-f8c3-44fd-a354-b045330c47c7',
+          'https://cloud.iexapis.com/v1/news/image/2pE8rHWwrgEzkBz1aEq6hyg0k9fMKMGhXf2f9D0IAKob',
         lang: 'en',
         hasPaywall: false,
       },
@@ -192,15 +173,17 @@ export const mockNewsSectorsData = {
   INTC: {
     news: [
       {
-        datetime: 1585174987000,
-        headline: 'Intel : Response to COVID-19 Crisis | MarketScreener',
-        source: 'MarketScreener',
-        url: 'https://cloud.iexapis.com/v1/news/article/425cf44a-9692-4d56-bd99-31bc998ab95f',
+        datetime: 1680294268000,
+        headline:
+          'The Future of Data Center CPUs: AMD, Intel, Nvidia, and Surprising Contenders',
+        source: 'The Motley Fool',
+        url: 'https://cloud.iexapis.com/v1/news/article/3Ku9ZQ33JtKUJNUxLRdM1KEhuLJW5JG2XJ2IXMoUXZg2',
         summary:
-          "This is a time of unprecedented change and uncertainty. Intel's top priority is protecting the health and well-being of employees while keeping the business running for our customers and… | March 25, 2020",
-        related: 'INTC,INCO',
+          'The data center market is expected to be an over $100 billion opportunity for numerous semiconductor companies. Here is a closer look at future AMD, Intel, and Nvidia products.',
+        related:
+          'NVDA,NVD-GD,NVD-GS,NVD-GH,NVD-GM,NVD-GF,NVD-GB,NVD-GY,NVD-GI,AMD,INTC,INCO-BB',
         image:
-          'https://cloud.iexapis.com/v1/news/image/425cf44a-9692-4d56-bd99-31bc998ab95f',
+          'https://cloud.iexapis.com/v1/news/image/3Ku9ZQ33JtKUJNUxLRdM1KEhuLJW5JG2XJ2IXMoUXZg2',
         lang: 'en',
         hasPaywall: false,
       },
@@ -209,15 +192,15 @@ export const mockNewsSectorsData = {
   TSM: {
     news: [
       {
-        datetime: 1585172720000,
-        headline: 'TSMC (TSM) Gains But Lags Market: What You Should Know',
-        source: 'Zacks Investment Research',
-        url: 'https://cloud.iexapis.com/v1/news/article/74728d84-9923-4233-a80d-708498a67918',
+        datetime: 1680296419000,
+        headline: 'Taiwan Semiconductor Dominates Leading Edge',
+        source: 'Seeking Alpha',
+        url: 'https://cloud.iexapis.com/v1/news/article/3UfGx1D0saEf228uZ0Y50E6fwJR0ond1ti5Pb1UUhiXj',
         summary:
-          'In the latest trading session, TSMC (TSM) closed at $49, marking a +0.27% move from the previous day.',
-        related: 'TSM',
+          'Taiwan Semiconductor Manufacturing Company Limited accounts for 26% of the world’s semiconductor output. Click here to find out if TSM stock is a buy right now.',
+        related: 'TSM,2330-TT',
         image:
-          'https://cloud.iexapis.com/v1/news/image/74728d84-9923-4233-a80d-708498a67918',
+          'https://cloud.iexapis.com/v1/news/image/3UfGx1D0saEf228uZ0Y50E6fwJR0ond1ti5Pb1UUhiXj',
         lang: 'en',
         hasPaywall: false,
       },
@@ -226,17 +209,17 @@ export const mockNewsSectorsData = {
   CSCO: {
     news: [
       {
-        datetime: 1585160460000,
-        headline:
-          'Nachfolgerin von David Mead: Elisabeth De Dobbeleer leitet Cisco-Channel in EMEAR',
-        source: 'Channel Partner',
-        url: 'https://cloud.iexapis.com/v1/news/article/d31dde7c-7300-462c-ba5c-89a9d2ed6ee4',
+        datetime: 1680208200000,
+        headline: 'Network-1 Reports 2022 Year-End Financial Results',
+        source: 'Accesswire',
+        url: 'https://cloud.iexapis.com/v1/news/article/1ntDqhXtP37a4aJcJiJU6ZL5jTTQnfUJK4WmjmBjt9mW',
         summary:
-          'Der US-Netzwerkhersteller Cisco Systems gibt einen Führungswechsel für seine Partnerorganisationen in Europa, dem Nahen Osten, Afrika und Russland bekannt.',
-        related: 'CSCO',
+          "NEW CANAAN, CT / ACCESSWIRE / March 30, 2023 / Network-1 Technologies, Inc. (NYSE American:NTIP) (\"Network-1\"), a company engaged in acquiring, developing, licensing, and monetizing intellectual property, today announced financial results for the year ended December 31, 2022. Network-1 had no revenue in the year ended December 31, 2022 as compared to the year ended December 31, 2021, where revenue of $36,029,000 was realized from resolution of a contractual dispute with Cisco Systems, Inc. and a settlement of patent litigation with Hewlett-Packard. During 2022, ILiAD Biotechnologies, LLC (\"ILiAD\") completed a private financing of approximately $43,000,000, in connection with which Network-1 reported an unrealized gain of $3,883,000. In addition, during the year ended December 31, 2022, Network-1''s debt investment in ILiAD yielded a realized gain of $271,000 on the conversion of Network-1''s $1,000,000 convertible note and accrued interest. Also, during 2022, Network-1''s equity method accounting relating to its ILiAD equity investment resulted in an unrealized loss of $1,639,000, representing Network-1''s share of ILiAD''s reported losses.",
+        related:
+          'HPE,2HP-GD,2HP-GS,2HP-GH,2HP-GM,2HP-GF,2HP-GB,2HP-GY,2HP-GI,FTNT,FO8-GD,FO8-GS,FO8-GM,FO8-GF,FO8-GB,FO8-GI,GOOG,GOOGL,CSCO,NTIP,6LK-GS,6LK-GF,ANET,117-GD,117-GS,117-GM,117-GF,117-GB,117-GI',
         image:
-          'https://cloud.iexapis.com/v1/news/image/d31dde7c-7300-462c-ba5c-89a9d2ed6ee4',
-        lang: 'de',
+          'https://cloud.iexapis.com/v1/news/image/1ntDqhXtP37a4aJcJiJU6ZL5jTTQnfUJK4WmjmBjt9mW',
+        lang: 'en',
         hasPaywall: false,
       },
     ],
@@ -244,15 +227,16 @@ export const mockNewsSectorsData = {
   JNJ: {
     news: [
       {
-        datetime: 1585160610000,
-        headline: "Xarelto plaintiffs' lawyers win $114 million in fees, costs",
-        source: 'Reuters',
-        url: 'https://cloud.iexapis.com/v1/news/article/01f3a653-f4b9-4631-9808-bb95cb4fdbae',
+        datetime: 1680335578000,
+        headline:
+          'Johnson & Johnson, Procter & Gamble - 11 Companies To Continue Div Growth In Early April',
+        source: 'Seeking Alpha',
+        url: 'https://cloud.iexapis.com/v1/news/article/1Ncq0ModQ23zZnwR1ndNFYDdttMNHcEPWMpQL7zoMuTA',
         summary:
-          'A federal judge has awarded $114.3 million in fees and costs to plaintiffs’ lawyers in the multidistrict litigation, led by counsel from Beasley Allen and Levin Papantonio, over claims that Bayer AG and Johnson & Johnson failed to warn of the bleeding risks associated with the blood thinner Xarelto.',
-        related: 'JNJ',
+          'Eleven companies announced annual dividend increases in March. Colgate-Palmolive started its 7th decade of dividend growth in March with a 2% boost. Read more here.',
+        related: 'JNJ,PG,CL',
         image:
-          'https://cloud.iexapis.com/v1/news/image/01f3a653-f4b9-4631-9808-bb95cb4fdbae',
+          'https://cloud.iexapis.com/v1/news/image/1Ncq0ModQ23zZnwR1ndNFYDdttMNHcEPWMpQL7zoMuTA',
         lang: 'en',
         hasPaywall: false,
       },
@@ -261,15 +245,14 @@ export const mockNewsSectorsData = {
   UNH: {
     news: [
       {
-        datetime: 1585182006000,
-        headline: 'UnitedHealth Group pushes self-collected COVID-19 test',
-        source: 'Star Tribune',
-        url: 'https://cloud.iexapis.com/v1/news/article/11e562d3-26be-4783-b3b8-0a614ec8b255',
-        summary:
-          'Follow the StarTribune for the news, photos and videos from the Twin Cities and beyond.',
+        datetime: 1680272100000,
+        headline: 'Could UnitedHealth Stock Help You Become a Millionaire?',
+        source: 'The Motley Fool',
+        url: 'https://cloud.iexapis.com/v1/news/article/2ZAGHHCzkrS4B5kNZMWeFVpFcVGm9xGp1CIfJEgBg9c6',
+        summary: 'Should you add this top healthcare stock to your portfolio?',
         related: 'UNH',
         image:
-          'https://cloud.iexapis.com/v1/news/image/11e562d3-26be-4783-b3b8-0a614ec8b255',
+          'https://cloud.iexapis.com/v1/news/image/2ZAGHHCzkrS4B5kNZMWeFVpFcVGm9xGp1CIfJEgBg9c6',
         lang: 'en',
         hasPaywall: false,
       },
@@ -278,16 +261,16 @@ export const mockNewsSectorsData = {
   NVS: {
     news: [
       {
-        datetime: 1585146927000,
+        datetime: 1680269074000,
         headline:
-          'Laekna Acquires Exclusive Global Rights to Clinical-Stage Cancer Asset',
-        source: 'Business Wire',
-        url: 'https://cloud.iexapis.com/v1/news/article/b62de9fe-ae1f-428c-b394-b360a83419ff',
+          "Novartis'' heart drug Entresto gets EMA nod for expanded use in children",
+        source: 'Seeking Alpha',
+        url: 'https://cloud.iexapis.com/v1/news/article/Dhz16dj95D2778oXX77P5zN9CRBgWRJBg7fSgpEfjLE',
         summary:
-          'SHANGHAI--(BUSINESS WIRE)-- #AdvancedCancer--Laekna announced a new agreement with Novartis giving the China-based biotech company exclusive global rights to Novartis’ anti-PD-L1 Antibody.',
-        related: 'NVS',
+          "A committee of the European Medicines Agency recommended expanding the approval of Novartis'' (NVS) Entresto for children. Read more here",
+        related: 'NVS,NOVN-SE',
         image:
-          'https://cloud.iexapis.com/v1/news/image/b62de9fe-ae1f-428c-b394-b360a83419ff',
+          'https://cloud.iexapis.com/v1/news/image/Dhz16dj95D2778oXX77P5zN9CRBgWRJBg7fSgpEfjLE',
         lang: 'en',
         hasPaywall: false,
       },
@@ -296,16 +279,15 @@ export const mockNewsSectorsData = {
   MRK: {
     news: [
       {
-        datetime: 1585170000000,
-        headline:
-          'Merck to Donate 300,000 Masks to New Jersey for COVID-19 Emergency Response',
-        source: 'Business Wire',
-        url: 'https://cloud.iexapis.com/v1/news/article/ee7dcf73-79c0-4bf6-a54b-48416fc1bc72',
+        datetime: 1680286386000,
+        headline: 'Merck & Co., Inc. Is Getting Healthier',
+        source: 'Seeking Alpha',
+        url: 'https://cloud.iexapis.com/v1/news/article/2Y2H7zFrjtN2efPe7RgW9T3FJ3WTmjjCckmQCaGi8y5A',
         summary:
-          'KENILWORTH, N.J.--(BUSINESS WIRE)---- $MRK #COVID19--Merck to Donate 300,000 Masks to New Jersey for COVID-19 Emergency Response',
+          'Merck has more than 60 drugs and projects in clinical development, a robust balance sheet, and free cash flow. Click here to read our most recent analysis of MRK.',
         related: 'MRK',
         image:
-          'https://cloud.iexapis.com/v1/news/image/ee7dcf73-79c0-4bf6-a54b-48416fc1bc72',
+          'https://cloud.iexapis.com/v1/news/image/2Y2H7zFrjtN2efPe7RgW9T3FJ3WTmjjCckmQCaGi8y5A',
         lang: 'en',
         hasPaywall: false,
       },
@@ -314,36 +296,35 @@ export const mockNewsSectorsData = {
   'BRK.B': {
     news: [
       {
-        datetime: 1585146927000,
+        datetime: 1680260713000,
         headline:
-          'Berkshire Hathaway Inc. (BRK.B) Down 25.5% Since Last Earnings Report: Can It Rebound?',
-        source: 'Zacks Investment Research',
-        url: 'https://cloud.iexapis.com/v1/news/article/f0545b6e-2c20-4324-afba-12ceb579da5b',
+          "Building - Warren Buffett''s Berkshire Hathaway has likely scored a $30 billion gain on Apple stock this year thanks to its 25% surge",
+        source: 'Business Mag',
+        url: 'https://cloud.iexapis.com/v1/news/article/31wLrirIZyRS3FX96UutfiMpthxTvns6aNVm3PuSAXDy',
         summary:
-          "Berkshire Hathaway Inc. (BRK.B) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.",
-        related: 'BRK.A,BRK.B',
+          "Warren Buffett. Kevin Lamarque/Reuters Warren Buffett''s Berkshire Hathaway has likely notched a $30 billion gain on Apple this year. Apple stock has surged 25%, boosting the…",
+        related: 'AAPL,BRK.A,BRK.B',
         image:
-          'https://cloud.iexapis.com/v1/news/image/f0545b6e-2c20-4324-afba-12ceb579da5b',
+          'https://cloud.iexapis.com/v1/news/image/31wLrirIZyRS3FX96UutfiMpthxTvns6aNVm3PuSAXDy',
         lang: 'en',
         hasPaywall: false,
-        symbol: 'BRK.A',
       },
     ],
   },
   V: {
     news: [
       {
-        datetime: 1585146927000,
-        headline:
-          'Verschwörungstheorie: Coronavirus wurde nicht im Labor gezüchtet',
-        source: 'Kurier.at',
-        url: 'https://cloud.iexapis.com/v1/news/article/0b347b1d-57c8-4b51-93cf-a66344fd11d8',
+        datetime: 1680229555000,
+        headline: 'US stock market closes higher, Dow Jones gains 0.43%',
+        source: 'InstaForex',
+        url: 'https://cloud.iexapis.com/v1/news/article/3XWR9nFWjmD3rob9yXINvUfxdLFJnGtAhuBs7cuufiea',
         summary:
-          'US-Forscher räumen mit der hartnäckigen verschwörerischen Annahme auf, das neuartige Virus sei menschengemacht. Unsichere Zeiten sind ein idealer Nährboden für Verschwörungstheorien . Angesichts der weltweiten Coronavirus-Pandemie ist es also kaum verwunderlich, dass verschwörerische Annahmen in ähnlicher Weise grassieren wie das neuartige Virus selbst. Im Zentrum der Verschwörungstirade , die sich seit dem Ausbruch der Lungenkrankheit Covid-19 in China Ende des vergangenen Jahres entwickelt hat, steht die Überzeugung, das Virus sei im Labor gezüchtet worden – und damit menschengemacht. Wissenschaft räumt mit Fake News auf Forscher fanden in entsprechenden Tests keinerlei Hinweise darauf. Neue Analysen bestimmter Genabschnitte von SARS-CoV-2, wie das neuartige Coronavirus abgekürzt wird, würden eindeutig belegen, dass der Erreger natürlichen Ursprungs sei, heißt es in einer Erhebung der US-amerikanischen Forschungseinrichtung Scripps Research . "Durch den Vergleich der verfügbaren Genomsequenzdaten bekannter Coronavirus-Stämme konnten wir klar feststellen, dass SARS-CoV-2 durch natürliche Prozesse entstanden ist", sagt Kristian Andersen , Experte für Immunologie und Mikrobiologie bei Scripps Research und Mitautor der Studie.',
-        related: 'V',
+          "At the same time, there are indicators that hold back the growth of Wall Street, for example, internal macro statistics. So, earlier, the US Department of Commerce lowered the estimate of the country''s GDP growth in the fourth quarter to 2.6% in annual terms (if GDP grew at the same pace for four consecutive quarters), the second estimate was 2.7%, and the first - 2.9% . In the third quarter, US GDP grew by 3.2% on an annualized basis. Data on the labor market also turned out to be worse than expected. US initial jobless claims for the week ending March 25 increased by 7,000 from the previous week to 198,000. The forecast was 196 thousand. At the close in the New York Stock Exchange, the Dow Jones was up 0.43%, the S&P 500 was up 0.57% and the NASDAQ Composite was up 0.73%. The leading performer among the Dow Jones index components today was Intel Corporation (NASDAQ:INTC), which gained 0.57 points or 1.81% to close at 32.09. Boeing Co (NYSE:BA) rose 3.07 points or 1.48% to close at 211.04.",
+        related:
+          'SBNY,MMM,MMM-GD,MMM-GS,MMM-GH,MMM-GM,MMM-GF,MMM-GB,MMM-GY,MMM-GI,MMM-SE,MMM-SR,AXDX,ZBRA,ZT1A-GD,ZT1A-GS,ZT1A-GM,ZT1A-GF,ZT1A-GB,ZT1A-GY,ZT1A-GI,INTC,INCO-BB,SCHW,SCHW,SCHW-D,SCHW-J,SIVBQ,SCYX,BA,BOEI-BB,BOE-LN,AXP,W8A-GD,W8A-GS,W8A-GH,W8A-GM,W8A-GF,W8A-GB,W8A-GY,W8A-GI,CZR,V,CYXT,MCLDW,PALI,PAYC,0PY-GD,0PY-GS,0PY-GM,0PY-GF,0PY-GB,0PY-GI',
         image:
-          'https://cloud.iexapis.com/v1/news/image/0b347b1d-57c8-4b51-93cf-a66344fd11d8',
-        lang: 'de',
+          'https://cloud.iexapis.com/v1/news/image/3XWR9nFWjmD3rob9yXINvUfxdLFJnGtAhuBs7cuufiea',
+        lang: 'en',
         hasPaywall: false,
       },
     ],
@@ -351,16 +332,16 @@ export const mockNewsSectorsData = {
   JPM: {
     news: [
       {
-        datetime: 1585179538000,
+        datetime: 1680305448000,
         headline:
-          "Sharp recession should give way to a second half snap back, J.P. Morgan's Anastasia Amoroso predicts",
-        source: 'CNBC',
-        url: 'https://cloud.iexapis.com/v1/news/article/873c7d36-c2aa-407b-b6cf-ab004ce94e0a',
+          'Google co-founder and Hyatt Hotels chairman subpoenaed in case over JPMorgan and Jeffrey Epstein',
+        source: 'Daily Mail Online',
+        url: 'https://cloud.iexapis.com/v1/news/article/fZrvGx9aQZdVe6oRuh3Z4ERx3aVGY3mCSYNs3jNqWvA',
         summary:
-          "J.P. Morgan Private Bank's Anastasia Amoroso expects government stimulus measures and a drop in coronavirus cases to help the economy.",
-        related: 'JPM',
+          "Google co-founder Sergey Brin (right) is among three billionaires to have been issued subpoenas this week in relation to JPMorgan''s ties to pedophile financier Jeffrey Epstein (left).",
+        related: 'JPM,JPM-C,JPM-D,JPM-J,JPM-K,JPM-L,H',
         image:
-          'https://cloud.iexapis.com/v1/news/image/873c7d36-c2aa-407b-b6cf-ab004ce94e0a',
+          'https://cloud.iexapis.com/v1/news/image/fZrvGx9aQZdVe6oRuh3Z4ERx3aVGY3mCSYNs3jNqWvA',
         lang: 'en',
         hasPaywall: false,
       },
@@ -369,16 +350,17 @@ export const mockNewsSectorsData = {
   BAC: {
     news: [
       {
-        datetime: 1585169309000,
+        datetime: 1680280200000,
         headline:
-          'California governor announces deal with most major banks to waive residential mortgage payments for 90 days (JPM, WF, USB, C)',
-        source: 'Business Insider',
-        url: 'https://cloud.iexapis.com/v1/news/article/d13b3b5d-8a65-4966-9095-4cf68f9efecd',
+          'Generac’s stock among S&P 500’s biggest losers after BofA gives up on recovery hopes',
+        source: 'MarketWatch',
+        url: 'https://cloud.iexapis.com/v1/news/article/1utDFbU7TQBMUm6qsqutKiYd2ddbZ8dRV3aE1z0ihJMv',
         summary:
-          'JPMorgan Chase, Wells Fargo, Citi, and US Bank will issue a 90-day waiver on residential mortgage payments in California, Governor Gavin Newsom announced on Wednesday. Around 200 state charter banks and credit unions will also issue the waivers. Bank of America will do so for 30 days, the governor said. Newsom said he is currently working with the banks on accounting for ATM fees and overdraft charges and hopes to announce a solution soon. Visit Business Insider\'s homepage for more stories . Homeowners in California paying a mortgage to JPMorgan Chase, Wells Fargo, Citi, or US Bank will receive a 90-day waiver on mortgage payments, California Gov. Gavin Newsom said. Around 200 of the state\'s charter banks and credit unions will also issue waivers for 90 days, Newsom announced during a Wednesday press conference. Newsom said that "unfortunately Bank of America did not publicly commit" to 90 days, but will give a 30-day waiver. "I hope they will reconsider and join those other banks that are willing to do the right thing," Newsom said.',
-        related: 'BAC',
+          "Generac''s stock fell after BofA turned bearish, saying the home-generator maker''s ambitious 2023 outlook seems ''increasingly out of reach.''",
+        related:
+          'BAC,BAC-L,BAC-B,BAC-E,BAC-K,BAC-M,BAC-N,BAC-O,BAC-P,BAC-Q,BAC-S,BML-G,BML-H,BML-J,BML-L,MER-K,GNRC',
         image:
-          'https://cloud.iexapis.com/v1/news/image/d13b3b5d-8a65-4966-9095-4cf68f9efecd',
+          'https://cloud.iexapis.com/v1/news/image/1utDFbU7TQBMUm6qsqutKiYd2ddbZ8dRV3aE1z0ihJMv',
         lang: 'en',
         hasPaywall: false,
       },
@@ -1558,320 +1540,107 @@ export const mockTopLosersScreenerList = [
 
 export const mockDetailData = {
   quote: {
-    symbol: 'MFA',
-    companyName: 'MFA Financial, Inc.',
-    primaryExchange: 'New York Stock Exchange',
+    avgTotalVolume: 21491015,
     calculationPrice: 'close',
-    open: 2.24,
-    openTime: 1585229403196,
-    openSource: 'official',
-    close: 1.7,
-    closeTime: 1585252920620,
+    change: 0.28,
+    changePercent: 0.01935,
+    close: 14.75,
     closeSource: 'official',
-    high: 2.9,
-    highTime: 1585259255457,
+    closeTime: 1680292800093,
+    companyName: 'American Airlines Group Inc',
+    currency: 'USD',
+    delayedPrice: 14.75,
+    delayedPriceTime: 1680292715544,
+    extendedChange: -0.04,
+    extendedChangePercent: -0.00271,
+    extendedPrice: 14.71,
+    extendedPriceTime: 1680307172051,
+    high: 14.76,
     highSource: '15 minute delayed price',
-    low: 1.64,
-    lowTime: 1585250741944,
-    lowSource: '15 minute delayed price',
-    latestPrice: 1.7,
+    highTime: 1680292800215,
+    iexAskPrice: null,
+    iexAskSize: null,
+    iexBidPrice: null,
+    iexBidSize: null,
+    iexClose: 14.755,
+    iexCloseTime: 1680292798359,
+    iexLastUpdated: null,
+    iexMarketPercent: null,
+    iexOpen: 14.64,
+    iexOpenTime: 1680269401428,
+    iexRealtimePrice: null,
+    iexRealtimeSize: null,
+    iexVolume: null,
+    lastTradeTime: 1680292799721,
+    latestPrice: 14.75,
     latestSource: 'Close',
-    latestTime: 'March 26, 2020',
-    latestUpdate: 1585252920620,
-    latestVolume: 279166548,
-    iexRealtimePrice: 2.09,
-    iexRealtimeSize: 90,
-    iexLastUpdated: 1585256197231,
-    delayedPrice: 1.7,
-    delayedPriceTime: 1585253399336,
-    oddLotDelayedPrice: 1.75,
-    oddLotDelayedPriceTime: 1585252799952,
-    extendedPrice: 2.17,
-    extendedChange: 0.47,
-    extendedChangePercent: 0.27647,
-    extendedPriceTime: 1585267198368,
-    previousClose: 1.14,
-    previousVolume: 227398893,
-    change: 0.56,
-    changePercent: 0.49123,
-    volume: 279166548,
-    iexMarketPercent: 0.010005554103853447,
-    iexVolume: 2793216,
-    avgTotalVolume: 17506239,
-    iexBidPrice: 0,
-    iexBidSize: 0,
-    iexAskPrice: 0,
-    iexAskSize: 0,
-    iexOpen: null,
-    iexOpenTime: null,
-    iexClose: 261.45,
-    iexCloseTime: 1585252799853,
-    marketCap: 770295500,
-    peRatio: 2.12,
-    week52High: 8.09,
-    week52Low: 0.32,
-    ytdChange: -0.359555,
-    lastTradeTime: 1585252796247,
+    latestTime: 'March 31, 2023',
+    latestUpdate: 1680292800093,
+    latestVolume: 12348748,
+    low: 14.56,
+    lowSource: '15 minute delayed price',
+    lowTime: 1680272025445,
+    marketCap: 9629043242,
+    oddLotDelayedPrice: 14.755,
+    oddLotDelayedPriceTime: 1680292774527,
+    open: 14.58,
+    openTime: 1680269400000,
+    openSource: 'official',
+    peRatio: 76.07,
+    previousClose: 14.47,
+    previousVolume: 13673518,
+    primaryExchange: 'NASDAQ',
+    symbol: 'AAL',
+    volume: 12348748,
+    week52High: 21.42,
+    week52Low: 11.65,
+    ytdChange: 0.17894119496855335,
     isUSMarketOpen: false,
   },
   logo: {
-    url: 'https://storage.googleapis.com/iexcloud-hl37opg/api/logos/MFA.png',
+    url: 'https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAL.png',
   },
-  chart: {
-    range: '1m',
-    data: [
-      {
-        date: '2020-02-26',
-        label: 'Feb 26',
-        high: 7.68,
-        low: 7.51,
-        open: 7.58,
-        close: 7.52,
-        volume: 7573826,
-      },
-      {
-        date: '2020-02-27',
-        label: 'Feb 27',
-        high: 7.47,
-        low: 7.21,
-        open: 7.47,
-        close: 7.3,
-        volume: 10238826,
-      },
-      {
-        date: '2020-02-28',
-        label: 'Feb 28',
-        high: 7.26,
-        low: 6.97,
-        open: 7.15,
-        close: 7.23,
-        volume: 13259902,
-      },
-      {
-        date: '2020-03-02',
-        label: 'Mar 2',
-        high: 7.62,
-        low: 7.25,
-        open: 7.27,
-        close: 7.6,
-        volume: 6305805,
-      },
-      {
-        date: '2020-03-03',
-        label: 'Mar 3',
-        high: 7.67,
-        low: 7.35,
-        open: 7.62,
-        close: 7.44,
-        volume: 8308504,
-      },
-      {
-        date: '2020-03-04',
-        label: 'Mar 4',
-        high: 7.59,
-        low: 7.45,
-        open: 7.52,
-        close: 7.58,
-        volume: 5882025,
-      },
-      {
-        date: '2020-03-05',
-        label: 'Mar 5',
-        high: 7.52,
-        low: 7.4,
-        open: 7.47,
-        close: 7.5,
-        volume: 2923780,
-      },
-      {
-        date: '2020-03-06',
-        label: 'Mar 6',
-        high: 7.44,
-        low: 7.2,
-        open: 7.32,
-        close: 7.4,
-        volume: 7009556,
-      },
-      {
-        date: '2020-03-09',
-        label: 'Mar 9',
-        high: 7.35,
-        low: 7.01,
-        open: 7.13,
-        close: 7.1,
-        volume: 11503064,
-      },
-      {
-        date: '2020-03-10',
-        label: 'Mar 10',
-        high: 7.29,
-        low: 7.01,
-        open: 7.22,
-        close: 7.17,
-        volume: 10224336,
-      },
-      {
-        date: '2020-03-11',
-        label: 'Mar 11',
-        high: 7.1,
-        low: 6.82,
-        open: 7.04,
-        close: 6.9,
-        volume: 8653772,
-      },
-      {
-        date: '2020-03-12',
-        label: 'Mar 12',
-        high: 6.51,
-        low: 6,
-        open: 6.27,
-        close: 6.02,
-        volume: 9605098,
-      },
-      {
-        date: '2020-03-13',
-        label: 'Mar 13',
-        high: 6.5,
-        low: 5.83,
-        open: 6.37,
-        close: 6.07,
-        volume: 8386082,
-      },
-      {
-        date: '2020-03-16',
-        label: 'Mar 16',
-        high: 5.98,
-        low: 5.1,
-        open: 5.4,
-        close: 5.1,
-        volume: 7346004,
-      },
-      {
-        date: '2020-03-17',
-        label: 'Mar 17',
-        high: 5.27,
-        low: 4.22,
-        open: 5.27,
-        close: 4.25,
-        volume: 12858691,
-      },
-      {
-        date: '2020-03-18',
-        label: 'Mar 18',
-        high: 4.19,
-        low: 1.5,
-        open: 3.97,
-        close: 3.65,
-        volume: 22942294,
-      },
-      {
-        date: '2020-03-19',
-        label: 'Mar 19',
-        high: 3.85,
-        low: 3,
-        open: 3.37,
-        close: 3.65,
-        volume: 13267391,
-      },
-      {
-        date: '2020-03-20',
-        label: 'Mar 20',
-        high: 4.51,
-        low: 3.55,
-        open: 3.86,
-        close: 3.6,
-        volume: 14022823,
-      },
-      {
-        date: '2020-03-23',
-        label: 'Mar 23',
-        high: 3.6,
-        low: 2.57,
-        open: 3.5,
-        close: 2.7,
-        volume: 11524029,
-      },
-      {
-        date: '2020-03-24',
-        label: 'Mar 24',
-        high: 2.92,
-        low: 0.32,
-        open: 2.9,
-        close: 0.36,
-        volume: 55081850,
-      },
-      {
-        date: '2020-03-25',
-        label: 'Mar 25',
-        high: 1.44,
-        low: 0.64,
-        open: 0.72,
-        close: 1.14,
-        volume: 227398893,
-      },
-    ],
-  },
+  chart: { range: '1m', data: [[Object], [Object], [Object]] },
   company: {
-    symbol: 'MFA',
-    companyName: 'MFA Financial, Inc.',
-    exchange: 'New York Stock Exchange',
-    industry: 'Real Estate Investment Trusts',
-    website: 'http://www.mfafinancial.com',
+    symbol: 'AAL',
+    companyName: 'American Airlines Group Inc',
+    exchange: 'NASDAQ',
+    industry: 'Scheduled Passenger Air Transportation ',
+    website: 'www.aa.com',
     description:
-      'MFA Financial, Inc. operates as a real estate investment trust, which engages in the business of investment, on a leveraged basis, in residential mortgage assets including agency mortgage-backed securities, non-agency mortgage-backed securities, and residential whole loans. The company was founded by Stewart Zimmerman on July 24, 1997 and is headquartered in New York, NY.',
-    CEO: 'Craig L. Knutson',
-    securityName: 'MFA Financial, Inc.',
+      'American Airlines Group Inc. is the parent company of American Airlines. Together with regional partner American Eagle, American Airlines offers an average of nearly 6,700 flights daily to 350 destinations in 50 countries. American Airlines is a founding member of the oneworld® alliance, whose members and members-elect offer nearly 14,250 flights daily to 1,000 destinations in 150 countries.',
+    CEO: '',
+    securityName: 'American Airlines Group Inc',
     issueType: 'cs',
-    sector: 'Finance',
-    primarySicCode: 6798,
-    employees: 66,
-    tags: ['Finance', 'Real Estate Investment Trusts'],
-    address: '350 Park Avenue',
+    sector: 'Transportation and Warehousing',
+    primarySicCode: 4512,
+    employees: 129700,
+    tags: [
+      'Transportation',
+      'Airlines',
+      'Transportation and Warehousing',
+      'Scheduled Passenger Air Transportation ',
+    ],
+    address: null,
     address2: null,
-    state: 'NY',
-    city: 'New York',
-    zip: '10022',
-    country: 'US',
-    phone: '1.212.207.6400',
+    state: null,
+    city: null,
+    zip: null,
+    country: null,
+    phone: null,
   },
   news: [
     {
-      datetime: 1585236600000,
-      headline: 'Iran backs UN plan for a ceasefire in Afghanistan: MFA',
-      source: 'Mehr News Agency',
-      url: 'https://cloud.iexapis.com/v1/news/article/32bcde65-6287-40e0-ab2f-32d19b08d3a1',
+      datetime: 1680180056000,
+      headline: '7 Undervalued Growth Stocks to Buy Before They Take Off',
+      source: 'InvestorPlace',
+      url: 'https://cloud.iexapis.com/v1/news/article/3etcU8TPXKzRZ7NJDtQM40e7VMH33YD54Ik9w7QjbJsV',
       summary:
-        'TEHRAN, Mar. 26 (MNA) – Ministry of Foreign Affairs (MFA) of the Islamic Republic of Iran supported UN-sponsored plan for a ceasefire in Afghanistan.',
-      related: 'MFA',
+        'With the mini-banking crisis ebbing, the Fed poised to stop raising interest rates, and strong economic growth, it’s a good time to find undervalued growth stocks to buy. Significant parts of most of the American banks that have failed in recent weeks have been acquired, while a troublesome European bank, Credit Suisse, was bought by UBS (NYSE: UBS ). Meanwhile, the flow of deposits from small banks to large banks “has slowed to a trickle in recent days, CNBC reported on March 25. The latter data indicate that the banking sector is quickly returning to normal after the mini-crisis. As a result, the mini-crisis is unlikely to trigger a recession and almost certainly won’t result in a credit crunch. Further, the Fed is poised to finally take its foot off the brake, as most Fed officials expect to raise rates minimally for the rest of this year. On the economic front, the labor market continues to be very strong, and the central bank expects the economy to grow at a scintillating, annualized pace of 3.2% this quarter.',
+      related:
+        'PLUG,APD,CSGN-SE,CS,SSTK,0A8F-LN,AAL,ROKU,R35-GD,R35-GS,R35-GM,R35-GF,R35-GB,UBS,UBSG-SE,DRI',
       image:
-        'https://cloud.iexapis.com/v1/news/image/32bcde65-6287-40e0-ab2f-32d19b08d3a1',
-      lang: 'en',
-      hasPaywall: false,
-    },
-    {
-      datetime: 1585196216000,
-      headline: 'MFA Financial revokes dividends, Shares up 23%',
-      source: 'Seeking Alpha',
-      url: 'https://cloud.iexapis.com/v1/news/article/3fe9528a-61f8-471a-aed8-8ffe0bfc3888',
-      summary:
-        'MFA Financial (NYSE:MFA) revokes its 1Q20 quarterly dividends on common stock and 7.50% Series B cumulative redeemable preferred stock. The quarterly cash',
-      related: 'MFA',
-      image:
-        'https://cloud.iexapis.com/v1/news/image/3fe9528a-61f8-471a-aed8-8ffe0bfc3888',
-      lang: 'en',
-      hasPaywall: false,
-    },
-    {
-      datetime: 1585078597000,
-      headline:
-        "Mortgage Massacre Latest Casualty: $10 Billion m-REIT MFA Can't Meet Margin Calls",
-      source: 'Zero Hedge',
-      url: 'https://cloud.iexapis.com/v1/news/article/c4232fe8-02e6-4349-bb74-e18993e16a3c',
-      summary:
-        'Mortgage Massacre Latest Casualty: $10 Billion m-REIT MFA Can\'t Meet Margin Calls First, its was Invesco , then ED&F Man Capital and now the mortgage mayhem that erupted as a daisy-chain of mortgage REITs suddenly imploded, has taken down MFA Financial, whose crashing stock was halted after the company reported that "due to the turmoil in the financial markets resulting from the global pandemic of the COVID-19 virus, the Company and its subsidiaries have received an unusually high number of margin calls from financing counterparties, and have also experienced higher funding costs in respect of its repurchase agreements." As a result of this liquidity run, at the close of business on March 23, 2020, "the Company did not meet its margin calls." Further, on March 23, 2020, the Company notified its financing counterparties that it does not expect to be in a position to fund the anticipated volume of future margin calls under its financing arrangements in the near term as a result of market disruptions created by the COVID-19 pandemic.',
-      related: 'MFA',
-      image:
-        'https://cloud.iexapis.com/v1/news/image/c4232fe8-02e6-4349-bb74-e18993e16a3c',
+        'https://cloud.iexapis.com/v1/news/image/3etcU8TPXKzRZ7NJDtQM40e7VMH33YD54Ik9w7QjbJsV',
       lang: 'en',
       hasPaywall: false,
     },

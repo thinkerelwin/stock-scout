@@ -19,7 +19,9 @@ const DetailBoard = ({ quote, logo }) => {
     <section className="detail-board">
       <div className="detail-board__title-box">
         <img src={logo.url} alt="compnay logo" className="detail-board__logo" />
-        <h2 className="detail-board__name">{quote.companyName}</h2>
+        <h2 className="detail-board__name" data-testid="detail-companyName">
+          {quote.companyName}
+        </h2>
         <h2 className="detail-board__symbol">{quote.symbol}</h2>
         <p className="detail-board__exchange">{quote.primaryExchange}</p>
       </div>

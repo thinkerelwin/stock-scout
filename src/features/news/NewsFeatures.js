@@ -50,7 +50,7 @@ const NewsFeatures = () => {
   }
 
   return (
-    <section className="news-features">
+    <section className="news-features" data-testid="news-feature">
       {featureNewsList.map(
         ({ url, image, headline, related, datetime }, index) => (
           <a

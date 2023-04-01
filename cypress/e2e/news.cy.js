@@ -8,12 +8,30 @@ const headlineOfFirstArticleOnNewsFeature =
 const headlineOfFirstArticleOnNewsSectors =
   mockNewsSectorsData.XOM.news[0].headline;
 
-const headlinesForTest = [
-  headlineOfFirstArticleOnNewsFeature,
-  headlineOfFirstArticleOnNewsSectors,
-];
+const URLOfFirstArticleOnNewsFeature = mockNewsFeaturesData.GOOG.news[0].url;
+const URLOfFirstArticleOnNewsSectors = mockNewsSectorsData.XOM.news[0].url;
 
 describe('news page', () => {
+  beforeEach(() => {
+    let mockNewsFeaturesDataWithOutIdList = { ...mockNewsFeaturesData };
+    delete mockNewsFeaturesDataWithOutIdList.idList;
+
+    let mockNewsSectorsDataWithOutIdList = { ...mockNewsSectorsData };
+    delete mockNewsSectorsDataWithOutIdList.idList;
+
+    cy.intercept(
+      'GET',
+      `${urlToRequest}/stock/market/batch?symbols=goog,amzn,fb&types=news&last=1`,
+      mockNewsFeaturesDataWithOutIdList
+    );
+
+    cy.intercept(
+      'GET',
+      `${urlToRequest}/stock/market/batch?symbols=XOM,CVX,TOT,BP,MSFT,INTC,TSM,CSCO,JNJ,UNH,NVS,MRK,BRK.B,V,JPM,BAC&types=news&last=1`,
+      mockNewsSectorsDataWithOutIdList
+    );
+  });
+
   it('renders page correctly', () => {
     cy.visit('/');
 
@@ -23,51 +41,28 @@ describe('news page', () => {
   });
 
   describe('stubbing responses', () => {
-    beforeEach(() => {
-      let mockNewsFeaturesDataWithOutIdList = { ...mockNewsFeaturesData };
-      delete mockNewsFeaturesDataWithOutIdList.idList;
-
-      let mockNewsSectorsDataWithOutIdList = { ...mockNewsSectorsData };
-      delete mockNewsSectorsDataWithOutIdList.idList;
-
-      cy.server();
-
-      cy.route(
-        'GET',
-        `${urlToRequest}/stock/market/batch?symbols=goog,amzn,fb&types=news&last=1`,
-        mockNewsFeaturesDataWithOutIdList
-      );
-
-      cy.route(
-        'GET',
-        `${urlToRequest}/stock/market/batch?symbols=XOM,CVX,TOT,BP,MSFT,INTC,TSM,CSCO,JNJ,UNH,NVS,MRK,BRK.B,V,JPM,BAC&types=news&last=1`,
-        mockNewsSectorsDataWithOutIdList
-      );
-
-      cy.visit('/news');
-    });
-
     it('render news list correctly', () => {
-      headlinesForTest.forEach((headline) => {
-        cy.findByText(headline).should('be.visible');
-      });
+      cy.visit('/news');
+
+      cy.get('[data-testid="news-feature"]')
+        .findByText(headlineOfFirstArticleOnNewsFeature)
+        .should('be.visible');
+
+      cy.findByText(headlineOfFirstArticleOnNewsSectors).should('be.visible');
     });
 
-    it('navigate to news source website when clicking on one of the photo shown on "Recent news" section', () => {
-      headlinesForTest.forEach((headline) => {
-        cy.findByTitle(headline).then(($a) => {
-          // extract the fully qualified href property
-          const href = $a.prop('href');
-          // make an http request for this resource
-          // outside of the browser
-          cy.request(href)
-            // drill into the response body
-            .its('body')
-            // and assert that its contents have the <html> response
-            .should('include', headline)
-            .and('include', '</html>');
-        });
-      });
+    it('have valid URL for user to check the detail of the news in "Recent news" section', () => {
+      cy.visit('/news');
+
+      cy.get('[data-testid="news-feature"]')
+        .findByTitle(headlineOfFirstArticleOnNewsFeature)
+        .should('have.attr', 'href', URLOfFirstArticleOnNewsFeature);
+
+      cy.findByTitle(headlineOfFirstArticleOnNewsSectors).should(
+        'have.attr',
+        'href',
+        URLOfFirstArticleOnNewsSectors
+      );
     });
   });
 });

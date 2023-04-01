@@ -31,7 +31,6 @@ export const useSizeDetection = (width = defaultWidth) => {
       sizeDetector.removeListener(carouselSwitch);
     };
   }, [dispatch, width]);
-  console.log('isMediumSize Check', isMediumSize);
 
   return { isMediumSize };
 };
