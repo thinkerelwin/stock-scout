@@ -3,16 +3,6 @@ import { urlToRequest } from '../../src/api/IEXCloud';
 import { mockDetailData } from '../../src/mockData';
 
 describe('detail page', () => {
-  beforeEach(() => {
-    cy.intercept(
-      'GET',
-      `${urlToRequest}/stock/AAL/batch?types=quote,logo,chart,company,news&last=3&range=dynamic`,
-      mockDetailData
-    );
-
-    cy.visit(targetURL);
-  });
-
   const targetURL = '/detail/AAL';
 
   it('renders page correctly', () => {
@@ -27,6 +17,16 @@ describe('detail page', () => {
   });
 
   describe('stubbing responses', () => {
+    beforeEach(() => {
+      cy.intercept(
+        'GET',
+        `${urlToRequest}/stock/AAL/batch?types=quote,logo,chart,company,news&last=3&range=dynamic`,
+        mockDetailData
+      );
+
+      cy.visit(targetURL);
+    });
+
     it('renders page correctly', () => {
       cy.findByText(mockDetailData.quote.primaryExchange).should('be.visible');
       cy.findByText(`${mockDetailData.quote.symbol} Stock Chart`).should(

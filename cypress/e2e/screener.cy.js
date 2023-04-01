@@ -20,11 +20,9 @@ describe('screener page', () => {
 
   describe('stubbing responses', () => {
     beforeEach(() => {
-      cy.server();
+      cy.intercept('GET', `${urlToRequest}/ref-data/sectors`, mockCategories);
 
-      cy.route('GET', `${urlToRequest}/ref-data/sectors`, mockCategories);
-
-      cy.route(
+      cy.intercept(
         'GET',
         `${urlToRequest}/stock/market/collection/list?collectionName=mostactive`,
         mockScreenerList
@@ -42,7 +40,7 @@ describe('screener page', () => {
     });
 
     it('change displaying list when clicking on another tab in categories list', () => {
-      cy.route(
+      cy.intercept(
         'GET',
         `${urlToRequest}/stock/market/collection/list?collectionName=losers`,
         mockTopLosersScreenerList
@@ -54,7 +52,7 @@ describe('screener page', () => {
     });
 
     it('navigate to detail page when clicking on the symbol of a company in the ScreenerTable', () => {
-      cy.route(
+      cy.intercept(
         'GET',
         `${urlToRequest}/stock/MFA/batch?types=quote,logo,chart,company,news&last=3&range=dynamic`,
         mockDetailData

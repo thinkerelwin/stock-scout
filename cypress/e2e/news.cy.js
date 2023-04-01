@@ -12,26 +12,6 @@ const URLOfFirstArticleOnNewsFeature = mockNewsFeaturesData.GOOG.news[0].url;
 const URLOfFirstArticleOnNewsSectors = mockNewsSectorsData.XOM.news[0].url;
 
 describe('news page', () => {
-  beforeEach(() => {
-    let mockNewsFeaturesDataWithOutIdList = { ...mockNewsFeaturesData };
-    delete mockNewsFeaturesDataWithOutIdList.idList;
-
-    let mockNewsSectorsDataWithOutIdList = { ...mockNewsSectorsData };
-    delete mockNewsSectorsDataWithOutIdList.idList;
-
-    cy.intercept(
-      'GET',
-      `${urlToRequest}/stock/market/batch?symbols=goog,amzn,fb&types=news&last=1`,
-      mockNewsFeaturesDataWithOutIdList
-    );
-
-    cy.intercept(
-      'GET',
-      `${urlToRequest}/stock/market/batch?symbols=XOM,CVX,TOT,BP,MSFT,INTC,TSM,CSCO,JNJ,UNH,NVS,MRK,BRK.B,V,JPM,BAC&types=news&last=1`,
-      mockNewsSectorsDataWithOutIdList
-    );
-  });
-
   it('renders page correctly', () => {
     cy.visit('/');
 
@@ -41,6 +21,26 @@ describe('news page', () => {
   });
 
   describe('stubbing responses', () => {
+    beforeEach(() => {
+      let mockNewsFeaturesDataWithOutIdList = { ...mockNewsFeaturesData };
+      delete mockNewsFeaturesDataWithOutIdList.idList;
+
+      let mockNewsSectorsDataWithOutIdList = { ...mockNewsSectorsData };
+      delete mockNewsSectorsDataWithOutIdList.idList;
+
+      cy.intercept(
+        'GET',
+        `${urlToRequest}/stock/market/batch?symbols=goog,amzn,fb&types=news&last=1`,
+        mockNewsFeaturesDataWithOutIdList
+      );
+
+      cy.intercept(
+        'GET',
+        `${urlToRequest}/stock/market/batch?symbols=XOM,CVX,TOT,BP,MSFT,INTC,TSM,CSCO,JNJ,UNH,NVS,MRK,BRK.B,V,JPM,BAC&types=news&last=1`,
+        mockNewsSectorsDataWithOutIdList
+      );
+    });
+
     it('render news list correctly', () => {
       cy.visit('/news');
 
