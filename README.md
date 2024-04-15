@@ -1,27 +1,27 @@
-# stock-scout
+# stock-scout[not working anymore, the backend API is no longer free and charges a sizable amount to use it]
 
 ![screen shot on news page](./readme_photo.png 'screen shot on news page')
 ![screen shot on E2E coverage report](./E2E_coverage.png 'screen shot on E2E coverage report')
 
-An app provides stock market news and detail info of stocks, a simple screener with a sortable column header, using **Redux Toolkit** to simplify redux state management, testing with **Jest** and **React Testing Library**.
+An app provides stock market news and detailed info on stocks, a simple screener with a sortable column header, using **Redux Toolkit** to simplify redux state management, testing with **Jest** and **React Testing Library**.
 
 online demo: https://stock-scout.vercel.app
 
-p.s. Due to data usage limitation, numbers on the Screener page aren't real.
+p.s. Due to data usage limitations, the numbers on the Screener page aren't real.
 
 ## User story
 
-1. User can slide to see different recent news on the homepage if using mobile or pad device, or full layout on the desktop version
+1. The user can slide to see different recent news on the homepage if using a mobile or PAD device, or the full layout on the desktop version
 2. A news page to see recent news on various sections, clicking on the image or text will open a new window to reveal the full story
-3. Loading icon or error message will be shown to let the user know the current state on data fetching
+3. A Loading icon or error message will be shown to let the user know the current state of data fetching
 
-### on Screener page
+### on the Screener page
 
-4. User can click a different category to navigate to get a list of that section
-5. User can click the column header to sort the stock list
-6. User can click on the stock symbol to get detail information on that stock, including price charts, company profile, and recent news about this company
+4. The user can click a different category to navigate to get a list of that section
+5. The user can click the column header to sort the stock list
+6. The user can click on the stock symbol to get detailed information on that stock, including price charts, company profile, and recent news about this company
 
-p.s. price charts will return 1d or 1m data, Depending on the day or week and time of day. Intraday per minute data is only returned during market hours.
+P.S. Price charts will return 1d or 1m data, Depending on the day or week and time of day. Intraday per-minute data is only returned during market hours.
 
 ## Installing
 
@@ -42,7 +42,7 @@ E2E
 
 - `npx nyc instrument --compact=false src instrumented` To instrument the application code
 - `npm run cypress` to generate info required for coverage report
-- `npm run cypress-report` to get summary on coverage report
+- `npm run cypress-report` to get a summary of the coverage report
 
 the full report html will be located in /coverage/Icov-report/index.html
 
