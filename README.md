@@ -1,4 +1,4 @@
-# stock-scout[not working anymore, the backend API is no longer free and charges a sizable amount to use it]
+# stock-scout[*not working anymore, the backend API is no longer free and charges a sizable amount to use it*]
 
 ![screen shot on news page](./readme_photo.png 'screen shot on news page')
 ![screen shot on E2E coverage report](./E2E_coverage.png 'screen shot on E2E coverage report')
