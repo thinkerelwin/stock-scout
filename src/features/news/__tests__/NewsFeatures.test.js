@@ -24,7 +24,7 @@ it('render NewsFeatures normally', async () => {
   );
 
   expect(
-    await screen.findByTitle(mockNewsFeaturesData.GOOG.news[0].headline)
+    await screen.findByTitle(mockNewsFeaturesData.AMZN.news[0].headline)
   ).toBeInTheDocument();
 });
 

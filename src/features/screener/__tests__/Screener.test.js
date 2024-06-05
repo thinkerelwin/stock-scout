@@ -117,7 +117,7 @@ it('navigate to detail page when clicking on the symbol of a company in the Scre
       <App />
     </MemoryRouter>
   );
-  const targetSymbol = mockScreenerList[0].symbol;
+  const targetSymbol = mockScreenerList[5].symbol;
   const targetLink = await screen.findByText(targetSymbol);
 
   fireEvent.click(targetLink);
