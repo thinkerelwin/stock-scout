@@ -1,7 +1,9 @@
-# stock-scout[*not working anymore, the backend API is no longer free and charges a sizable amount to use it*]
+# stock-scout
 
 ![screen shot on news page](./readme_photo.png 'screen shot on news page')
 ![screen shot on E2E coverage report](./E2E_coverage.png 'screen shot on E2E coverage report')
+
+### *not working anymore, the backend API is no longer free and charges a sizable amount to use it*
 
 An app provides stock market news and detailed info on stocks, a simple screener with a sortable column header, using **Redux Toolkit** to simplify redux state management, testing with **Jest** and **React Testing Library**.
 
